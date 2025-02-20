@@ -1,0 +1,121 @@
+<!--Login: Red femenina de apoyo-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio sesión</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!--Seccion del trabajador-->
+    <div id="particles-js"></div>
+    <div class="container" id="container">
+      <div class="form-container register-container">
+        <form>
+          <h1>Trabajador</h1>
+          <div class="form-control">
+            <select id="role" required>
+                <option value="" disabled selected>Selecciona un rol...</option>
+                <option value="admin">Administrador</option>
+                <option value="consultor">Consultor legal</option>
+                <option value="psico">Psicologo</option>
+                <option value="enfermero">Enfermero</option>
+                <option value="asesor">Asesor</option>
+            </select>
+            <small id="role-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="documento" placeholder="Documento" required/>
+            <small id="documento-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="password" id="password" placeholder="Contraseña" required/>
+            <small id="password-error"></small>
+            <span></span>
+          </div>
+          <button type="submit" value="submit" style="font-size: 1rem; padding: 12px 40px;">Iniciar sesión</button>
+          <div class="content">
+            <div class="pass-link">
+              <a href="recuperar.html">¿Olvidaste la contraseña?</a>
+            </div>
+          </div>
+          <p>¿No tienes cuenta? <a href="register.html" style="font-size: 1rem; color: #bf8ae2; text-shadow: 0 0 10px rgba(103, 9, 95, 0.5);">Regístrate</a></p>
+        </form>
+             <!--Modal de error-->
+              <div id="errorModal" class="modal">
+               <div class="modal-content">
+               <span class="close">&times;</span>
+               <p>Error: Trabajador no encontrado o datos inválidos.</p>
+               </div>
+              </div>
+             <!-- Spinner de carga -->
+               <div id="loadingSpinner" class="spinner">
+                 <p>Cargando 😊 ...</p>
+               </div>
+      </div>      
+      <div class="form-container login-container">
+      <!--Seccion del usuario-->
+        <form class="form-lg">
+          <h1>Usuario</h1>
+          <div class="form-control2">
+            <input type="email" class="email" placeholder="Correo electrónico" required/>
+            <small class="email-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control2">
+            <input type="password" class="password-2" placeholder="Contraseña" required/>
+            <small class="password-error-2"></small>
+            <span></span>
+          </div>
+          <button type="submit" value="submit" style="font-size: 1rem; padding: 12px 40px;">Iniciar sesión</button>
+          <div class="pass-link">
+              <a href="recuperar.html">¿Olvidaste la contraseña?</a>
+            </div>
+          <p>¿No tienes cuenta? <a href="register.html" style="font-size: 1rem; color: #bf8ae2; text-shadow: 0 0 10px rgba(103, 9, 95, 0.5);">Regístrate</a></p>
+        </form>
+      </div>
+      <!--Navegacion entre usuario y trabajador-->
+      <div class="overlay-container">
+        <div class="overlay">
+          <img src="img/flo_inisesi.jpg" class="imagen-grande">
+          <!--Usuario-->
+          <div class="overlay-panel overlay-left">
+            <h1 class="title">
+              Inicio sesión <br />
+            </h1>
+            <p>Si eres un usuario registrado, inicia sesión utilizando el botón de abajo. ¡Te deseamos mucho éxito y que disfrutes tu experiencia!</p>
+            <button class="ghost" id="login">
+              Usuario
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <a href="index.html" class="btn-glow" style="margin-top: 20px;">Volver al inicio</a>
+          </div>
+          <!--Trabajador-->
+          <div class="overlay-panel overlay-right">
+            <h1 class="title">
+              Inicio sesión
+            </h1>
+            <p>
+            Si eres un trabajador registrado, inicia sesión utilizando el botón de abajo. ¡Te deseamos mucho éxito y que disfrutes tu experiencia!
+            </p>
+            <button class="ghost" id="register">
+              Trabajador
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="index.html" class="btn-glow" style="margin-top: 20px;">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!--Llamado de java sc-->
+  <script src="js/login.js"></script>
+  <script src="js/particles.min.js"></script>
+  <script src="js/app.js"></script>
+</html>
+
+<!--Plantilla tomada de: Andev.web-->

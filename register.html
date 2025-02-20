@@ -1,0 +1,212 @@
+<!--Register: Red femenina de apoyo-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/styless.css" />
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <div class="container" id="container">
+      <div class="form-container register-container">
+        <form>
+          <h1>Trabajador</h1>
+          <div class="form-control">
+            <input type="text" id="nomEmp" placeholder="Nombres" required/>
+            <small id="nomEmp-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="apeEmp" placeholder="Apellidos" maxlength="100" required />
+            <small id="apeEmp-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="docEmp" placeholder="Documento" required/>
+            <small id="docEmp-error"></small>
+            <span></span>
+        </div>
+        <div class="form-control">
+          <input type="email" id="corEmp" placeholder="Correo electrónico" required/>
+          <small id="corEmp-error"></small>
+          <span></span>
+        </div>
+          <div class="form-control">
+          <input type="date" id="fecNacEmp" placeholder="Fecha de nacimiento" required />
+          <small id="fecNacEmp-error"></small>
+          <span></span>
+          </div>
+          <div class="form-control">
+            <label>Género: </label>
+            <div class="radio-group">
+                <input type="radio" id="genEmpM" name="genEmp" value="M" required />
+                <label for="genEmpM">Masculino</label>
+                <input type="radio" id="genEmpF" name="genEmp" value="F" required />
+                <label for="genEmpF">Femenino</label>
+            </div>
+            <small id="genEmp-error"></small>
+            <span></span>
+        </div>
+          <div class="form-control">
+           <input type="text" id="telEmp" placeholder="Teléfono" maxlength="11" required />
+           <small id="telEmp-error"></small>
+           <span></span>
+          </div>
+         <div class="form-control">
+           <input type="text" id="dirEmp" placeholder="Dirección" maxlength="30" required />
+            <small id="dirEmp-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <select id="codCiuEmp" required>
+              <option value="" disabled selected>Selecciona una ciudad...</option>
+              <option value="bogo">Bogotá</option>
+              <option value="mede">Medellin</option>
+              <option value="cali">Cali</option>
+              <option value="buca">Bucaramanga</option>
+              <option value="carta">Cartagena</option>
+            </select>
+            <small id="codCiuEmp-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <select id="role" required>
+              <option value="" disabled selected>Selecciona un rol...</option>
+              <option value="admin">Administrador</option>
+              <option value="consultor">Consultor legal</option>
+              <option value="Psico">Psicologo</option>
+              <option value="enfermo">Enfermero</option>
+              <option value="asesor">Asesor</option>
+          </select>
+            <small id="rolEmp-error"></small>
+            <span></span>
+        </div>
+          <div class="form-control">
+            <input type="text" id="numTarProEmp" placeholder="Número de tarjeta profesional" maxlength="11" required />
+            <small id="numTarProEmp-error"></small>
+           <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="espProEmp" placeholder="Especialidad" maxlength="100" required />
+            <small id="espProEmp-error"></small>
+            <span></span>
+          </div>
+         <div class="form-control">
+            <input type="password" id="pswEmp" placeholder="Contraseña" maxlength="30" required />
+            <small id="pswEmp-error"></small>
+            <span></span>
+          </div>
+          <button type="submit" value="submit">Registrar</button>
+          <p>¿Ya tienes cuenta? <a href="login.html" style="font-size: 1rem; color: #bf8ae2; text-shadow: 0 0 10px rgba(103, 9, 95, 0.5);">Inicia sesión</a></p>
+        </form>
+      </div>
+    <!--Seccion usuario registro-->
+      <div class="form-container login-container">
+        <form class="form-lg">
+          <h1>Usuario</h1>
+          <div class="form-control2">
+            <input type="email" class="emailUsu" placeholder="Correo electrónico" required/>
+            <small class="emailUsu-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="nomUsu" placeholder="Nombres" required/>
+            <small id="nomUsu-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="text" id="apeUsu" placeholder="Apellidos" maxlength="100" required />
+            <small id="apeUus-error"></small>
+            <span></span>
+          </div>
+          <div class="form-control">
+            <input type="date" id="fecNacUsu" placeholder="Fecha de nacimiento" required />
+            <small id="fecNacUsu-error"></small>
+            <span></span>
+            </div>
+            <div class="form-control">
+              <label>Género: </label>
+              <div class="radio-group">
+                  <input type="radio" id="genUsuM" name="genUsu" value="M" required />
+                  <label for="genUsuM">Masculino</label>
+                  <input type="radio" id="genUsuF" name="genUsu" value="F" required />
+                  <label for="genUsuF">Femenino</label>
+              </div>
+              <small id="genUsu-error"></small>
+              <span></span>
+          </div>
+            <div class="form-control">
+             <input type="text" id="telUsu" placeholder="Teléfono" maxlength="11" required />
+             <small id="telUsu-error"></small>
+             <span></span>
+            </div>
+           <div class="form-control">
+             <input type="text" id="dirUsu" placeholder="Dirección" maxlength="30" required />
+              <small id="dirUsu-error"></small>
+              <span></span>
+            </div>
+            <div class="form-control">
+              <select id="codCiuEmp" required>
+                <option value="" disabled selected>Selecciona una ciudad...</option>
+                <option value="bogo">Bogotá</option>
+                <option value="mede">Medellin</option>
+                <option value="cali">Cali</option>
+                <option value="buca">Bucaramanga</option>
+                <option value="carta">Cartagena</option>
+              </select>
+              <small id="codCiuEmp-error"></small>
+              <span></span>
+            </div>
+          <div class="form-control">
+            <input type="password" id="pswUsu" placeholder="Contraseña" maxlength="30" required />
+            <small id="pswUsu-error"></small>
+            <span></span>
+          </div>
+          <button type="submit" value="submit">Registrar</button>
+          <p>¿Ya tienes cuenta? <a href="login.html" style="font-size: 1rem; color: #bf8ae2; text-shadow: 0 0 10px rgba(103, 9, 95, 0.5);">Inicia sesión</a></p>
+          <img src="img/ocupa_regis.png" alt="Logo" style="width: 200px; height: 200px; vertical-align: middle;">
+        </form>
+      </div>
+    <!--Navegacion entre usuario y trabajador-->
+       <div class="overlay-container">
+        <div class="overlay">
+          <img src="img/fondo_regis.jpg" class="imagen-grande">
+        <!--Usuario-->
+          <div class="overlay-panel overlay-left">
+            <h1 class="title">
+              Registro
+            </h1>
+            <p>Si eres un usuario sin registrar, registrate utilizando el botón de abajo. ¡Te deseamos mucho éxito y que disfrutes tu experiencia!</p>
+            <button class="ghost" id="login">
+              Usuario
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <a href="index.html" class="btn-glow" style="margin-top: 20px;">Volver al inicio</a>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h1 class="title">
+              Registro
+            </h1>
+            <p>
+              Si eres un trabajador sin registrar, registrate utilizando el botón de abajo. ¡Te deseamos mucho éxito y que disfrutes tu experiencia!
+            </p>
+            <button class="ghost" id="register">
+              Trabajador
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <a href="index.html" class="btn-glow" style="margin-top: 20px;">Volver al inicio</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="js/register.js"></script>
+  <script src="js/particles.min.js"></script>
+  <script src="js/app.js"></script>
+</html>
+
+<!--Plantilla tomada de: Andev.web-->
