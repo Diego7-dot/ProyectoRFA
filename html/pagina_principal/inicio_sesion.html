@@ -1,0 +1,57 @@
+<!-- Inicio sesion: Red femenina de apoyo -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- KM = Permitir caracteres especiales -->
+  <meta charset="utf-8">
+  <!-- KM = Optimizador para los dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- KM = Referente de icono -->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon"> 
+  <!-- KM = Título -->
+  <title>Inicio de sesión</title>
+  <!-- KM = Referencia a el CSS -->
+  <link href="../../css/pagina_principal/inicio_sesion.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- KM = Llamado de las partículas -->
+  <div id="particles-js"></div>
+
+  <!-- KM = Creación del formulario -->
+  <section class="form-sesion">
+    <h1 class="titulo">¡Bienvenid@!</h1>
+    <p class="intro">
+      Por favor, selecciona tu perfil para acceder al espacio adecuado para ti. 
+      Estamos aquí para apoyarte y brindarte las herramientas que necesitas.
+    </p>
+
+    <!-- KM = Selección de rol -->
+    <div class="seleccion-rol">
+      
+      <!-- Opción Usuario -->
+      <div class="opcion usuario">
+        <img src="../../iconos/pagina_principal/user_mujer.png" alt="Usuario" class="icono-rol">
+        <a href="inicio_sesion_usuario.html" class="btn-rol usuario">Ingresar como usuari@</a>
+      </div>
+
+      <!-- Opción Persona de Apoyo -->
+      <div class="opcion apoyo">
+        <img src="../../iconos/pagina_principal/user_apoyo.png" alt="Persona de Apoyo" class="icono-rol">
+        <a href="inicio_sesion_empleado.html" class="btn-rol ">Ingresar como persona de apoyo</a>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-glow">Volver al inicio</a>
+  </section>
+
+  <!-- KM = JavaScript y librerías -->
+  <script src="../../libreria/pagina_principal/gsap.js"></script>
+  <script src="../../java_script/pagina_principal/inicio_sesion.js"></script>
+  <script src="../../java_script/pagina_principal/particulas.min.js"></script>
+  <script src="../../java_script/pagina_principal/aplicacion_particula.js"></script>
+
+</body>
+</html>
+<!-- Plantilla tomada de: Andev.web -->

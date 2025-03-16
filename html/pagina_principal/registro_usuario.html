@@ -1,0 +1,91 @@
+<!-- Registro de usuarios: Red femenina de apoyo -->
+
+<!DOCTYPE html>
+
+<html lang="es">
+  <head>
+    <!--KM = Permitir caracteres especiales-->
+    <meta charset="utf-8">
+    <!--KM = Optimizador para los dispositivos moviles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--KM = Referente de icono-->
+    <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon"> 
+    <!--KM = Titulo-->
+    <title>Registro usuario</title>
+    <!--KM = Referencia a el CSS-->
+    <link href="../../css/pagina_principal/registro_usuario.css" rel="stylesheet">
+  </head>
+  
+  <body>
+    <!--KM = llamado las particulas-->
+    <div id="particles-js"></div>
+    <!--KM = Creacion del fomulario para su envio-->
+    <form action = "" method="post">
+      <!--KM = Formulario-->
+      <section class="form-register">
+        <label class="titulo">Registro</label>
+        
+        <fieldset>
+        <!--KM = Campos de para poder registrar al usuario-->
+        <legend class="label-bold" for="corUsu">Correo electrónico:</legend>
+        <input class="controls" type="email" name="corUsu" id="corUsu" placeholder="..." required autocomplete="email">
+        
+        <label class="label-bold" for="nomUsu">Nombre o alias:</label>
+        <input class="controls" type="text" name="nomUsu" id="nomUsu" placeholder="..." required autocomplete="name">
+        
+        <label class="label-bold" for="fecNacUsu">Fecha de nacimiento:</label>
+        <input class="controls" type="date" name="fecNacUsu" id="fecNacUsu" required autocomplete="bday">
+      
+        <label class="label-bold">Selecciona tu género:</label>
+        <div class="radio-group" role="radiogroup">
+          <div class="radio-option">
+            <input type="radio" id="genUsuF" name="genUsu" value="F" required />
+            <label for="genUsuF">Femenino</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="genUsuM" name="genUsu" value="M" required />
+            <label for="genUsuM"> Masculino</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="genUsuO" name="genUsu" value="O" required />
+            <label for="genUsuO">Otro...</label>
+          </div>
+        </div>
+        <small id="genUsu-error"></small>
+        
+        <!--Derechos reservados a: https://icons8.com/icon/121539/closed-eye -->
+        <label class="label-bold" for="conUsu">Contraseña:</label>
+          <div class="input-icon">
+            <input class="controls" type="password" name="psw" id="psw" placeholder="..." required autocomplete="new-password">
+            <img src="../../iconos/pagina_principal/ojo_cerrado.png" alt="Mostrar contraseña" class="icon" id="togglePasswordIcon" aria-label="Mostrar u ocultar contraseña">
+          </div>
+
+        <label class="label-bold" for="verConUsu">Confirmar contraseña:</label>
+          <div class="input-icon">
+            <input class="controls" type="password" name="verConUsu" id="verConUsu" placeholder="..." required autocomplete="new-password">
+            <img src="../../iconos/pagina_principal/ojo_cerrado.png" alt="Mostrar contraseña" class="icon" id="toggleVerifyPasswordIcon" aria-label="Mostrar u ocultar contraseña">
+          </div>
+
+          <!--KM = Terminos y envio del registro-->
+        <label for="cbox1">
+            <input type="checkbox" id="cbox1" name="terminos" required>
+            Estoy de acuerdo con <a href="#">Términos y condiciones</a>
+        </label>
+
+        <button class="botons" type="submit">Registrar</button>
+      </fieldset>
+
+        <p>¿Ya tienes cuenta? <a href="inicio_sesion.html">Inicia sesión</a></p>
+        <a href="index.html" class="btn-glow">Volver al inicio</a>
+        </section>
+      </form>
+
+  <!--KM = Referencia a el JS-->
+  <script src="../../java_script/pagina_principal/registro_usuario.js"></script>
+  <script src="../../java_script/pagina_principal/particulas.min.js"></script>
+  <script src="../../java_script/pagina_principal/aplicacion_particula.js"></script>
+ 
+ </body>
+</html>
+
+<!--Plantilla tomada de: Andev.web-->

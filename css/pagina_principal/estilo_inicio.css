@@ -1,0 +1,434 @@
+/*Css de la pagina principal*/
+
+/*KM = Paleta de colores */
+:root {
+  --rosa_claro: #F1C6D6;
+  --rosa_viejo: #D88C9B;
+  --lavanda_claro: #B4A7D6;
+  --purpura_oscuro: #6A3D7B;
+  --morado_oscuro: #2A0A42;
+  --rosa_oscuro: #9B4D5D;
+  --dorado: #CFAF70;
+  --gris_claro: #D1D1D1;
+  --gris_oscuro: #8b8787;
+  --rosa_polvito: #D8A7B1;
+  --verde: #A8B9A3;
+  --azul: #3E4A6D;
+  --crema: #F0E2C6;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo_claro: #b03a2e;
+}
+
+/*KM = Cargue de tipografía Chewy*/
+@font-face {
+  font-family: 'Chewy'; 
+  src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en normal*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en negrita*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Comic Neue en negrita y cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Comic Neue delgada*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue delgada y cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Delicious_Handrawn*/
+@font-face {
+  font-family: 'Delicious_Handrawn'; 
+  src: url('../../libreria/tipografia/Delicious_Handrawn/DeliciousHandrawn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Fuzzy_Bubbles en normal*/
+@font-face {
+  font-family: 'Fuzzy_Bubbles';
+  src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Fuzzy_Bubbles en negrita*/
+@font-face {
+  font-family: 'Fuzzy_Bubbles';
+  src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Indie_Flower*/
+@font-face {
+  font-family: 'Indie_Flower'; 
+  src: url('../../libreria/tipografia/Indie_Flower/IndieFlower-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Shadows_Into_Light*/
+@font-face {
+  font-family: 'Indie_Flower'; 
+  src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*Css de la pagina principal*/
+
+/*KM = Paleta de colores */
+:root {
+  --rosa_claro: #F1C6D6;
+  --rosa_viejo: #D88C9B;
+  --lavanda_claro: #B4A7D6;
+  --purpura_oscuro: #6A3D7B;
+  --morado_oscuro: #2A0A42;
+  --rosa_oscuro: #9B4D5D;
+  --dorado: #CFAF70;
+  --gris_claro: #D1D1D1;
+  --gris_oscuro: #8b8787;
+  --rosa_polvito: #D8A7B1;
+  --verde: #A8B9A3;
+  --azul: #3E4A6D;
+  --crema: #F0E2C6;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo_claro: #b03a2e;
+}
+
+/*KM = Cargue de tipografía Chewy*/
+@font-face {
+  font-family: 'Chewy'; 
+  src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en normal*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en negrita*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue en cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Comic Neue en negrita y cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Comic Neue delgada*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Comic Neue delgada y cursiva*/
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/*KM = Cargue de tipografía Delicious_Handrawn*/
+@font-face {
+  font-family: 'Delicious_Handrawn'; 
+  src: url('../../libreria/tipografia/Delicious_Handrawn/DeliciousHandrawn-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Fuzzy_Bubbles en normal*/
+@font-face {
+  font-family: 'Fuzzy_Bubbles';
+  src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Fuzzy_Bubbles en negrita*/
+@font-face {
+  font-family: 'Fuzzy_Bubbles';
+  src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Indie_Flower*/
+@font-face {
+  font-family: 'Indie_Flower'; 
+  src: url('../../libreria/tipografia/Indie_Flower/IndieFlower-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Cargue de tipografía Shadows_Into_Light*/
+@font-face {
+  font-family: 'Indie_Flower'; 
+  src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*KM = Estilo general de la página */
+body {
+  font-family: "Comic_Neue", sans-serif;
+  background-color: var(--blanco);
+  margin: 0;
+  padding: 0;
+}
+
+/* KM = Estilos generales de la barra */
+.container-barra {
+  background-color: var(--purpura_oscuro);
+  padding: 15px 0;
+  text-align: center;
+}
+
+.flexibilidad-barra {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  gap: 10px;
+}
+
+/* KM = Estilos para los botones de inicio y registro */
+.btn-inicio-registro {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 14px;
+  color: var(--purpura_oscuro);
+  background-color: var(--blanco);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn-inicio-registro:hover {
+  background-color: var(--rosa_polvito);
+}
+
+/* KM = Estilos para Preguntas frecuentes */
+.preguntas-frecuentes {
+  font-size: 14px;
+  color: var(--blanco);
+  text-decoration: underline;
+}
+
+/* KM = Separadores */
+.separador {
+  color: var(--blanco);
+  margin: 0 5px;
+}
+
+/* KM = Redes sociales */
+.redes-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.social-icon {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/*KM = Contalo como segundo modulo jajaja, Keren del futuro que luego te pierdes */
+
+/*KM = Estilos generales para la barra de navegación */
+.barra-navegacion {
+  background-color: var(--blanco); /* Fondo en blanco */
+  padding: 10px 15px;
+  margin: 10px auto;
+  border-radius: 12px;
+  max-width: 95%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* KM = Contenedor de navegación */
+.contenedor-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* KM = Navegación */
+.navegacion {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+/* KM = Logo en móviles */
+.logo-movil {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-movil .logo-texto {
+  margin: 0 auto;
+  color: var(--negro); /* Texto en negro */
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none !important; /* Quita cualquier subrayado */
+}
+
+/* KM = Logo de escritorio oculto en móviles */
+.logo-escritorio {
+  display: none;
+}
+
+.enlaces-container {
+  margin-top: 6px;
+  margin-bottom: 4px;
+}
+
+/* KM = Enlaces del menú */
+.enlace-nav {
+  color: var(--negro); 
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: color 0.3s ease-in-out;
+  display: block;
+}
+
+.enlace-nav:hover {
+  color: var(--dorado);
+}
+
+/* KM = Estilos del botón menú hamburguesa */
+
+.menu{
+ display: none;
+ flex-direction: column;
+ align-items: center;
+ text-align: center;
+ background-color: var(--gris_claro);
+ width: 100%;
+ padding: 10px 0;
+ position: absolute;
+ top: 50px;
+ left: 0;
+ z-index: 1000;
+}
+
+.menu-activo{
+  display: flex;
+}
+
+.boton-menu {
+  background: var(--blanco);
+  border: 2px solid var(--gris_oscuro);
+  padding: 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+}
+
+/* KM = Estilos del icono menú hamburguesa */
+.icono-menu {
+  width: 30px;
+  height: 3px;
+  background-color: var(--blanco);
+  display: block;
+  position: relative;
+}
+
+.icono-menu::before,
+.icono-menu::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  background-color: var(--morado_oscuro);
+  left: 0;
+}
+
+.icono-menu::before {
+  top: -8px;
+}
+
+.icono-menu::after {
+  top: 8px;
+}

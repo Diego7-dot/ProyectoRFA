@@ -1,0 +1,149 @@
+<!-- Preguntas Frecuentes: Red Femenina de Apoyo -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- KM = Permitir caracteres especiales -->
+  <meta charset="UTF-8">
+  <!-- KM = Optimizador para dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- KM = Título -->
+  <title>Preguntas Frecuentes</title>
+  <!-- KM = Icono de la página -->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!-- KM = Estilos CSS -->
+  <link href="../../css/pagina_principal/preguntas_frecuentes.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="titulo">Preguntas Frecuentes</h1>
+
+    <!-- KM = Texto de introducción -->
+    <p class="texto-intro">
+        ¿Tienes dudas? Selecciona una categoría para ver las preguntas frecuentes o consulta nuestras redes sociales para más información.
+    </p>
+
+    <!-- KM = Categorías -->
+    <nav class="categorias" id="categorias">
+		<button class="categoria" data-categoria="redes-sociales">Redes Sociales</button>
+        <button class="categoria" data-categoria="informacion-general">Información General</button>
+        <button class="categoria" data-categoria="registro-cuenta">Registro y Cuenta</button>
+        <button class="categoria" data-categoria="servicio-disponible">Servicio Disponible</button>
+        <button class="categoria" data-categoria="privacidad-seguridad">Privacidad y Seguridad</button>
+    </nav>
+
+    <!-- KM = Preguntas iniciales -->
+        <!-- KM = Contenedor de preguntas (Se ocultan hasta que se selecciona una categoría) -->
+		    <!-- KM = Contenedor de preguntas (Se ocultan hasta que se selecciona una categoría) -->
+			<section class="preguntas">
+        
+				<!-- KM = Redes Sociales -->
+				<article class="contenedor-preguntas" data-categoria="redes-sociales">
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿No encuentras una respuesta a tu pregunta?</button>
+						<p class="respuesta">
+							Puedes comunicarte con nosotros a través de nuestras redes sociales o llenar el siguiente 
+							<a href="contacto.html">formulario de contacto</a> y te responderemos lo antes posible.
+						</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Dónde nos encuentras en redes sociales?</button>
+						<div class="respuesta">
+							<p>Síguenos en nuestras redes para estar al tanto de todas las novedades y recibir apoyo:</p>
+							<ul class="redes-sociales">
+								<li><a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">Facebook</a></li>
+								<li><a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">Twitter/X</a></li>
+								<li><a href="https://discord.gg/qpRyw9Yw" target="_blank">Discord</a></li>
+								<li><a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">Instagram</a></li>
+								<li><a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">YouTube</a></li>
+								<li><a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">Telegram</a></li>
+							</ul>
+						</div>
+					</div>
+				</article>
+		
+				<!-- KM = Información General -->
+				<article class="contenedor-preguntas" data-categoria="informacion-general">
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Cuál es el objetivo de este sitio?</button>
+						<p class="respuesta">Nuestro objetivo es proporcionar un espacio seguro y de apoyo para quienes lo necesiten. Aquí encontrarás información, recursos y orientación sobre diversos temas de interés.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Qué tipo de contenido puedo encontrar aquí?</button>
+						<p class="respuesta">Ofrecemos contenido educativo, recursos de apoyo y asesoramiento en distintas áreas. Además, contamos con un equipo de profesionales para resolver tus dudas.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Quiénes pueden utilizar esta plataforma?</button>
+						<p class="respuesta">Cualquier persona que necesite orientación, información o apoyo puede acceder a nuestros recursos sin costo alguno.</p>
+					</div>
+				</article>
+		
+				<!-- KM = Registro y Cuenta -->
+				<article class="contenedor-preguntas" data-categoria="registro-cuenta">
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Cómo puedo crear una cuenta?</button>
+						<p class="respuesta">Para crear una cuenta, dirígete a la sección de registro, completa el formulario con tus datos y sigue las instrucciones que recibirás en tu correo electrónico.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Qué debo hacer si olvido mi contraseña?</button>
+						<p class="respuesta">Puedes restablecer tu contraseña ingresando tu correo electrónico en la página de recuperación. Recibirás un enlace con instrucciones para generar una nueva.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Es obligatorio registrarse para acceder a los recursos?</button>
+						<p class="respuesta">No, algunos recursos están disponibles sin necesidad de registro, pero para acceder a ciertos servicios personalizados es necesario contar con una cuenta.</p>
+					</div>
+				</article>
+		
+				<!-- KM = Servicio Disponible -->
+				<article class="contenedor-preguntas" data-categoria="servicio-disponible">
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Qué servicios ofrece esta plataforma?</button>
+						<p class="respuesta">Brindamos asesoramiento en distintas áreas, acceso a recursos útiles y un espacio seguro donde los usuarios pueden recibir apoyo según sus necesidades.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Cómo puedo acceder a los recursos de apoyo?</button>
+						<p class="respuesta">Puedes acceder a los recursos visitando la sección de ayuda. También puedes comunicarte con nuestro equipo para recibir asesoramiento personalizado.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Ofrecen asesoramiento en tiempo real?</button>
+						<p class="respuesta">Sí, contamos con profesionales disponibles en ciertos horarios para responder consultas en vivo.</p>
+					</div>
+				</article>
+		
+				<!-- KM = Privacidad y Seguridad -->
+				<article class="contenedor-preguntas" data-categoria="privacidad-seguridad">
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Qué medidas de seguridad tienen para proteger mis datos?</button>
+						<p class="respuesta">Implementamos protocolos de seguridad avanzados para proteger tu información. Nuestro sistema encripta los datos y cumple con normativas de privacidad.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Puedo eliminar mi cuenta y mis datos personales?</button>
+						<p class="respuesta">Sí, puedes solicitar la eliminación de tu cuenta en la configuración del perfil o contactando con nuestro equipo de soporte.</p>
+					</div>
+		
+					<div class="contenedor-pregunta">
+						<button class="pregunta" aria-expanded="false">¿Cómo puedo asegurarme de que mi información no será compartida?</button>
+						<p class="respuesta">Nuestra política de privacidad garantiza que no compartimos información personal con terceros sin consentimiento explícito.</p>
+					</div>
+				</article>
+		
+			</section>		
+	
+    <!-- KM = Botón de regreso -->
+    <p><a href="index.html" class="btn-glow">Volver al inicio</a></p>
+
+    <!-- KM = JS -->
+    <script src="../../java_script/pagina_principal/preguntas_frecuentes.js"></script>
+</body>
+
+</html>
+
+<!--Plantilla tomada de: falconmasters-->

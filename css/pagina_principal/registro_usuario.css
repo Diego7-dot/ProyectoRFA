@@ -1,0 +1,306 @@
+/* CSS del registro (Solo para usuarios normales, no empleados) */
+
+/*KM = Paleta de colores */
+:root {
+  --rosa_claro: #F1C6D6;
+  --rosa_viejo: #D88C9B;
+  --lavanda_claro: #B4A7D6;
+  --purpura_oscuro: #6A3D7B;
+  --morado_oscuro: #2A0A42;
+  --rosa_oscuro: #9B4D5D;
+  --dorado: #CFAF70;
+  --gris_claro: #D1D1D1;
+  --gris_oscuro: #8b8787;
+  --rosa_polvito: #D8A7B1;
+  --verde: #A8B9A3;
+  --azul: #3E4A6D;
+  --crema: #F0E2C6;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo_claro: #b03a2e;
+}
+
+/*KM = Carga de tipografías */
+@font-face {
+  font-family: 'Chewy'; 
+  src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shadows_Into_Light'; 
+  src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+}
+
+/*KM = Estilo general de la página */
+body {
+  font-family: "Comic_Neue", sans-serif;
+  background-color: var(--morado_oscuro);
+  margin: 0;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/*KM = Contenedor principal del formulario */
+.form-register {
+  width: 90%;
+  max-width: 340px;
+  background-color: var(--blanco);
+  padding: 15px;
+  margin: auto;
+  border-radius: 8px;
+  box-shadow: 7px 13px 37px rgba(255, 255, 255, 0.5);
+  text-align: center;
+  transition: width 0.3s ease-in-out;
+}
+
+/*KM = Estilo del título */
+.form-register .titulo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--purpura_oscuro);
+  text-align: center;
+  display: block;
+  margin-bottom: 18px;
+}
+
+.label-bold {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/*KM = La caja de fiel, que deje espacio para lo demas */
+fieldset {
+  margin-top: 30px;
+  margin-bottom: 25px; 
+}
+
+/*KM = Estilos para etiquetas */
+.form-register label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  color: var(--negro);
+  margin-bottom: 8px;
+}
+
+fieldset legend {
+  font-size: 14px; 
+  font-weight: bold; 
+  text-align: left; 
+  margin-bottom: 4px; 
+}
+
+/*KM = Estilo de los inputs */
+.controls, 
+.input-icon input {
+  width: 100%;
+  font-family: "Comic_Neue", sans-serif;
+  background: var(--blanco);
+  padding: 9px;
+  border-radius: 4px;
+  margin-bottom: 18px;
+  border: 1px solid var(--gris_oscuro);
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/*KM = Icono de alternar contraseña */
+.input-icon {
+  position: relative;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+}
+
+.input-icon .icon {
+  position: absolute;
+  right: 12px;
+  top: 35%; 
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*KM = Links */
+.form-register a {
+  color: var(--purpura_oscuro);
+  text-decoration: underline;
+}
+
+.form-register a:hover {
+  color: var(--rosa_oscuro);
+}
+
+.form-register p {
+  margin-bottom: 15px; 
+}
+
+/*KM = Botón principal */
+.form-register .botons {
+  width: 100%;
+  background: var(--purpura_oscuro);
+  font-family: "Comic_Neue", sans-serif;
+  border-radius: 4px;
+  border: none;
+  padding: 12px;
+  color: var(--blanco);
+  font-size: 18px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 25px;
+}
+
+.form-register .botons:hover {
+  background: var(--rosa_oscuro);
+}
+
+.btn-glow {
+  display: block;
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+  text-align: center;
+}
+
+/*KM = Mensaje de error */
+.error-message {
+  color: var(--rojo_claro);
+  font-size: 12px;
+  position: relative;
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 6px;
+  text-align: left;
+}
+
+#fecNacUsu-error {
+  max-width: 90%; 
+  word-wrap: break-word; 
+  white-space: normal;
+}
+
+.input-icon .error-message {
+  position: relative;
+  top: -8px;
+  left: 6px; 
+}
+
+/*KM = Radio buttons */
+.radio-group {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  margin-bottom: 16px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+}
+
+.radio-option input[type="radio"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+.radio-option label {
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+/*KM = Fondo de partículas */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--morado_oscuro);
+}
+
+/*KM = Móviles más grandes */
+@media screen and (min-width: 480px) {
+  .form-register {
+    width: 400px;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .form-register .titulo {
+    font-size: 28px; 
+  }
+}
+
+/*KM = Tablets */
+@media screen and (min-width: 768px) {
+  .form-register {
+    width: 700px;
+    padding: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .form-register .titulo {
+    font-size: 30px; 
+  }
+
+  fieldset legend, 
+  .form-register label {
+    font-size: 16px; 
+  }
+
+  .form-register a, 
+  .form-register p{
+   font-size: 16px;
+  }
+
+  .form-register .botons {
+    font-size: 20px; 
+  }
+}
+
+/*KM = Escritorio */
+@media screen and (min-width: 950px) {
+  .form-register {
+    width: 900px;
+
+    padding: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .form-register .titulo {
+    font-size: 32px; 
+  }
+
+  fieldset legend, 
+  .form-register label {
+    font-size: 16px; 
+  }
+
+  .form-register a, 
+  .form-register p{
+   font-size: 16px;
+  }
+
+  .form-register .botons{
+    font-size: 20px; 
+  }
+}

@@ -1,0 +1,66 @@
+<!--Inicio sesion_Usuario: Red femenina de apoyo-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!--KM = Permitir caracteres especiales-->
+  <meta charset="utf-8">
+  <!--KM = Optimizador para los dispositivos moviles-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--KM = Referente de icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon"> 
+  <!--KM = Titulo-->
+  <title>Inicio de sesión</title>
+  <!--KM = Referencia a el CSS-->
+  <link href="../../css/pagina_principal/inicio_sesion_empleado.css" rel="stylesheet">
+</head>
+
+<body>
+  <!--KM = llamado de las partículas-->
+  <div id="particles-js"></div>
+
+  <!--KM = Creación del formulario para su envío-->
+  <form action="" method="post">
+    <section class="form-sesion">
+      <label class="titulo">Inicio de sesión</label>
+      <label class="titula">🩷 Persona de apoyo 🩷</label>
+
+      <fieldset>
+        <div id="form-empleado">
+          <label class="label-bold" for="rol">Rol:</label>
+          <select class="controls" id="rol" name="rol" required>
+            <option value="" disabled selected>Selecciona...</option>
+            <option value="admin">Administrador/a</option>
+            <option value="psicologo">Psicóloga/o</option>
+            <option value="enfermera">Enfermera/o</option>
+            <option value="asesor">Asesor/a</option>
+            <option value="consultor">Consultor/a legal</option>
+          </select>
+
+          <label class="label-bold" for="documento">Documento:</label>
+          <input class="controls" type="text" id="documento" name="documento" placeholder="..." required>
+
+          <label class="label-bold" for="password">Contraseña:</label>
+          <div class="input-icon">
+            <input class="controls" type="password" name="password" id="password" placeholder="..." required autocomplete="current-password">
+            <img src="../../iconos/pagina_principal/ojo_cerrado.png" alt="Mostrar contraseña" class="icon" id="toggleVerifyPasswordIcon">
+          </div>
+        </div>
+
+        <button class="boton-ma" type="submit">Ingresar</button>
+      </fieldset>
+
+  <a href="inicio_sesion.html" class="btn-glow">Volver</a>
+  </section>
+</form>
+
+  <!--Llamado de JavaScript-->
+  <script src="../../java_script/pagina_principal/inicio_sesion_empelado.js"></script>
+  <script src="../../java_script/pagina_principal/particulas.min.js"></script>
+  <script src="../../java_script/pagina_principal/aplicacion_particula.js"></script>
+</body>
+
+</html>
+
+<!--Plantilla tomada de: Andev.web-->

@@ -1,0 +1,192 @@
+ /*KM = Css de preguntas frecuentes */
+
+/*KM = Paleta de colores */
+:root {
+    --rosa_claro: #F1C6D6;
+    --rosa_viejo: #D88C9B;
+    --lavanda_claro: #B4A7D6;
+    --purpura_oscuro: #6A3D7B;
+    --morado_oscuro: #2A0A42;
+    --rosa_oscuro: #9B4D5D;
+    --dorado: #CFAF70;
+    --gris_claro: #D1D1D1;
+    --gris_oscuro: #8b8787;
+    --rosa_polvito: #D8A7B1;
+    --verde: #A8B9A3;
+    --azul: #3E4A6D;
+    --crema: #F0E2C6;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo_claro: #b03a2e;
+  }
+  
+  /*KM = Carga de tipografías */
+  @font-face {
+    font-family: 'Chewy'; 
+    src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Shadows_Into_Light'; 
+    src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  }
+
+/* KM =  Estilo general de la pagina*/
+body {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--color-fondo);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* KM = Titulo principal */
+.titulo {
+    font-size: 28px;
+    color: var(--morado_oscuro);
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* KM = Texto de como usar los botones o finalidad del modulo */
+.texto-intro {
+    font-size: 16px;
+    color: var(--negro);
+    text-align: left;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+/* 📌 Contenedor de Categorías */
+.categorias {
+    display: flex;
+    flex-direction: column; /* Asegura que los botones queden uno debajo del otro */
+    align-items: flex-start; /* Alinea los botones a la izquierda */
+    gap: 10px; /* Espaciado entre botones */
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* 📌 Estilo de cada categoría (botón tipo radio) */
+.categoria {
+    background-color: var(--blanco);
+    color: var(--morado_oscuro);
+    padding: 12px 15px;
+    border-radius: 20px; /* Hace los bordes más redondeados */
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px solid transparent; /* Borde invisible para evitar cambios de tamaño */
+    text-align: left; /* Asegura que el texto quede alineado */
+    width: 100%; /* Ocupará todo el ancho disponible */
+    transition: background 0.3s, border 0.3s, transform 0.2s ease-in-out;
+}
+
+/* 📌 Efecto al pasar el mouse */
+.categoria:hover {
+    background-color: var(--color-hover);
+    transform: scale(1.03);
+}
+
+/* 📌 Estilo para la categoría activa (cuando se selecciona) */
+.categoria.activa {
+    background-color: var(--color-primario);
+    border: 2px solid var(--color-hover); /* Hace que resalte */
+    font-weight: bold;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 📌 Contenedor de Preguntas */
+.preguntas {
+    width: 100%;
+    max-width: 700px;
+}
+
+.contenedor-preguntas {
+    display: none;
+    margin-top: 10px;
+    background: var(--color-blanco);
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-preguntas.activo {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 📌 Preguntas */
+.contenedor-pregunta {
+    border-bottom: 1px solid var(--color-borde);
+    padding: 10px 0;
+}
+
+.pregunta {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--color-texto);
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.pregunta:hover {
+    color: var(--color-hover);
+}
+
+/* 📌 Respuestas (Ocultas por defecto) */
+.respuesta {
+    font-size: 14px;
+    color: var(--color-texto);
+    padding: 5px 10px;
+    display: none;
+}
+
+/* 📌 Animación al abrir respuestas */
+.pregunta[aria-expanded="true"] + .respuesta {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 📌 Animación de aparición */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 📌 Responsive - Mobile First */
+@media screen and (min-width: 768px) {
+    .preguntas {
+        max-width: 700px;
+    }
+    .titulo {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 950px) {
+    .preguntas {
+        max-width: 900px;
+    }
+    .titulo {
+        font-size: 36px;
+    }
+}

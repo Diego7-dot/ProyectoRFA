@@ -1,0 +1,241 @@
+/* Created by for themeforest.com. You can buy in www.themeforest.com/ */
+ 
+  /*KM = Css del menu empelado: Administrador*/
+  
+  :root {
+    --rosa_claro: #F1C6D6;
+    --rosa_viejo: #D88C9B;
+    --lavanda_claro: #B4A7D6;
+    --purpura_oscuro: #6A3D7B;
+    --morado_oscuro: #2A0A42;
+    --rosa_oscuro: #9B4D5D;
+    --dorado: #CFAF70;
+    --gris_claro: #D1D1D1;
+    --gris_oscuro: #8b8787;
+    --rosa_polvito: #D8A7B1;
+    --verde: #A8B9A3;
+    --azul: #3E4A6D;
+    --crema: #F0E2C6;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo_claro: #b03a2e;
+  }
+ 
+  /*KM = Cargue de tipografía Chewy*/
+@font-face {
+    font-family: 'Chewy'; 
+    src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue en normal*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue en negrita*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue en cursiva*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue en negrita y cursiva*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue delgada*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Comic Neue delgada y cursiva*/
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  /*KM = Cargue de tipografía Delicious_Handrawn*/
+  @font-face {
+    font-family: 'Delicious_Handrawn'; 
+    src: url('../../libreria/tipografia/Delicious_Handrawn/DeliciousHandrawn-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Fuzzy_Bubbles en normal*/
+  @font-face {
+    font-family: 'Fuzzy_Bubbles';
+    src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Fuzzy_Bubbles en negrita*/
+  @font-face {
+    font-family: 'Fuzzy_Bubbles';
+    src: url('../../libreria/tipografia/Fuzzy_Bubbles/FuzzyBubbles-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Indie_Flower*/
+  @font-face {
+    font-family: 'Indie_Flower'; 
+    src: url('../../libreria/tipografia/Indie_Flower/IndieFlower-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /*KM = Cargue de tipografía Shadows_Into_Light*/
+  @font-face {
+    font-family: 'Indie_Flower'; 
+    src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+body{
+  font-family: "Comic_Neue", sans-serif;
+  background-color: var(--blanco);
+  margin: 0;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* KM = Contenedor principal de la primera barra*/
+.main-header {
+  display: flex;
+  align-items: center;       
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--rosa_claro);
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.site-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-info {
+  position: relative;         
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+.user-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+  /* Estado inicial (oculto) */
+  opacity: 0;    
+  pointer-events: none;    
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+.user-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.user-menu li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.user-menu li a:hover {
+  background-color: #f0f0f0;
+}
+
+.user-menu.active {
+  opacity: 1;               
+  pointer-events: auto;     
+  transform: translateY(0);
+}

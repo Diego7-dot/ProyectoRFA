@@ -1,0 +1,311 @@
+/* CSS del inicio de sesión */
+
+/*KM = Paleta de colores */
+:root {
+  --rosa_claro: #F1C6D6;
+  --rosa_viejo: #D88C9B;
+  --lavanda_claro: #B4A7D6;
+  --purpura_oscuro: #6A3D7B;
+  --morado_oscuro: #2A0A42;
+  --rosa_oscuro: #d36e83;
+  --dorado: #CFAF70;
+  --gris_claro: #D1D1D1;
+  --gris_oscuro: #8b8787;
+  --rosa_polvito: #D8A7B1;
+  --verde: #A8B9A3;
+  --azul: #3E4A6D;
+  --crema: #F0E2C6;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo_claro: #b03a2e;
+  --brillo-tarjeta: rgba(255, 255, 255, 0.7);
+  --brillo-icono: rgba(255, 0, 255, 0.8);
+}
+
+/*KM = Carga de tipografías */
+@font-face {
+  font-family: 'Chewy'; 
+  src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shadows_Into_Light'; 
+  src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+}
+
+/*KM = Estilo general de la página */
+body {
+  font-family: "Comic_Neue", sans-serif;
+  background-color: var(--purpura_oscuro);
+  margin: 0;
+  padding: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/*KM = Contenedor principal del formulario */
+.form-sesion {
+  width: 90%;
+  max-width: 340px;
+  background-color: var(--blanco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/*KM = Estilo del título */
+.titulo {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--purpura_oscuro);
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+/*KM = Introduccion :) */
+.intro {
+  font-size: 14px;
+  color: var(--negro);
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.opcion.usuario { 
+  background-color: var(--rosa_claro); 
+}  
+
+.btn-rol.usuario { 
+  background-color: var(--rosa_oscuro); 
+} 
+
+.opcion.apoyo { 
+  background-color: var(--lavanda_claro);  
+} 
+
+.btn-rol.apoyo { 
+  background-color: var(--purpura_oscuro);
+}  
+
+/*KM = Contenedor de los roles */
+.seleccion-rol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+}
+
+/*KM = Iconos */
+.icono-rol {
+  width: 80px;
+  height: 80px;
+  margin-top: 3px;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 10px var(--brillo-icono)); 
+  transition: filter 0.3s ease-in-out;
+}
+
+/* KM = Estilo de cada opción */
+.opcion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 250px;
+  background-color: var(--lavanda_claro);
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 10px var(--brillo-tarjeta);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.opcion::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border-radius: 12px;
+  background: linear-gradient(45deg, #ff6ec4, #7873f5, #ff6ec4);
+  filter: blur(10px);
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.opcion:hover::before {
+  opacity: 1;
+}
+
+.opcion:hover {
+  transform: scale(1.05);
+  background-color: var(--rosa_claro);
+}
+
+/* Estilos para los botones de selección */
+.btn-rol {
+  display: inline-block;
+  width: 90%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 6px;
+  background: var(--purpura_oscuro);
+  color: var(--blanco);
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  margin-bottom: 6px;
+}
+
+.btn-rol:hover {
+  background: var(--rosa_oscuro);
+}
+
+.btn-glow {
+  display: block; 
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+/*KM = Fondo de partículas */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--purpura_oscuro);
+}
+
+/*KM = Móviles más grandes */
+@media screen and (min-width: 480px) {
+  .form-sesion {
+    width: 400px;
+    padding: 30px;
+  }
+  .titulo {
+    font-size: 28px;
+  }
+}
+
+/*KM = Tablets */
+@media screen and (min-width: 768px) {
+  .form-sesion {
+    width: fit-content;
+    max-width: 750px; 
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .intro {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .btn-rol {
+    font-size: 18px;
+  }
+
+  .btn-glow {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .seleccion-rol {
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    width: auto; 
+    padding: 20px;
+  }
+
+  .opcion {
+    flex-grow: 1;
+    max-width: 360px; 
+    min-width: 250px;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 12px;
+  }
+}
+
+/*KM = Escritorio */
+@media screen and (min-width: 950px) {
+  .form-sesion {
+    width: fit-content;  
+    max-width: 850px;  
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+  .titulo {
+    font-size: 32px;
+  }
+
+  .intro{
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .btn-rol {
+    font-size: 18px;
+  }
+
+  .btn-glow{
+    font-size: 16px;
+    margin-top: 40px;
+  }
+
+  .seleccion-rol {
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 40px; 
+    width: 100%;
+  }
+
+  .opcion {
+    flex-grow: 1;
+    max-width: 400px;
+    min-width: 280px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
