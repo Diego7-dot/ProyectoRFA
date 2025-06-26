@@ -1,38 +1,37 @@
 <?php
-function Conexion() {
-    // Parámetros de conexión
+function Conexion()
+{
+    // DI= Conexion a la base de datos (Parametros)
     $host = "localhost";
     $dbname = "rfa_1";
     $user = "root";
-    $password = "1234";
+    $password = "";
 
-    // Validar que los parámetros básicos no estén vacíos
+    // DI = Validar que los campos no esten vacios
     if (empty($host) || empty($dbname) || empty($user)) {
-        throw new Exception("Los parámetros de conexión no están completos.");
+        throw new Exception("Los parametros de conexion no estan completos.");
     }
-    
-    // Configurar mysqli para lanzar excepciones en caso de error
+
+    // DI = Configurar mysqli para lanzar excepciones en caso de error
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    
+
     try {
-        // Establecer la conexión
+        // DI = Establecer la conexion
         $con = mysqli_connect($host, $user, $password, $dbname);
         if (!$con) {
-            throw new Exception("Error de conexión: " . mysqli_connect_error());
+            throw new Exception("Error de conexion: " . mysqli_connect_error());
         }
-        
-        // Configurar el juego de caracteres para evitar problemas de codificación
+
+        // DI = Configurar el juego de caracteres para evitar problemas de codificacion
         if (!mysqli_set_charset($con, "utf8mb4")) {
             throw new Exception("Error al establecer el juego de caracteres: " . mysqli_error($con));
         }
-        
     } catch (Exception $e) {
-        // Registrar el error para depuración (en producción, evita mostrar detalles al usuario)
+        // DI = Registrar el error para depuracion 
         error_log($e->getMessage());
-        // Puedes mostrar un mensaje genérico o detener la ejecución
-        die("Error al conectar con la base de datos.");
+        // DI = Error al conectar en la base de datos
+        die("Error al conectar con la base de datos: " . $e->getMessage());
     }
-    
+
     return $con;
 }
-?>

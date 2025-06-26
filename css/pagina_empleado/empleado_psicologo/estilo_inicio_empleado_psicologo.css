@@ -1,0 +1,674 @@
+/*KM = Css del menu empelado: Psicologa*/
+  
+:root {
+    --rosa_claro: #da99b1;
+    --rosa_viejo: #D88C9B;
+    --lavanda_claro: #B4A7D6;
+    --purpura_oscuro: #6A3D7B;
+    --morado_oscuro: #2A0A42;
+    --rosa_oscuro: #9B4D5D;
+    --dorado: #CFAF70;
+    --gris_claro: #D1D1D1;
+    --gris_oscuro: #8b8787;
+    --rosa_polvito: #D8A7B1;
+    --verde: #A8B9A3;
+    --azul: #3E4A6D;
+    --crema: #F0E2C6;
+    --blanco: #fff;
+    --negro: #000;
+    --rojo_claro: #b03a2e;
+  }
+   
+  /*KM = Carga de tipografías */
+  @font-face {
+    font-family: 'Chewy'; 
+    src: url('../../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'Shadows_Into_Light'; 
+    src: url('../../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  }
+  
+  /* KM =  Momento de los top globales */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* KM =  Estilo principal de la pagina */
+  body {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--blanco);
+    font-size: 14px;
+  }
+  
+  /* KM =  Contenedor de los navegadores */
+  .header-wrapper {
+    position: relative;
+  }
+  
+  /* KM =  Primer navegador */
+  .main_cabezera {
+    width: 100%;
+    background-color: var(--rosa_claro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3.2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+  
+  /* KM =  Logo y titulo, lo que me costo adaptarlo xd */
+  .logo-pagina {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .logo_icono {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .pc_nombre {
+    display: none;
+  }
+  
+  .mobil_nombre {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--blanco);
+  }
+  
+  /* KM =  Informacion del usuario */
+  .informacion_user {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .barra_user {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .avatar_user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .texto_user {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .nombre_user {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .rol_user {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .bajar_menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+  }
+  
+  /* KM =  Menu desplegable del usuarios */
+  .menu_usuario {
+    position: absolute;
+    top: calc(100% + 0.4rem);
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .menu_usuario.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  
+  .menu_usuario ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  
+  .menu_usuario li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .menu_usuario li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* KM =  Menu secundario */
+  .menu_secundario {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--blanco);
+    padding: 0.5rem 0;
+    box-sizing: border-box;
+    border-top: 1px solid var(--gris_oscuro);
+    border-bottom: 1px solid var(--gris_oscuro);
+  }
+  
+  .menu_secundario .menu-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: var(--morado_oscuro);
+    transition: color 0.2s ease;
+  }
+  
+  .menu_secundario .menu-item:hover {
+    color: var(--purpura_oscuro);
+  }
+  
+  .menu_secundario .menu-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+  }
+  
+  /* KM =  Ocultar en movil el primer titulo */
+  .menu_secundario .menu-item span {
+    display: none;
+  }
+  
+  /* KM =  Cuerpo de la pagina */
+  .bienvenido {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--blanco); 
+    margin-top: 5px;
+  }
+  
+  .bienvenido h2 {
+    font-size: 16px;
+    margin-bottom: 0.5rem;
+    color: var(--morado_oscuro);
+  }
+  
+  .bienvenido p {
+    font-size: 14px;
+    color: var(--negro);
+    margin: 0;
+    margin-top: 10px;
+  }
+  
+  .bienvenido img {
+    width: 50px;   
+    max-width: 100%;  
+    height: auto;  
+    margin-top: 15px;    
+  }
+  
+  /*KM = Móviles más grandes */
+  @media screen and (min-width: 480px) {
+    .main_cabezera {
+      justify-content: center;
+      gap: 12rem; 
+    }
+  }
+  
+  /*KM = Móviles aun mas grandes */
+  @media screen and (min-width: 600px) {
+    .main_cabezera {
+      justify-content: center;
+      gap: 16rem; 
+    }
+  }
+  
+  /*KM = Tablets */
+  @media screen and (min-width: 768px) {
+    .header-wrapper {
+      position: relative;
+      height: 120px;
+    }
+    
+    .texto_user{
+      font-size: 14px;
+    }
+  
+    .menu_usuario{
+      z-index: 1000;
+      font-size: 14px;
+    }
+    
+    .informacion_user {
+      justify-content: center;
+      min-width: 200px;
+    }
+  
+    .bajar_menu {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+  
+    .main_cabezera {
+      justify-content: center;
+      gap: 10rem; 
+    }
+    
+    .menu_secundario {
+      position: relative; 
+      margin: 1rem auto; 
+      background-color: var(--blanco);
+      padding: 1.5rem 1rem;
+      border: 2px solid var(--gris_oscuro);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 90%;
+      z-index: 999;
+    }
+    
+    .menu_secundario .menu-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.2rem;
+      font-size: 14px;
+      text-decoration: none;
+      color: var(--morado_oscuro);
+    }
+    
+    .menu_secundario .menu-item:hover {
+      color: var(--purpura_oscuro);
+    }
+    
+    .smenu_secundario .menu-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .menu_secundario .menu-item span {
+      display: inline;
+      font-size: 14px;
+    }
+  
+    .mobil_nombre{
+      display: none;
+    }
+  
+    .pc_nombre{
+      display: inline;
+      font-size: 26px;
+      color: var(--blanco);
+    }
+  
+    .bienvenido h2 {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+      color: var(--morado_oscuro);
+    }
+    
+    .bienvenido p {
+      font-size: 14px;
+      color: var(--negro);
+      margin: 0;
+      margin-top: 15px;
+    }
+    
+    .bienvenido img {
+      width: 60px;   
+      max-width: 100%;  
+      height: auto;  
+      margin-top: 20px;    
+    }
+  }
+  
+  /*KM = Escritorio pequeño */
+  @media screen and (min-width: 950px) {
+    .header-wrapper {
+      position: relative;
+      height: 120px;
+    }
+    
+    .texto_user{
+      font-size: 16px;
+    }
+  
+    .menu_usuario {
+      z-index: 1000;
+      font-size: 16px;
+    }
+    
+    .informacion_user {
+      justify-content: center;
+      min-width: 200px;
+    }
+  
+    .bajar_menu {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+  
+    .main_cabezera {
+      justify-content: center;
+      gap: 14rem; 
+    }
+    
+    .menu_secundario {
+      position: relative; 
+      margin: 1rem auto; 
+      background-color: var(--blanco);
+      padding: 1.5rem 1rem;
+      border: 2px solid var(--gris_oscuro);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 90%;
+      z-index: 999;
+    }
+    
+    .menu_secundario .menu-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 16px;
+      text-decoration: none;
+      color: var(--morado_oscuro);
+    }
+    
+    .menu_secundario .menu-item:hover {
+      color: var(--purpura_oscuro);
+    }
+    
+    .menu_secundario .menu-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .menu_secundario .menu-item span {
+      display: inline;
+      font-size: 16px;
+    }
+  
+    .mobil_nombre{
+      display: none;
+    }
+  
+    .pc_nombre{
+      display: inline;
+      font-size: 26px;
+      color: var(--blanco);
+    }
+  
+    .bienvenido h2 {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+      color: var(--morado_oscuro);
+    }
+    
+    .bienvenido p {
+      font-size: 16px;
+      color: var(--negro);
+      margin: 0;
+      margin-top: 15px;
+    }
+    
+    .bienvenido img {
+      width: 60px;   
+      max-width: 100%;  
+      height: auto;  
+      margin-top: 20px;    
+    }
+  }
+  
+  /*KM = Escritorio un poco no tan pequeño*/
+  @media screen and (min-width: 1100px) {
+    .header-wrapper {
+      position: relative;
+      height: 120px;
+    }
+    
+    .texto_user{
+      font-size: 16px;
+    }
+  
+    .menu_usuario {
+      z-index: 1000;
+      font-size: 16px;
+    }
+    
+    .informacion_user {
+      justify-content: center;
+      min-width: 200px;
+    }
+  
+    .bajar_menu {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+  
+    .main_cabezera {
+      justify-content: center;
+      gap: 24rem; 
+    }
+    
+    .menu_secundario {
+      position: relative; 
+      margin: 1rem auto; 
+      background-color: var(--blanco);
+      padding: 1.5rem 1rem;
+      border: 2px solid var(--gris_oscuro);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 90%;
+      z-index: 999;
+    }
+    
+    .menu_secundario .menu-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 16px;
+      text-decoration: none;
+      color: var(--morado_oscuro);
+    }
+    
+    .menu_secundario .menu-item:hover {
+      color: var(--purpura_oscuro);
+    }
+    
+    .menu_secundario .menu-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .menu_secundario .menu-item span {
+      display: inline;
+      font-size: 16px;
+    }
+  
+    .mobil_nombre{
+      display: none;
+    }
+  
+    .pc_nombre{
+      display: inline;
+      font-size: 26px;
+      color: var(--blanco);
+    }
+  
+    .bienvenido h2 {
+      font-size: 20px;
+      margin-bottom: 0.5rem;
+      color: var(--morado_oscuro);
+    }
+    
+    .bienvenido p {
+      font-size: 16px;
+      color: var(--negro);
+      margin: 0;
+      margin-top: 15px;
+    }
+    
+    .bienvenido img {
+      width: 60px;   
+      max-width: 100%;  
+      height: auto;  
+      margin-top: 20px;    
+    }
+  }
+  
+  /*KM = Escritorio */
+  @media screen and (min-width: 1300px) {
+    .header-wrapper {
+      position: relative;
+      height: 120px;
+    }
+    
+    .texto_user{
+      font-size: 16px;
+    }
+  
+    .menu_usuario{
+      z-index: 1000;
+      font-size: 16px;
+    }
+    
+    .informacion_user {
+      justify-content: center;
+      min-width: 250px;
+    }
+  
+    .bajar_menu {
+      width: 16px;
+      height: 16px;
+      opacity: 0.8;
+      margin-left: auto;
+    }
+  
+    .main_cabezera {
+      justify-content: center;
+      gap: 35rem; 
+    }
+    
+    .menu_secundario {
+      position: relative; 
+      margin: 1rem auto; 
+      background-color: var(--blanco);
+      padding: 1.5rem 1rem;
+      border: 2px solid var(--gris_oscuro);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 2rem;
+      max-width: 1200px;
+      width: 90%;
+      z-index: 999;
+    }
+    
+    .menu_secundario .menu-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 16px;
+      text-decoration: none;
+      color: var(--morado_oscuro);
+    }
+    
+    .menu_secundario .menu-item:hover {
+      color: var(--purpura_oscuro);
+    }
+    
+    .menu_secundario .menu-icon {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .menu_secundario .menu-item span {
+      display: inline;
+      font-size: 16px;
+    }
+  
+    .mobil_nombre{
+      display: none;
+    }
+  
+    .pc_nombre{
+      display: inline;
+      font-size: 26px;
+      color: var(--blanco);
+    }
+  
+    .bienvenido p {
+      font-size: 16px;
+      color: var(--negro);
+      margin: 0;
+      margin-top: 15px;
+    }
+    
+    .bienvenido img {
+      width: 60px;   
+      max-width: 100%;  
+      height: auto;  
+      margin-top: 20px;    
+    }
+  }
+  

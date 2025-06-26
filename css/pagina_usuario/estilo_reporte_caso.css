@@ -1,0 +1,983 @@
+/*KM = Css del reporte de caso */
+
+/* KM = Principal paleta de colores */
+:root {
+  --rosa_claro: #f7acc6;
+  --rosa_oscuro: #f26a9a;
+  --morado_claro: #b592bd;
+  --morado_oscuro: #70338a;
+  --morado_oscuro-dos: #70338a;
+  --naranja_claro: #f6cdab;
+  --naranja_oscuro: #ef775a;
+  --amarillo_claro: #fff4b8;
+  --amarillo_oscuro: #f4a300;
+  --rojo_claro: #fdb7b7;
+  --rojo_oscuro: #8b0000;
+  --crema_claro: #fff9e6;
+  --crema_oscuro: #f2e4c3;
+  --durazno: #ffd6c1;
+  --lavanda: #e6d6f3;
+  --mantequilla: #fff4b8;
+  --negro: #151414;
+  --negro-dos: #151414;
+  --negro_cálido: #2d2a2a;
+  --gris: #868686;
+  --gris_oscuro: #3c3c3c;
+  --blanco: #ffffff;
+  --segundo-blanco: #fff;
+  --sombra: rgba(0, 0, 0, 0.381);
+  --sombrita: rgba(255, 255, 255, 0.773);
+  --sombre: rgba(62, 0, 55, 0.6);
+}
+
+/* KM = Colores para modo oscuro de la pagina*/
+.dark-mode {
+  --negro-dos: #151414;
+  --rosa_claro: #b45f7d;
+  --rosa_oscuro: #944062;
+  --morado_claro: #4a1467;
+  --morado_oscuro: #210c2b;
+  --morado_oscuro: #210c2b;
+  --morado_oscuro-dos: #c1a7e4;
+  --naranja_claro: #f6cdab;
+  --naranja_oscuro: #9a3f2c;
+  --amarillo_claro: #f4a300;
+  --amarillo_oscuro: #fff4b8;
+  ;
+  --rojo_claro: #8b0000;
+  --rojo_oscuro: #fdb7b7;
+  --crema_claro: #3b2f2f;
+  --crema_oscuro: #2e2323;
+  --durazno: #a84f3a;
+  --lavanda: #9270c2;
+  --mantequilla: #bfa565;
+  --negro: #ffffff;
+  --negro_cálido: #f7f7f7;
+  --gris: #d6d6d6;
+  --gris_oscuro: #aaaaaa;
+  --blanco: #000;
+  --segundo-blanco: #fff;
+  --sombrita: rgba(0, 0, 0, 0.074)15;
+  --sombra: rgba(255, 255, 255, 0.53);
+  --sombre: rgba(36, 2, 34, 0.688);
+}
+
+/*KM = Carga de tipografías */
+@font-face {
+  font-family: 'Chewy';
+  src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Shadows_Into_Light';
+  src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+}
+
+/* KM =  Momento de los top globales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* KM =  Estilo principal de la pagina */
+body {
+  font-family: "Comic_Neue", sans-serif;
+  background-color: var(--blanco);
+  font-size: 14px;
+}
+
+/* KM = Mensaje de modos en proceso! */
+.mensaje-proceso {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.mensaje-proceso.show::after {
+  content: '¡En proceso de elaboración!';
+  background-color: var(--naranja_claro);
+  color: var(--blanco);
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px var(--sombra);
+  opacity: 1;
+  animation: fadeInOut 3s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+/* KM = Icono de modo oscuro */
+.modo-flotante {
+  position: fixed;
+  bottom: 130px;
+  right: 1.5rem;
+  background: var(--rosa_oscuro);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 6px 16px var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-modo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.dark-mode .modo-flotante {
+  background: var(--negro);
+  border: 1px solid var(--lavanda_claro);
+}
+
+/* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 240px;
+  right: 1.5rem;
+  background: var(--morado_claro);
+  border: none;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 6px 16px var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icono-flota {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/* KM = Ocultar todos los modales al iniciar */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--sombra);
+}
+
+/* KM = Estilos del contenido del modal */
+.modal-contenido {
+  background-color: var(--blanco);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--rojo_oscuro);
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: var(--rosa_oscuro);
+}
+
+.modal-contenido h2 {
+  font-size: 16px;
+  color: var(--morado_oscuro-dos);
+  margin-bottom: 10px;
+}
+
+.modal-contenido p {
+  font-size: 14px;
+  color: var(--negro);
+  margin-bottom: 10px;
+}
+
+.botones-modal a {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  background-color: var(--morado_claro);
+  color: var(--segundo-blanco);
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--sombra);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones-modal a:hover {
+  background-color: var(--morado_oscuro);
+  transform: scale(1.03);
+}
+
+.botones-modal .btn-modal {
+  font-family: "Comic_Neue", sans-serif;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+  background-color: var(--morado_claro);
+  color: var(--segundo-blanco);
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--sombra);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.botones-modal .btn-modal:hover {
+  background-color: var(--morado_oscuro);
+  transform: scale(1.03);
+}
+
+/* KM =  Contenedor de los navegadores */
+.header-wrapper {
+  position: relative;
+}
+
+/* KM =  Primer navegador */
+.main_cabezera {
+  width: 100%;
+  background-color: var(--rosa_claro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* KM =  Logo y titulo, lo que me costo adaptarlo xd */
+.logo-pagina {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo_icono {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.pc_nombre {
+  display: none;
+}
+
+.mobil_nombre {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--blanco);
+}
+
+/* KM =  Informacion del usuario */
+.informacion_user {
+  position: relative;
+  cursor: pointer;
+}
+
+.barra_user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--blanco);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--gris);
+  border-radius: 6px;
+}
+
+.avatar_user {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.texto_user {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.nombre_user {
+  font-weight: bold;
+  color: var(--gris_oscuro);
+  font-size: 16px;
+}
+
+.rol_user {
+  color: var(--gris);
+  font-size: 14px;
+}
+
+.bajar_menu {
+  width: 16px;
+  height: 16px;
+  opacity: 0.8;
+}
+
+/* KM =  Menu desplegable del usuarios */
+.menu_usuario {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  background-color: var(--segundo-blanco);
+  border: 1px solid var(--gris);
+  border-radius: 6px;
+  box-shadow: 0 4px 8px var(--sombra);
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu_usuario.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.menu_usuario ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+.menu_usuario li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: var(--gris_oscuro);
+  font-size: 0.9rem;
+}
+
+.menu_usuario li a:hover {
+  background-color: var(--blanco);
+}
+
+/* KM =  Menu secundario */
+.menu_secundario {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--segundo-blanco);
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+  border-top: 1px solid var(--gris_oscuro);
+  border-bottom: 1px solid var(--gris_oscuro);
+}
+
+.menu_secundario .menu-item {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--negro-dos);
+  transition: color 0.2s ease;
+}
+
+.menu_secundario .menu-item:hover {
+  color: var(--morado_oscuro);
+}
+
+.menu_secundario .menu-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+/* KM =  Ocultar en movil el primer titulo */
+.menu_secundario .menu-item span {
+  color: var(--negro-dos);
+  font-size: 14px;
+  display: none;
+}
+
+/* KM =  Cuerpo de la pagina */
+.bienvenido {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--blanco);
+  margin-top: 5px;
+}
+
+.bienvenido h2 {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+  color: var(--morado_oscuro-dos);
+}
+
+.bienvenido p {
+  font-size: 14px;
+  color: var(--negro);
+  margin: 0;
+  margin-top: 10px;
+}
+
+.bienvenido img {
+  width: 50px;
+  max-width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* KM = Nombre de usuario */
+.nombre_user {
+  display: inline-block;
+  max-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.nombre-usuario {
+  max-width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+/* KM = Bienvenida limitada*/
+.bienvenida_user_limitada {
+  display: inline-block;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.nombre-usuario-bi {
+  text-align: center;
+}
+
+
+/*KM = Móviles más grandes */
+@media screen and (min-width: 480px) {
+  .main_cabezera {
+    justify-content: center;
+    gap: 12rem;
+  }
+
+  .nombre_user {
+    max-width: 50px;
+  }
+
+  .nombre-usuario {
+    max-width: 55%;
+  }
+}
+
+/*KM = Móviles aun mas grandes */
+@media screen and (min-width: 600px) {
+  .main_cabezera {
+    justify-content: center;
+    gap: 16rem;
+  }
+}
+
+/*KM = Tablets */
+@media screen and (min-width: 768px) {
+  .nombre_user {
+    max-width: 70px;
+  }
+
+  .nombre-usuario {
+    max-width: 65%;
+  }
+
+  .header-wrapper {
+    position: relative;
+    height: 120px;
+  }
+
+  .texto_user {
+    font-size: 14px;
+  }
+
+  .menu_usuario {
+    z-index: 1000;
+    font-size: 14px;
+  }
+
+  .informacion_user {
+    justify-content: center;
+    min-width: 200px;
+  }
+
+  .bajar_menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .main_cabezera {
+    justify-content: center;
+    gap: 10rem;
+  }
+
+  .menu_secundario {
+    position: relative;
+    margin: 1rem auto;
+    background-color: var(--segundo-blanco);
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--gris_oscuro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 999;
+  }
+
+  .menu_secundario .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.2rem;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-item:hover {
+    color: var(--purpura_oscuro);
+  }
+
+  .smenu_secundario .menu-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu_secundario .menu-item span {
+    display: inline;
+    font-size: 14px;
+  }
+
+  .mobil_nombre {
+    display: none;
+  }
+
+  .pc_nombre {
+    display: inline;
+    font-size: 26px;
+    color: var(--blanco);
+  }
+
+  .bienvenido h2 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    color: var(--morado_oscuro-dos);
+  }
+
+  .bienvenido p {
+    font-size: 14px;
+    color: var(--negro);
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .bienvenido img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+/*KM = Escritorio pequeño */
+@media screen and (min-width: 950px) {
+  .nombre_user {
+    max-width: 80px;
+  }
+
+  .header-wrapper {
+    position: relative;
+    height: 120px;
+  }
+
+  .texto_user {
+    font-size: 16px;
+  }
+
+  .menu_usuario {
+    z-index: 1000;
+    font-size: 16px;
+  }
+
+  .informacion_user {
+    justify-content: center;
+    min-width: 200px;
+  }
+
+  .bajar_menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .main_cabezera {
+    justify-content: center;
+    gap: 14rem;
+  }
+
+  .menu_secundario {
+    position: relative;
+    margin: 1rem auto;
+    background-color: var(--segundo-blanco);
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--gris_oscuro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--sombra);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 999;
+  }
+
+  .menu_secundario .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-item:hover {
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu_secundario .menu-item span {
+    display: inline;
+    font-size: 16px;
+  }
+
+  .mobil_nombre {
+    display: none;
+  }
+
+  .pc_nombre {
+    display: inline;
+    font-size: 26px;
+    color: var(--blanco);
+  }
+
+  .bienvenido h2 {
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    color: var(--morado_oscuro-dos);
+  }
+
+  .bienvenido p {
+    font-size: 16px;
+    color: var(--negro);
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .bienvenido img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+/*KM = Escritorio un poco no tan pequeño*/
+@media screen and (min-width: 1100px) {
+  .header-wrapper {
+    position: relative;
+    height: 120px;
+  }
+
+  .texto_user {
+    font-size: 16px;
+  }
+
+  .menu_usuario {
+    z-index: 1000;
+    font-size: 16px;
+  }
+
+  .informacion_user {
+    justify-content: center;
+    min-width: 200px;
+  }
+
+  .bajar_menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .main_cabezera {
+    justify-content: center;
+    gap: 24rem;
+  }
+
+  .menu_secundario {
+    position: relative;
+    margin: 1rem auto;
+    background-color: var(--segundo-blanco);
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--gris_oscuro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--sombra);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 999;
+  }
+
+  .menu_secundario .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-item:hover {
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu_secundario .menu-item span {
+    display: inline;
+    font-size: 16px;
+  }
+
+  .mobil_nombre {
+    display: none;
+  }
+
+  .pc_nombre {
+    display: inline;
+    font-size: 26px;
+    color: var(--blanco);
+  }
+
+  .bienvenido h2 {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: var(--morado_oscuro-dos);
+  }
+
+  .bienvenido p {
+    font-size: 16px;
+    color: var(--negro);
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .bienvenido img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}
+
+/*KM = Escritorio */
+@media screen and (min-width: 1300px) {
+  .header-wrapper {
+    position: relative;
+    height: 120px;
+  }
+
+  .texto_user {
+    font-size: 16px;
+  }
+
+  .menu_usuario {
+    z-index: 1000;
+    font-size: 16px;
+  }
+
+  .informacion_user {
+    justify-content: center;
+    min-width: 250px;
+  }
+
+  .bajar_menu {
+    width: 16px;
+    height: 16px;
+    opacity: 0.8;
+    margin-left: auto;
+  }
+
+  .main_cabezera {
+    justify-content: center;
+    gap: 35rem;
+  }
+
+  .menu_secundario {
+    position: relative;
+    margin: 1rem auto;
+    background-color: var(--segundo-blanco);
+    padding: 1.5rem 1rem;
+    border: 2px solid var(--gris_oscuro);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--sombra);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1200px;
+    width: 90%;
+    z-index: 999;
+  }
+
+  .menu_secundario .menu-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 16px;
+    text-decoration: none;
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-item:hover {
+    color: var(--morado_oscuro);
+  }
+
+  .menu_secundario .menu-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu_secundario .menu-item span {
+    display: inline;
+    font-size: 16px;
+  }
+
+  .mobil_nombre {
+    display: none;
+  }
+
+  .pc_nombre {
+    display: inline;
+    font-size: 26px;
+    color: var(--blanco);
+  }
+
+  .bienvenido p {
+    font-size: 16px;
+    color: var(--negro);
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  .bienvenido img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+  }
+}

@@ -1,218 +1,464 @@
-<!--Espacio joven: Red femenina de apoyo-->
+<!--***********************************************************************-->
+<!-- Espacio joven: Red femenina de apoyo -->
+<!--
+  La siguiente plantilla fue modificada y adaptada por Keren Daniela Morgado
+  Todos los derechos reservados a HTML Codex (https://htmlcodex.com)
+  Plantilla original: Ice Cream Shop Website Template
+  Enlace a la plantilla: https://htmlcodex.com/ice-cream-shop-website-template
+-->
+<!--***********************************************************************-->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>RFA-Espacio joven</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!--KM = Permitir caracteres especiales :)-->
+  <meta charset="utf-8">
+  <!--KM = Referente del buscador-->
+  <title>Red Feminina de Apoyo</title>
+  <!--KM = Diseño responsivo-->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--KM = Icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!--KM = CSS principal y una libreria-->
+  <link href="../../css/pagina_principal/estilo_joven.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-primary py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-light text-primary mx-2" href="login.html">Inicio sesion</a>
-                        <span class="text-white">|</span>
-                        <a class="btn btn-light text-primary mx-2" href="register.html">Registro</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="faQ.html">Preguntas frecuentes</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://x.com/mujeryfuturo1?lang=es" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                            <i class="fas fa-balance-scale"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-white pl-3" href="https://www.youtube.com/watch?v=OGpWtBKtY2E" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!--KM = Mensaje de procesos, la pagina sigue en actualizaciones -->
+  <div id="mensaje-proceso" class="mensaje-proceso"></div>
+
+  <!--KM = Modo oscuro-->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro"/>
+  </button>
+
+  <!--KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir"/>
+  </button>
+
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+
+  <!-- KM = Barra superior (Contiene inicio de sesion, registro, preguntas frecuntes y redes sociales)-->
+  <header class="contenedor_barra">
+    <div class="container">
+      <div class="acomodar_barra">
+
+        <!-- KM = Adaptabilidad para dispositivos moviles -->
+        <div class="enlaces_y_sociales">
+          
+          <!--  KM = Muestra de los botones -->
+          <div class="enlaces-top">
+            <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
+            <span class="separador">|</span>
+            <a class="btn-inicio-registro" href="registro_usuario.html">Registro</a>
+            <span class="separador">|</span>
+            <a class="preguntas-fre" href="preguntas.html">Preguntas</a>
+            <a class="preguntas_pc" href="preguntas.html">Preguntas frecuentes</a>
+          </div>
+          <!-- Fila inferior: redes sociales -->
+          <div class="redes-container">
+            <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+              <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+              <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+            </a>
+
+            <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+              <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+              <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+              <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+            </a>
+
+            <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+              <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Topbar End -->
+  </header>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
-                <a href="index.html" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>RFA</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="recursos.html" class="nav-item nav-link">Recursos de apoyo</a>
-                        <a href="consultar.html" class="nav-item nav-link">Información legal</a>
-                        <a href="product.html" class="nav-item nav-link">Eventos</a>
-                    </div>
-                    <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">RFA</span></h1>
-                    </a>
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="service.html" class="nav-item nav-link">Prevención</a>
-                        <a href="gallery.html" class="nav-item nav-link">Testimonios</a>
-                        <a href="contact.html" class="nav-item nav-link">Espacio joven</a>
-                    </div>
-                </div>
-            </nav>
+  <!--KM = Barra de navegacion, para el mobil-->
+  <nav class="secondary-menu">
+    <a href="index.html" class="logo-movil">
+      <h1 class="logo-texto_mobi">RFA</h1>
+    </a>
+
+    <!-- KM = hamburguesa personalizado -->
+    <button type="button" class="boton-menu hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- KM = Contenido del menu desplegable en mobil -->
+    <div class="menu colapsable" id="menu-navegacion">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </nav>
+  
+  <!--KM = Barra de navegacion para escritorio-->
+  <div class="menu-escritorio">
+    <div class="menu-izquierda">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+    </div>
+    <a href="index.html" class="logo-escritorio">
+      <h1 class="logo-texto">RFA</h1>
+    </a>
+    <div class="menu-derecha">
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </div>
+  <!--KM =  Fin de la segunda barra de navegacion -->
+
+  <!-- KM = Imagenes de presentacion, version mobil-->
+  <section class="imagen-estatica imagen-movil">
+    <div class="contenedor-banner">
+        <img src="../../imagenes/espacio_joven.png" alt="Descripción de la imagen" class="imagen-banner">
+        <div class="texto-superpuesto">
+          <h4>Espacio joven</h4>
+          <h1>Crece, aprende y defiende tus derechos</h1>
+          <a href="#joven" class="btn-primary">Leer más</a>
         </div>
+      </div>
+    <!-- KM = Invitacion para el chatbot y registrarse-->
+    <div class="chatbot-invitation_mobi">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
     </div>
-    <!-- Navbar End -->
+  </section>
+  
+  <!-- KM = Imagen presentacion version escritorio -->
+  <section class="imagen-estatica-pc imagen-escritorio">
+    <div class="contenedor-banner-pc">
+    <img src="../../imagenes/espacio_joven_pc.png" alt="Imagen de mujer alentada por otras" class="imagen-banner-pc">
+    <div class="texto-superpuesto-pc">
+      <h4>Espacio joven</h4>
+      <h1>Crece, aprende y defiende tus derechos</h1>
+      <a href="#joven" class="btn-primary">Leer más</a>
+    </div>
+    <div class="chatbot-invitation">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
+    </div>
+   </div>
+  </section>
+  <!-- KM = Fin de las imagenes -->
 
-
-     <!-- Header Start -->
-     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px; background-image: url('img/joven_index.jpg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; height: 800px;">
-        <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Espacio joven</h1>
+  <!-- KM = Este mensaje ahora hace la funcion de espera -->
+  <div class="secciones-principales">
+  <section id="limon" class="contenedor-padre">
+    <div class="contenedor-respirando">
+      <h2 class="titulo">Tu espacio seguro para crecer y brillar</h2>
+      <div class="fila-texto-imagen">
+        
+        <!-- KM = Introduccion, posibles a cambios -->
+        <div class="contenedor-texto">
+          <p class="parrafo">
+            En <strong>Red Femenina de Apoyo</strong> creemos en ti, en tu fuerza y en tus sueños.
+          </p>
+          <p class="parrafo">
+            Este espacio joven es para que resuelvas tus dudas, encuentres apoyo y sepas que no estás sola. Aquí podrás aprender sobre tus derechos, conocer redes de ayuda y encontrar herramientas para crecer fuerte, libre y segura.
+           </p>
         </div>
+        <img src="../../imagenes/icono_joven.png" alt="Imagen dandose apoyo" class="imagen-en-linea" />   
+      </div>
     </div>
-    <!-- Header End -->
+  </section>
+  <!-- KM = Fin del mensaje -->
+  
+  <!-- KM = Sección jóvenes, específicamente derechos -->
+  <section id="joven" class="espacio-joven">
+   <div class="contenedor-espacio-joven">
 
+    <!-- KM = Derechos -->
+    <div class="scroll-derecho"></div>
+    <h2 class="titulo-seccion">Sobre derechos</h2>
+    <div class="preguntas-acordeon">
 
-    <!-- Contact Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative text-center mb-5">Contact Us For Any Query</h1>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <div class="contact-form bg-light rounded p-5">
-                        <div id="success"></div>
-                        <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                            <div class="form-row">
-                                <div class="col-sm-6 control-group">
-                                    <input type="text" class="form-control p-4" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="col-sm-6 control-group">
-                                    <input type="email" class="form-control p-4" id="email" placeholder="Your Email" required="required" data-validation-required-message="Please enter your email" />
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <input type="text" class="form-control p-4" id="subject" placeholder="Subject" required="required" data-validation-required-message="Please enter a subject" />
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div class="control-group">
-                                <textarea class="form-control p-4" rows="6" id="message" placeholder="Message" required="required" data-validation-required-message="Please enter your message"></textarea>
-                                <p class="help-block text-danger"></p>
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block py-3 px-5" type="submit" id="sendMessageButton">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué derechos tengo como adolescente?
+        </button>
+        <div class="respuesta">
+          <p>Tienes derecho a vivir libre de violencia, a recibir educación, a expresarte, a la privacidad, a la salud física y mental, y a participar en decisiones que te afecten.</p>
         </div>
-    </div>
-    <!-- Contact End -->
+      </div>
 
-
-
-    <!--Contactos-->
-    <div id="cont" class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary">RFA</h1>
-                    </a>
-                </div>
-                <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://x.com/mujeryfuturo1?lang=es" target="_blank"><i class="fa fa-times"></i></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                                <i class="fas fa-balance-scale"></i>
-                            </a></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <div class="col-md-6 text-center text-lg-right">
-                        <div class="d-inline-flex align-items-center">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-2 mb-4">
-                    <div class="row">
-                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Contactanos</h5>
-                            <p class="mb-2">Carrera 27, Sena CSET</p>
-                            <p class="mb-0">+57 3213211436</p>
-                        </div>
-                        <div class="col-sm-6 text-center text-sm-left">
-                            <h5 class="font-weight-bold mb-2">Horarios de atención</h5>
-                            <p class="mb-2">Lunes – Domingo, 24 horas</p>
-                            <p class="mb-0">Soporte: +57 3003110085</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                    </p>
-                </div>
-            </div>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿A partir de qué edad puedo recibir atención médica sin permiso de mis padres?
+        </button>
+        <div class="respuesta">
+          <p>Depende del país, pero usualmente a partir de los 14 o 16 años puedes recibir atención médica confidencial.</p>
         </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué debo hacer si mis derechos son vulnerados en casa o escuela?
+        </button>
+        <div class="respuesta">
+          <p>Busca ayuda en adultos de confianza o acude a instituciones de protección de derechos.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Tengo derecho a recibir educación sexual integral?
+        </button>
+        <div class="respuesta">
+          <p>Sí, tienes derecho a recibir información clara y respetuosa sobre tu cuerpo y emociones.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Puedo denunciar si alguien me acosa en redes sociales?
+        </button>
+        <div class="respuesta">
+          <p>Sí. El acoso en línea es violencia digital y puedes denunciarlo.</p>
+        </div>
+      </div>
+
     </div>
-    <!--Contactos terminados :(-->
 
+    <!-- KM = Seguridad, autoestima y redes de apoyo -->
+    <div class="scroll-derecho"></div>
+    <h2 class="titulo-seccion">Sobre seguridad, autoestima y redes de apoyo</h2>
+    <div class="preguntas-acordeon">
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Cómo sé si una relación es sana?
+        </button>
+        <div class="respuesta">
+          <p>Una relación sana se basa en respeto, confianza y apoyo mutuo, sin miedo o control.</p>
+        </div>
+      </div>
 
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué puedo hacer si me siento sola o triste?
+        </button>
+        <div class="respuesta">
+          <p>Habla con alguien de confianza o busca ayuda profesional.</p>
+        </div>
+      </div>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Cómo construyo mi autoestima?
+        </button>
+        <div class="respuesta">
+          <p>Reconociendo tus fortalezas, rodeándote de personas que te valoren y cuidando de ti misma.</p>
+        </div>
+      </div>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿A quién puedo acudir si necesito ayuda emocional o legal?
+        </button>
+        <div class="respuesta">
+          <p>Acude a líneas de ayuda, psicólogos o instituciones de defensa de derechos.</p>
+        </div>
+      </div>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué señales indican que debo pedir ayuda urgente?
+        </button>
+        <div class="respuesta">
+          <p>Si sientes miedo, amenazas, violencia o tu seguridad está en riesgo, busca ayuda inmediata.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- KM = Ayuda y protección de menores -->
+    <div class="scroll-derecho"></div>
+    <h2 class="titulo-seccion">Sobre ayuda y protección de menores de edad</h2>
+    <div class="preguntas-acordeon">
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Dónde puedo encontrar ayuda si siento que estoy en peligro?
+        </button>
+        <div class="respuesta">
+          <p>En líneas de emergencia, fundaciones de niñez o autoridades escolares.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué hago si un adulto me hace sentir incómoda?
+        </button>
+        <div class="respuesta">
+          <p>Confía en tu intuición, busca alejarte y pide ayuda a un adulto de confianza o autoridades.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Qué es una red de apoyo y cómo puedo crear una?
+        </button>
+        <div class="respuesta">
+          <p>Es un grupo de personas que te escuchan y te apoyan. Puedes construirla acercándote a quienes te respetan y valoran.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿A qué instituciones puedo acudir para pedir apoyo o asesoría?
+        </button>
+        <div class="respuesta">
+          <p>Institutos de protección infantil, defensorías, casas de juventud o fundaciones.</p>
+        </div>
+      </div>
+
+      <div class="pregunta">
+        <button class="pregunta-btn">
+          <span class="icono">
+            <img src="../../imagenes/icono_mas.png" alt="Icono abrir" class="icono-img">
+          </span>
+          ¿Puedo pedir ayuda anónimamente?
+        </button>
+        <div class="respuesta">
+          <p>Sí. Algunas líneas de ayuda permiten asistencia anónima. En esta página solo mayores de edad podrán enviar solicitudes directamente.</p>
+        </div>
+      </div>
+    </div>
+   </div>
+  </section>
+  <!-- KM = Fin de espacio joven -->
+
+  
+  <!-- KM = Pie de pagina y contactos-->
+  <footer id="cont" class="footer-section">
+    <div class="footer-container">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="logo-footer">RFA</h1>
+      </a>
+
+      <!-- KM = Redes sociales de nuevo jeje -->
+      <div class="redes-container">
+        <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+          <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+        </a>
+
+        <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+          <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+        </a>
+
+        <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+          <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+        </a>
+
+        <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+          <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+        </a>
+
+        <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+          <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+        </a>
+
+        <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+          <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+        </a>
+      </div>
+        
+       <!-- KM = Información de contacto y horarios -->
+       <div class="footer-info">
+
+        <!-- KM = Contactos -->
+        <section class="footer-contact">
+          <h5>Contáctanos</h5>
+          <p>Carrera 27, Sena CSET</p>
+          <p>+57 3213211436</p>
+        </section>
+
+        <div class="separator"></div>
+  
+        <!-- KM =  Horarios de atención -->
+        <section class="footer-hours">
+          <h5>Horarios de atención</h5>
+          <p>Lunes – Domingo, 24 horas</p>
+          <p>Soporte: +57 3003110085</p>
+        </section>
+      </div>
+  
+      <!-- KM = Información de derechos de autor-->
+      <p class="footer-copy">
+        &copy; <a href="#">Keren Daniela Morgado</a>. Todos los derechos reservados. Diseño adaptado y modificado a partir de una plantilla original. <br>
+        &copy; <a href="#">© Domain</a>. . All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>.
+      </p>
+    </div>
+  </footer>
+  <!-- KM = Se termino, por ahora! Puedes revisar las otras secciones :)-->
+
+  <!-- KM = Librerias y js de la pagina recursos de apoyo -->
+  <script src="../../java_script/pagina_principal/espacio_joven.js"></script>
 </body>
-
 </html>

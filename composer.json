@@ -1,17 +1,5 @@
 {
-    "name": "usuario/proyecto_modificado",
     "require": {
-        "phpmailer/phpmailer": "6.8",
-        "google/apiclient": "2.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Usuario\\ProyectoModificado\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "RFA"
-        }
-    ]
+        "phpoffice/phpspreadsheet": "^4.3"
+    }
 }

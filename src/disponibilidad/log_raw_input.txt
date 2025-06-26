@@ -1,0 +1,42 @@
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"mircoles","horaIni":"06:00","horaFin":"18:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"jueves","horaIni":"06:00","horaFin":"18:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"viernes","horaIni":"06:00","horaFin":"18:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"sbado","horaIni":"06:00","horaFin":"18:00","fechaInicio":"","fechaFin":"","observacion":""}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"mircoles","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"jueves","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"viernes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"sbado","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"martes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"mircoles","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"jueves","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"viernes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"sbado","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"domingo","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"martes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"mircoles","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"jueves","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"viernes","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"sbado","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"domingo","horaIni":"07:00","horaFin":"19:00","fechaInicio":"","fechaFin":"","observacion":""}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"martes","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"mircoles","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"jueves","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"viernes","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"sbado","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""},{"dia":"domingo","horaIni":"13:00","horaFin":"22:00","fechaInicio":"","fechaFin":"","observacion":""}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"04:00","horaFin":"06:00"},{"dia":"lunes","horaIni":"06:00","horaFin":"08:00"},{"dia":"mircoles","horaIni":"04:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"04:00","horaFin":"06:00"},{"dia":"sbado","horaIni":"04:00","horaFin":"06:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"04:00","horaFin":"06:00"},{"dia":"lunes","horaIni":"08:00","horaFin":"12:00"},{"dia":"martes","horaIni":"04:00","horaFin":"06:00"},{"dia":"martes","horaIni":"08:00","horaFin":"12:00"},{"dia":"mircoles","horaIni":"04:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"08:00","horaFin":"12:00"},{"dia":"jueves","horaIni":"04:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"08:00","horaFin":"12:00"},{"dia":"viernes","horaIni":"04:00","horaFin":"06:00"},{"dia":"viernes","horaIni":"08:00","horaFin":"12:00"},{"dia":"sbado","horaIni":"08:00","horaFin":"12:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"04:00","horaFin":"06:00"},{"dia":"martes","horaIni":"04:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"04:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"07:00","horaFin":"09:00"},{"dia":"jueves","horaIni":"04:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"07:00","horaFin":"09:00"},{"dia":"viernes","horaIni":"04:00","horaFin":"06:00"},{"dia":"viernes","horaIni":"07:00","horaFin":"09:00"},{"dia":"sbado","horaIni":"04:00","horaFin":"06:00"},{"dia":"sbado","horaIni":"07:00","horaFin":"09:00"},{"dia":"domingo","horaIni":"04:00","horaFin":"06:00"},{"dia":"domingo","horaIni":"07:00","horaFin":"09:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"lunes","horaIni":"05:00","horaFin":"09:00"},{"dia":"lunes","horaIni":"10:00","horaFin":"22:00"},{"dia":"martes","horaIni":"05:00","horaFin":"09:00"},{"dia":"martes","horaIni":"10:00","horaFin":"22:00"},{"dia":"mircoles","horaIni":"05:00","horaFin":"09:00"},{"dia":"mircoles","horaIni":"10:00","horaFin":"22:00"},{"dia":"jueves","horaIni":"05:00","horaFin":"09:00"},{"dia":"jueves","horaIni":"10:00","horaFin":"22:00"},{"dia":"viernes","horaIni":"10:00","horaFin":"22:00"},{"dia":"domingo","horaIni":"05:00","horaFin":"09:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"martes","horaIni":"02:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"02:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"07:00","horaFin":"09:00"},{"dia":"jueves","horaIni":"02:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"07:00","horaFin":"09:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"martes","horaIni":"02:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"02:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"08:00","horaFin":"10:00"},{"dia":"jueves","horaIni":"02:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"08:00","horaFin":"10:00"}]}
+
+--- NUEVO INTENTO ---
+
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"martes","horaIni":"03:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"03:00","horaFin":"06:00"},{"dia":"mircoles","horaIni":"08:00","horaFin":"12:00"},{"dia":"jueves","horaIni":"03:00","horaFin":"06:00"},{"dia":"jueves","horaIni":"08:00","horaFin":"12:00"},{"dia":"viernes","horaIni":"03:00","horaFin":"06:00"},{"dia":"viernes","horaIni":"08:00","horaFin":"12:00"}]}
+
+--- NUEVO INTENTO ---
+{"docApoDisp":"22222222224","disponibilidad":[{"dia":"mircoles","horaIni":"13:30","horaFin":"20:00"},{"dia":"mircoles","horaIni":"21:00","horaFin":"23:00"},{"dia":"jueves","horaIni":"13:30","horaFin":"20:00"},{"dia":"jueves","horaIni":"21:00","horaFin":"23:00"},{"dia":"viernes","horaIni":"13:30","horaFin":"20:00"},{"dia":"viernes","horaIni":"21:00","horaFin":"23:00"},{"dia":"sbado","horaIni":"21:00","horaFin":"23:00"}]}

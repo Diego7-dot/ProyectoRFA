@@ -1,0 +1,1483 @@
+/***********************************************/
+/* Css de espacio joven */
+/**********************************************/
+
+/* KM = Principal paleta de colores */
+:root {
+    --rosa_claro: #f7acc6;
+    --rosa_oscuro: #f26a9a;
+    --morado_claro: #b592bd;
+    --morado_oscuro: #70338a;
+    --morado_oscuro-dos: #70338a;
+    --naranja_claro: #f4a261;
+    --naranja_oscuro: #e76f51; 
+    --crema_claro: #fff9e6;
+    --crema_oscuro: #f2e4c3;
+    --durazno: #ffd6c1;
+    --lavanda: #e6d6f3;
+    --mantequilla: #fff4b8;
+    --negro: #151414;
+    --negro_cálido: #2d2a2a;
+    --gris: #868686;
+    --gris_oscuro: #3c3c3c;
+    --blanco: #ffffff;
+    --segundo-blanco: #fff;
+    --sombra: rgba(0, 0, 0, 0.381);   
+    --sombrita: rgba(255, 255, 255, 0.773);  
+    --sombre: rgba(62, 0, 55, 0.6);
+  }
+    
+  /* KM = Colores para modo oscuro de la pagina*/
+  .dark-mode {
+    --rosa_claro: #b45f7d;     
+    --rosa_oscuro: #944062;    
+    --morado_claro: #4a1467;
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro-dos: #c1a7e4; 
+    --naranja_claro: #bf5c3a;  
+    --naranja_oscuro: #9a3f2c; 
+    --crema_claro: #3b2f2f;    
+    --crema_oscuro: #2e2323;    
+    --durazno: #a84f3a;        
+    --lavanda: #9270c2;       
+    --mantequilla: #bfa565;   
+    --negro: #ffffff;            
+    --negro_cálido: #f7f7f7;    
+    --gris: #d6d6d6;           
+    --gris_oscuro: #aaaaaa;
+    --blanco: #000;
+    --segundo-blanco: #fff;  
+    --sombrita: rgba(0, 0, 0, 0.074)15;   
+    --sombra: rgba(255, 255, 255, 0.53); 
+    --sombre: rgba(36, 2, 34, 0.688);   
+  }
+    
+  /*KM = Carga de tipografías */
+  @font-face {
+    font-family: 'Chewy'; 
+    src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Shadows_Into_Light'; 
+    src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  }
+    
+  /* KM = Medidas globales */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  /* KM = Cuerpo principal de la pagina */
+  body {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--blanco);
+    font-size: 14px;
+  }
+    
+  /* KM = Mensaje de modos en proceso! */
+  .mensaje-proceso {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    pointer-events: none;
+    z-index: 9999;
+  }
+    
+  .mensaje-proceso.show::after {
+    content: '¡En proceso de elaboración!'; 
+    background-color: var(--naranja_claro);
+    color: var(--blanco);
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px var(--sombra);
+    opacity: 1;
+    animation: fadeInOut 3s ease;
+  }
+    
+  @keyframes fadeInOut {
+    0% {
+     opacity: 0;
+     transform: scale(0.9);
+    }
+   10% {
+     opacity: 1;
+     transform: scale(1);
+    }
+    90% {
+     opacity: 1;
+     transform: scale(1);
+    }
+    100% {
+     opacity: 0;
+     transform: scale(0.9);
+    }
+  }
+    
+  /* KM = Icono de modo oscuro */
+  .modo-flotante {
+    position: fixed;
+    bottom: 130px;
+    right: 1.5rem; 
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .icono-modo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+    
+  .dark-mode .modo-flotante {
+    background: var(--negro);
+    border: 1px solid var(--lavanda_claro);
+  }
+    
+  /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 240px;
+    right: 1.5rem; 
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+    
+  .scroll-top-btn:hover {
+    transform: scale(1.1);
+  }
+    
+  .scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+    
+  .icono-flota {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    animation: floatUpDown 4s ease-in-out infinite;
+  }
+    
+  /* KM = Barra superior de la pagina, donde viene incluido etc... */
+  .contenedor_barra {
+    background-color: var(--morado_oscuro);
+    padding: 0.5rem 1rem;
+  }
+    
+  .acomodar_barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  /* KM = Contener los botones (enlaces) y iconos de redes sociales */
+  .enlaces_y_sociales {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+    
+  .enlaces-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+    
+  /* KM = Estilo de los botones! */
+  .btn-inicio-registro {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: var(--morado_oscuro);
+    background-color: var(--segundo-blanco);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+    
+  .btn-inicio-registro:hover {
+    background-color: var(--rosa_claro);
+  }
+    
+  /* KM = Estilo de las preguntas frecuentes  */
+  .preguntas-fre {
+    font-size: 14px;
+    color: var(--segundo-blanco);
+    text-decoration: underline;
+    display: block;
+  }
+    
+  .preguntas_pc{
+    font-size: 14px;
+    color: var(--blanco);
+    text-decoration: underline;
+    display: none;
+  }
+    
+  /* KM = Separar los botones */
+  .separador {
+    color: var(--segundo-blanco);
+    margin: 0 5px;
+  }
+    
+  /* KM = Estilo de los botones de redes sociales */
+  .redes-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+    
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+  }
+    
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+    
+  /* KM = Segundo menu para la version mobil */
+  .secondary-menu {
+    width: 100%;
+    background-color: var(--blanco);
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+    
+  /* KM = Mas que logo estilo de la letra */
+  .logo-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+    
+  .logo-movil .logo-texto_mobi {
+    color: var(--morado_oscuro-dos);
+    font-size: 28px;
+    font-weight: bold;
+  }
+    
+  /* KM = Boton de hamburguesita para moviles :) */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+    padding: 0;
+  }
+    
+  /* KM = Estilo al momento de mostrarlo */
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px; 
+    background-color: var(--morado_oscuro-dos);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+    
+  .hamburger:hover span {
+    background-color: var(--morado_claro);
+  }
+    
+  /* KM = Estilo del menu que se despliega de la hamburguesa */
+  .menu.colapsable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--blanco);
+    border-top: 1px solid var(--gris_oscuro);
+    border-bottom: 1px solid var(--gris_oscuro);
+    z-index: 999;
+    padding: 0; 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  /* KM = Activar el js para que se muestre */
+  .menu.colapsable.active {
+    max-height: 300px; 
+    padding: 1rem 0; 
+  }
+    
+  /* KM = Estilo del texto o categorias de la navegacion */
+  .menu.colapsable .enlace-nav {
+    margin: 4px 0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--negro);
+    font-family: "Comic_Neue", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease-in-out;
+  }
+    
+  .menu.colapsable .enlace-nav:hover {
+    color: var(--rosa_oscuro);
+  }
+    
+  /* KM = Desaparece el segundo menu de version pc */
+  .menu-escritorio {
+    display: none;
+  }
+    
+  /* KM = Mensaje de la pagina */
+  .contenedor-padre {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: var(--morado_claro);
+  }
+    
+  .contenedor-respirando {
+    width: 100%;
+    max-width: 300px;
+    background: var(--blanco);
+    border: 4px solid var(--rosa_claro);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px var(--sombra);
+    padding: 1.5rem;
+    animation: breathe 4s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .bloque-texto {
+    flex: 1;
+    text-align: left;
+  }
+    
+  .contenedor-texto {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+    
+  .titulo {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--morado_oscuro-dos);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+    
+  .fila-texto-imagen {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+    
+  .parrafo {
+    font-size: 14px;
+    color: var(--negro);
+    flex: 1;
+    text-align: left;
+    margin-bottom: 6px;
+  }
+    
+  .imagen-en-linea {
+    margin-top: 8px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+    
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+     transform: scale(1.02);
+    }
+  }
+    
+  /* KM = Estilo de la imagen presentacion*/
+  .imagen-movil {
+    display: block;
+  }
+    
+  .imagen-banner {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+  }
+  
+  .contenedor-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .imagen-banner-pc {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    display: block;
+  }
+    
+  /* Valeee esta es la imagen  mobil */
+  .imagen-estatica .texto-superpuesto {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--blanco);
+    background: var(--sombre);
+    padding: 0.5rem;
+    max-width: 90%;
+  }
+    
+  .imagen-estatica .texto-superpuesto h4 {
+    font-family: "Comic_Neue", sans-serif;;
+    font-size: 16px;
+    margin: 0.5rem 0;
+    color: var(--segundo-blanco);
+  }
+  
+  .imagen-estatica .texto-superpuesto h1 {
+    font-family: "Chewy", sans-serif;
+    font-size: 24px;
+    margin: 0.5rem 0;
+    color: var(--segundo-blanco);
+  }
+
+  .imagen-estatica .btn-primary {
+    background-color: var(--rosa_oscuro);
+    color: var(--segundo-blanco);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+    
+  /* KM = Imagen verion pc*/
+  .imagen-escritorio {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+  }
+  
+  .contenedor-banner-pc{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .texto-superpuesto-pc {
+    position: absolute;
+    top: 15%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: var(--sombre);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    color: var(--segundo-blanco);
+    box-shadow: 0 4px 12px var(--sombra);
+  }
+  
+  .texto-superpuesto-pc h1{
+    margin-bottom: 10px;
+    color: var(--segundo-blanco);
+    font-family: "Chewy", sans-serif;
+  }
+  
+  .texto-superpuesto-pc h4{
+    margin-bottom: 10px;
+    color: var(--segundo-blanco);
+  }
+  
+  .chatbot-invitation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background: var(--sombre);
+    max-width: 100%;
+    color: var(--segundo-blanco);
+    font-size: 12px;
+  }
+  
+  .btn-primary {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--rosa_oscuro);
+    color: var(--segundo-blanco);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  /* KM = Invitacion movil*/
+  .chatbot-invitation_mobi{
+    width: 100%;
+    background: var(--rosa_claro); 
+    padding: 15px;
+    text-align: center;
+    color: var(--segundo-blanco);
+    box-sizing: border-box;
+    margin-top: 0;
+    font-size: 10px;
+  }
+  
+  /* KM = Imagen en version escritorio*/
+  .imagen-escritorio {
+    display: none;
+  }
+  
+  /* KM = Este es el estilo del espacio joven*/
+  .titulo-seccion{
+    font-size: 16px;
+    text-align: center;
+    color: var(--morado_oscuro-dos);
+  }
+
+  .scroll-derecho {
+    margin: 20px auto 20px;
+    margin-top: 30px;
+    height: 4px;
+    width: 80px;
+    background-color: var(--morado_oscuro-dos);
+  }
+
+  .preguntas-acordeon {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 2rem;
+  }
+  
+  .pregunta {
+    background-color: var(--blanco);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px var(--sombra);
+    overflow: hidden;
+  }
+  
+  .pregunta-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--negro);
+    font-family: "Comic_Neue", sans-serif;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    color: var(--negro);
+    position: relative;
+  }
+
+  .texto-pregunta {
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icono img {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .respuesta {
+    font-size: 14px;
+    color: var(--negro);
+    max-height: 0;
+    margin: 1rem 1rem;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .respuesta.activa {
+    opacity: 1;
+  }
+  
+  .pregunta-btn::after {
+    content: "";
+    flex-grow: 1;
+  } 
+  
+  /* KM = Estilo de contactos en pie de pagina*/
+  .footer-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: var(--rosa_claro);
+    padding: 20px;
+    width: 100%; 
+    margin: 0;
+    box-sizing: border-box;
+  }
+    
+  .navbar-brand {
+    text-decoration: none; 
+    color: var(--segundo-blanco);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+    
+  .navbar-brand:hover {
+    text-decoration: none; 
+  }
+    
+  .redes-container_pie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;  
+    padding: 0;
+    width: 100%;
+  }
+    
+  .footer-contact h5,
+  .footer-hours h5 {
+    color: var(--segundo-blanco);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px; 
+  }
+    
+  .footer-contact p,
+  .footer-hours p {
+    color: var(--segundo-blanco);
+    font-size: 14px;
+      margin-bottom: 5px; 
+  }
+    
+  .footer-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 0;
+    margin-bottom: 0; 
+    box-sizing: border-box;
+  }
+    
+  .footer-contact,
+  .footer-hours {
+    margin: 0;
+    text-align: center;
+    padding: 5px 0; 
+  }
+    
+  .footer-copy {
+    font-size: 10px;
+    color: var(--gris_oscuro); 
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+    
+  .footer-copy a {
+    color: inherit;
+    text-decoration: none; 
+  }
+    
+  .footer-copy a:hover {
+    text-decoration: underline;
+  }
+    
+  .oculto{
+    display: none;
+  }
+    
+  .separator{
+    display: none;
+  }
+    
+  /*KM = Moviles grandes */
+  @media screen and (min-width: 480px) {
+    .imagen-estatica .texto-superpuesto h1 {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 28px;
+    }
+  
+    .imagen-estatica .btn-primary{
+      margin-bottom: 10px;
+    }
+  
+    .tarjeta-recurso {
+      max-width: 300px;
+      margin: 0 auto;   
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .footer-contact,
+    .footer-hours {
+      padding: 15px 0; 
+    }
+    
+    .redes-container_pie{
+      gap: 15px;  
+    }
+    
+    .navbar-brand {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      color: var(--segundo-blanco);
+    }
+  }
+    
+  /*KM = Moviles aun mas grandes */
+  @media screen and (min-width: 649px) {
+    .contenedor-banner-pc{
+      height: 400px;
+    }
+      
+    .texto-superpuesto-pc h4 {
+      font-size: 20px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+      font-size: 35px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+    }
+  
+    .chatbot-invitation_mobi{
+      display: none;
+    }
+  
+    .imagen-movil {
+      display: none;
+    }
+      
+    .imagen-escritorio {
+      display: block;
+    }
+  
+    .contenedor-banner-pc {
+      display: block;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--rosa_claro);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 32px; 
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .contenedor-espacio-joven{
+        width: 500px;
+        text-align: center;
+        margin: 0 auto;
+      }
+  }
+    
+  /*KM = Tablets */
+  @media screen and (min-width: 730px) {
+    .contenedor-espacio-joven{
+      width: 600px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .titulo-seccion {
+      font-size: 18px;
+    }
+
+    .texto-superpuesto-pc {
+        top: 10%; 
+    }
+
+    .contenedor-respirando {
+      max-width: 400px;
+    }
+  
+    .titulo {
+      font-size: 18px;
+    }
+  
+    .contenedor-banner-pc{
+      height: 400px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 40px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+     }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro-dos);
+      font-size: 32px; 
+      font-weight: bold;
+    }
+  }
+    
+  /*KM = Pantallas escritorio tamaño mediano */
+  @media screen and (min-width: 820px) {  
+    .contenedor-espacio-joven{
+      width: 700px;
+      text-align: center;
+      margin: 0 auto;
+    }
+
+    .texto-superpuesto-pc {
+      top: 12%; 
+    }
+    
+    .contenedor-banner-pc{
+      height: 450px;
+    }
+      
+    .texto-superpuesto-pc h4 {
+      font-size: 30px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 45px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0 1rem;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 32px; 
+      font-weight: bold;
+    }
+  }
+    
+  /*KM = Escritorio */
+  @media screen and (min-width: 929px) {
+    .pregunta-btn{
+        font-size: 16px;
+    }
+
+    .respuesta.activa p{
+      font-size: 16px;
+    }
+
+    .texto-superpuesto-pc {
+        top: 20%; 
+    }
+
+    .btn-toggle{
+      font-size: 16px;
+    }
+  
+    .btn-read{
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  
+    .intro-seccion {
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  
+    .scroll-evento{
+      width: 200px;
+    }
+  
+    .parrafo {
+      font-size: 16px;
+    }
+  
+    .contenedor-respirando {
+      max-width: 500px;
+    }
+  
+    .titulo-seccion {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  
+    .titulo {
+      font-size: 24px;
+    }
+  
+    .titulo-recurso{
+      font-size: 16px;
+    }
+  
+    .contenedor-banner-pc{
+      height: 600px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 50px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  
+    .footer-contact h5,
+    .footer-hours h5 {
+      font-size: 18px;
+    }
+  
+    .footer-contact p,
+    .footer-hours p {
+      font-size: 16px;
+    }
+  
+    .footer-copy {
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 2rem;
+    }
+    
+    .enlaces-top, 
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+    
+  /*KM = Escritorio */
+  @media screen and (min-width: 1100px) { 
+    .contenedor-espacio-joven{
+        width: 750px;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+    .texto-superpuesto-pc {
+        top: 8%; 
+      }
+    
+      .contenedor-banner-pc{
+        height: 750px;
+      }
+      
+      .texto-superpuesto-pc{
+        margin-top: 60px;
+      }
+    
+      .texto-superpuesto-pc h4 {
+        font-size: 40px;
+      }
+    
+      .texto-superpuesto-pc h1 {
+       font-size: 70px;
+      }
+
+    .contenedor-respirando {
+      max-width: 600px;
+    }
+  
+    .titulo-seccion {
+      font-size: 32px;
+    }
+  
+    .titulo {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 8rem;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;  
+      margin: 0 auto;
+      padding: 0.5rem 3rem;
+      background-color: var(--blanco);
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 36px; 
+      font-weight: bold;
+    }
+  }
+    
+    
+    

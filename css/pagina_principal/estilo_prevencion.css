@@ -1,0 +1,1829 @@
+/***********************************************/
+/* Css de la pagina señales de alerta */
+/**********************************************/
+
+/* KM = Principal paleta de colores */
+:root {
+    --rosa_claro: #f7acc6;
+    --rosa_oscuro: #f26a9a;
+    --morado_claro: #b592bd;
+    --morado_oscuro: #70338a;
+    --morado_oscuro-dos: #70338a;
+    --naranja_claro: #f6cdab;
+    --naranja_oscuro: #ef775a; 
+    --amarillo_claro: #fff4b8;
+    --amarillo_oscuro: #f4a300;
+    --rojo_claro: #fdb7b7;
+    --rojo_oscuro:#8b0000;
+    --crema_claro: #fff9e6;
+    --crema_oscuro: #f2e4c3;
+    --durazno: #ffd6c1;
+    --lavanda: #e6d6f3;
+    --mantequilla: #fff4b8;
+    --negro: #151414;
+    --negro_cálido: #2d2a2a;
+    --gris: #868686;
+    --gris_oscuro: #3c3c3c;
+    --blanco: #ffffff;
+    --segundo-blanco: #fff;
+    --sombra: rgba(0, 0, 0, 0.381);   
+    --sombrita: rgba(255, 255, 255, 0.773);  
+    --sombre: rgba(62, 0, 55, 0.6);
+  }
+    
+  /* KM = Colores para modo oscuro de la pagina*/
+  .dark-mode {
+    --rosa_claro: #b45f7d;     
+    --rosa_oscuro: #944062;    
+    --morado_claro: #4a1467;
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro-dos: #c1a7e4; 
+    --naranja_claro: #f6cdab;  
+    --naranja_oscuro: #9a3f2c; 
+    --amarillo_claro: #f4a300;
+    --amarillo_oscuro:#fff4b8;;
+    --rojo_claro: #8b0000;
+    --rojo_oscuro:#fdb7b7;
+    --crema_claro: #3b2f2f;    
+    --crema_oscuro: #2e2323;    
+    --durazno: #a84f3a;        
+    --lavanda: #9270c2;       
+    --mantequilla: #bfa565;   
+    --negro: #ffffff;            
+    --negro_cálido: #f7f7f7;    
+    --gris: #d6d6d6;           
+    --gris_oscuro: #aaaaaa;
+    --blanco: #000;
+    --segundo-blanco: #fff;  
+    --sombrita: rgba(0, 0, 0, 0.074)15;   
+    --sombra: rgba(255, 255, 255, 0.53); 
+    --sombre: rgba(36, 2, 34, 0.688);   
+  }
+    
+  /*KM = Carga de tipografías */
+  @font-face {
+    font-family: 'Chewy'; 
+    src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+  }
+    
+  @font-face {
+    font-family: 'Shadows_Into_Light'; 
+    src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+  }
+    
+  /* KM = Medidas globales */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+    
+  /* KM = Cuerpo principal de la pagina */
+  body {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--blanco);
+    font-size: 14px;
+  }
+    
+  /* KM = Mensaje de modos en proceso! */
+  .mensaje-proceso {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    pointer-events: none;
+    z-index: 9999;
+  }
+    
+  .mensaje-proceso.show::after {
+    content: '¡En proceso de elaboración!'; 
+    background-color: var(--naranja_claro);
+    color: var(--blanco);
+    padding: 1.2rem 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px var(--sombra);
+    opacity: 1;
+    animation: fadeInOut 3s ease;
+  }
+    
+  @keyframes fadeInOut {
+    0% {
+     opacity: 0;
+     transform: scale(0.9);
+    }
+   10% {
+     opacity: 1;
+     transform: scale(1);
+    }
+    90% {
+     opacity: 1;
+     transform: scale(1);
+    }
+    100% {
+     opacity: 0;
+     transform: scale(0.9);
+    }
+  }
+    
+  /* KM = Icono de modo oscuro */
+  .modo-flotante {
+    position: fixed;
+    bottom: 130px;
+    right: 1.5rem; 
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+    
+  .icono-modo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+    
+  .dark-mode .modo-flotante {
+    background: var(--negro);
+    border: 1px solid var(--lavanda_claro);
+  }
+    
+  /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+  .scroll-top-btn {
+    position: fixed;
+    bottom: 240px;
+    right: 1.5rem; 
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+    
+  .scroll-top-btn:hover {
+    transform: scale(1.1);
+  }
+    
+  .scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+    
+  .icono-flota {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    animation: floatUpDown 4s ease-in-out infinite;
+  }
+    
+  /* KM = Barra superior de la pagina, donde viene incluido etc... */
+  .contenedor_barra {
+    background-color: var(--morado_oscuro);
+    padding: 0.5rem 1rem;
+  }
+    
+  .acomodar_barra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    
+  /* KM = Contener los botones (enlaces) y iconos de redes sociales */
+  .enlaces_y_sociales {
+    margin-top: 10px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+    
+  .enlaces-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+    
+  /* KM = Estilo de los botones! */
+  .btn-inicio-registro {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: var(--morado_oscuro);
+    background-color: var(--segundo-blanco);
+    border-radius: 10px;
+    text-decoration: none;
+  }
+    
+  .btn-inicio-registro:hover {
+    background-color: var(--rosa_claro);
+  }
+    
+  /* KM = Estilo de las preguntas frecuentes  */
+  .preguntas-fre {
+    font-size: 14px;
+    color: var(--segundo-blanco);
+    text-decoration: underline;
+    display: block;
+  }
+    
+  .preguntas_pc{
+    font-size: 14px;
+    color: var(--blanco);
+    text-decoration: underline;
+    display: none;
+  }
+    
+  /* KM = Separar los botones */
+  .separador {
+    color: var(--segundo-blanco);
+    margin: 0 5px;
+  }
+    
+  /* KM = Estilo de los botones de redes sociales */
+  .redes-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+    
+  .social-icon {
+    width: 35px;
+    height: 35px;
+    transition: transform 0.3s ease-in-out;
+  }
+    
+  .social-icon:hover {
+    transform: scale(1.1);
+  }
+    
+  /* KM = Segundo menu para la version mobil */
+  .secondary-menu {
+    width: 100%;
+    background-color: var(--blanco);
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+    
+  /* KM = Mas que logo estilo de la letra */
+  .logo-movil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+  }
+    
+  .logo-movil .logo-texto_mobi {
+    color: var(--morado_oscuro-dos);
+    font-size: 28px;
+    font-weight: bold;
+  }
+    
+  /* KM = Boton de hamburguesita para moviles :) */
+  .hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    margin-left: 12px;
+    padding: 0;
+  }
+    
+  /* KM = Estilo al momento de mostrarlo */
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px; 
+    background-color: var(--morado_oscuro-dos);
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+  }
+    
+  .hamburger:hover span {
+    background-color: var(--morado_claro);
+  }
+    
+  /* KM = Estilo del menu que se despliega de la hamburguesa */
+  .menu.colapsable {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--blanco);
+    border-top: 1px solid var(--gris_oscuro);
+    border-bottom: 1px solid var(--gris_oscuro);
+    z-index: 999;
+    padding: 0; 
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  /* KM = Activar el js para que se muestre */
+  .menu.colapsable.active {
+    max-height: 300px; 
+    padding: 1rem 0; 
+  }
+    
+  /* KM = Estilo del texto o categorias de la navegacion */
+  .menu.colapsable .enlace-nav {
+    margin: 4px 0;
+    text-align: center;
+    text-decoration: none;
+    color: var(--negro);
+    font-family: "Comic_Neue", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: color 0.3s ease-in-out;
+  }
+    
+  .menu.colapsable .enlace-nav:hover {
+    color: var(--rosa_oscuro);
+  }
+    
+  /* KM = Desaparece el segundo menu de version pc */
+  .menu-escritorio {
+    display: none;
+  }
+    
+  /* KM = Mensaje de la pagina */
+  .contenedor-padre {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    background: var(--morado_claro);
+  }
+    
+  .contenedor-respirando {
+    width: 100%;
+    max-width: 300px;
+    background: var(--blanco);
+    border: 4px solid var(--rosa_claro);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 25px var(--sombra);
+    padding: 1.5rem;
+    animation: breathe 4s ease-in-out infinite;
+    display: flex;
+    flex-direction: column;
+  }
+    
+  .bloque-texto {
+    flex: 1;
+    text-align: left;
+  }
+    
+  .contenedor-texto {
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+    
+  .titulo {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--morado_oscuro-dos);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+    
+  .fila-texto-imagen {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+  }
+    
+  .parrafo {
+    font-size: 14px;
+    color: var(--negro);
+    flex: 1;
+    text-align: left;
+    margin-bottom: 6px;
+  }
+    
+  .imagen-en-linea {
+    margin-top: 8px;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+    
+  @keyframes breathe {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+     transform: scale(1.02);
+    }
+  }
+    
+  /* KM = Estilo de la imagen presentacion*/
+  .imagen-movil {
+    display: block;
+  }
+    
+  .imagen-banner {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
+  }
+  
+  .contenedor-banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .imagen-banner-pc {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover;
+    display: block;
+  }
+    
+  /* Valeee esta es la imagen  mobil */
+  .imagen-estatica .texto-superpuesto {
+    position: absolute;
+    top: 14%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: var(--blanco);
+    background: var(--sombre);
+    padding: 0.5rem;
+    max-width: 90%;
+  }
+    
+  .imagen-estatica .texto-superpuesto h4 {
+    font-family: "Comic_Neue", sans-serif;;
+    font-size: 16px;
+    margin: 0.5rem 0;
+    color: var(--segundo-blanco);
+  }
+  
+  .imagen-estatica .texto-superpuesto h1 {
+    font-family: "Chewy", sans-serif;
+    font-size: 24px;
+    margin: 0.5rem 0;
+    color: var(--segundo-blanco);
+  }
+
+  .imagen-estatica .btn-primary {
+    background-color: var(--rosa_oscuro);
+    color: var(--segundo-blanco);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+    
+  /* KM = Imagen verion pc*/
+  .imagen-escritorio {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: none;
+  }
+  
+  .contenedor-banner-pc{
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .texto-superpuesto-pc {
+    position: absolute;
+    top: 15%; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: var(--sombre);
+    padding: 1rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    color: var(--segundo-blanco);
+    box-shadow: 0 4px 12px var(--sombra);
+  }
+  
+  .texto-superpuesto-pc h1{
+    margin-bottom: 10px;
+    color: var(--segundo-blanco);
+    font-family: "Chewy", sans-serif;
+  }
+  
+  .texto-superpuesto-pc h4{
+    margin-bottom: 10px;
+    color: var(--segundo-blanco);
+  }
+  
+  .chatbot-invitation {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; 
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+    background: var(--sombre);
+    max-width: 100%;
+    color: var(--segundo-blanco);
+    font-size: 12px;
+  }
+  
+  .btn-primary {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--rosa_oscuro);
+    color: var(--segundo-blanco);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  
+  /* KM = Invitacion movil*/
+  .chatbot-invitation_mobi{
+    width: 100%;
+    background: var(--rosa_claro); 
+    padding: 15px;
+    text-align: center;
+    color: var(--segundo-blanco);
+    box-sizing: border-box;
+    margin-top: 0;
+    font-size: 10px;
+  }
+  
+  /* KM = Imagen en version escritorio*/
+  .imagen-escritorio {
+    display: none;
+  }
+  
+  /* KM = Estas son las tarjetas con la informacion de las señales de alerta*/
+  .violentometro-section {
+    padding: 2rem 1rem;
+    text-align: center;
+    background: var(--morado_claro);
+  }
+  
+  .scroll-termo {
+    margin: 20px auto 20px;
+    margin-top: 5px;
+    height: 4px;
+    width: 80px;
+    background-color: var(--segundo-blanco)
+  }
+
+  .violentometro-titulo {
+    font-size: 16px;
+    color: var(--segundo-blanco);
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .nivel {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: transform 0.3s ease;
+  }
+  
+  .nivela {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: transform 0.3s ease;
+  }
+
+  .nivele {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 10px var(--sombra);
+    transition: transform 0.3s ease;
+  }
+
+  .nivel:hover {
+    transform: scale(1.02);
+  }
+  
+  .nivela:hover {
+    transform: scale(1.02);
+  }
+
+  .nivele:hover {
+    transform: scale(1.02);
+  }
+
+  .nivel h3 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--amarillo_oscuro);
+  }
+  
+  .nivela h3 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--naranja_oscuro);
+  }
+
+  .nivele h3 {
+    font-size: 16px;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--rojo_oscuro);
+  }
+
+  .nivel ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+  
+  .nivela ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .nivele ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+  }
+
+  .nivel ul li {
+    font-size: 14px;
+    color: var(--negro);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .nivela ul li {
+    font-size: 14px;
+    color: var(--negro);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .nivele ul li {
+    font-size: 14px;
+    color: var(--negro);
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .nivel ul li::before {
+    content: "\2757";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .nivela ul li::before {
+    content: "\26A0";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--naranja_oscuro);
+  }
+
+  .nivele ul li::before {
+    content: "\1F534";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .nivel-amarillo {
+    background-color: var(--amarillo_claro);
+  }
+  
+  .nivel-naranja {
+    background-color: var(--naranja_claro);
+  }
+  
+  .nivel-rojo {
+    background-color: var(--rojo_claro);
+  }
+  
+.violento-cierre {
+  font-size: 14px;
+  margin-top: 2rem;
+  color: var(--segundo-blanco);
+  text-align: center;
+  margin-bottom: 25px;
+}  
+ 
+/* KM = Mini guia sobre la violencia */
+.scroll-guia {
+  margin: 20px auto 20px;
+  margin-top: 5px;
+  height: 4px;
+  width: 80px;
+  background-color: var(--morado_oscuro-dos);
+}
+
+.mini-guia-section {
+  padding: 2rem 1rem;
+  background-color: var(--blanco);
+  text-align: center;
+}
+
+.titulo-seccion-guia{
+  font-size: 16px;
+  color: var(--morado_oscuro-dos);
+  text-align: center;
+}
+
+.tabla-mini-guia {
+  overflow-x: auto;
+  margin-top: 2rem;
+  margin-bottom: 30px;
+}
+
+.tabla-mini-guia table {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: var(--blanco);
+  box-shadow: 0 4px 10px var(--sombra);
+  border-radius: 12px;
+  overflow: hidden;
+}
+  
+.tabla-mini-guia th, 
+.tabla-mini-guia td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--gris);
+  font-size: 14px;
+  font-family: "Comic_Neue", sans-serif;
+  color: var(--negro);
+  }
+  
+.tabla-mini-guia th {
+  background-color: var(--morado_claro);
+  color: var(--segundo-blanco);
+  font-size: 16px;
+}
+  
+.tabla-mini-guia tr:last-child td {
+  border-bottom: none;
+}
+  
+.tabla-mini-guia tr:hover {
+  background-color: var(--durazno);
+  transition: background-color 0.3s ease;
+}
+  
+  /* KM = Estilo para la primera seccion señal de alerta */
+  .signal-help-section {
+    padding: 2rem 1.5rem;
+    background-color: var(--blanco);
+    text-align: center;
+  }
+  
+  .scroll-señal {
+    margin: 20px auto 20px;
+    margin-top: 5px;
+    height: 4px;
+    width: 80px;
+    background-color: var(--morado_oscuro-dos)
+  }
+
+  .titulo-seccion-se{
+    font-size: 16px;
+    color: var(--morado_oscuro-dos);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .texto-seccion-se{
+    font-size: 14px;
+    color: var(--negro);
+    text-align: left;
+  }
+  
+  .contenedor-senal {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .gif-senal {
+    width: 250px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px var(--sombra);
+  }
+  
+  .explicacion-senal {
+    font-size: 14px;
+    color: var(--negro);
+    width: 100%;
+    text-align: left;
+    margin-bottom: 25px;
+  }
+  
+  /* KM = Estilo de contactos en pie de pagina*/
+  .footer-section {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    background-color: var(--rosa_claro);
+    padding: 20px;
+    width: 100%; 
+    margin: 0;
+    box-sizing: border-box;
+  }
+    
+  .navbar-brand {
+    text-decoration: none; 
+    color: var(--segundo-blanco);
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+  }
+    
+  .navbar-brand:hover {
+    text-decoration: none; 
+  }
+    
+  .redes-container_pie{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    gap: 10px;  
+    padding: 0;
+    width: 100%;
+  }
+    
+  .footer-contact h5,
+  .footer-hours h5 {
+    color: var(--segundo-blanco);
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px; 
+  }
+    
+  .footer-contact p,
+  .footer-hours p {
+    color: var(--segundo-blanco);
+    font-size: 14px;
+      margin-bottom: 5px; 
+  }
+    
+  .footer-info {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 100%; 
+    margin-top: 0;
+    margin-bottom: 0; 
+    box-sizing: border-box;
+  }
+    
+  .footer-contact,
+  .footer-hours {
+    margin: 0;
+    text-align: center;
+    padding: 5px 0; 
+  }
+    
+  .footer-copy {
+    font-size: 10px;
+    color: var(--gris_oscuro); 
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+    
+  .footer-copy a {
+    color: inherit;
+    text-decoration: none; 
+  }
+    
+  .footer-copy a:hover {
+    text-decoration: underline;
+  }
+    
+  .oculto{
+    display: none;
+  }
+    
+  .separator{
+    display: none;
+  }
+    
+  /*KM = Moviles grandes */
+  @media screen and (min-width: 480px) {
+    .imagen-estatica .texto-superpuesto h1 {
+      margin-bottom: 10px;
+      margin-top: 10px;
+      font-size: 28px;
+    }
+  
+    .imagen-estatica .btn-primary{
+      margin-bottom: 10px;
+    }
+  
+    .tarjeta-recurso {
+      max-width: 300px;
+      margin: 0 auto;   
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .footer-contact,
+    .footer-hours {
+      padding: 15px 0; 
+    }
+    
+    .redes-container_pie{
+      gap: 15px;  
+    }
+    
+    .navbar-brand {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      color: var(--segundo-blanco);
+    }
+  }
+    
+  /*KM = Moviles aun mas grandes */
+  @media screen and (min-width: 649px) {
+    .gif-senal {
+      width: 400px;
+      display: block; 
+      margin-left: 0; 
+      margin-right: auto;
+    }
+
+    .contenedor-banner-pc{
+      height: 400px;
+    }
+      
+    .texto-superpuesto-pc h4 {
+      font-size: 20px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+      font-size: 35px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+    }
+  
+    .chatbot-invitation_mobi{
+      display: none;
+    }
+  
+    .imagen-movil {
+      display: none;
+    }
+      
+    .imagen-escritorio {
+      display: block;
+    }
+  
+    .contenedor-banner-pc {
+      display: block;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--rosa_claro);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 32px; 
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+    
+  /*KM = Tablets */
+  @media screen and (min-width: 730px) {
+    .titulo-seccion-se{
+        font-size: 18px;
+      }
+    
+      .texto-seccion-se{
+        font-size: 14px;
+      }
+    
+     .violentometro-titulo {
+        font-size: 18px;
+      }
+    
+    .nivel h3 {
+        font-size: 15px;
+      }
+      
+      .nivela h3 {
+        font-size: 15px;
+      }
+    
+      .nivele h3 {
+        font-size: 15px;
+      }
+    
+    .nivel ul li {
+        font-size: 14px;
+      }
+      
+      .nivela ul li {
+        font-size: 14px;
+      }
+    
+      .nivele ul li {
+        font-size: 14px;
+      }
+    
+    .titulo-seccion-guia{
+      font-size: 18px;
+    }
+    
+    .violento-cierre {
+      font-size: 14px;
+    } 
+    
+    .tabla-mini-guia th, 
+    .tabla-mini-guia td {
+      font-size: 14px;
+      }
+      
+    .tabla-mini-guia th {
+      font-size: 16px;
+    }       
+
+    .contenedor-respirando {
+      max-width: 500px;
+    }
+  
+    .titulo {
+      font-size: 18px;
+    }
+  
+    .contenedor-banner-pc{
+      height: 400px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 40px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+     }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0.5rem 0;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro-dos);
+      font-size: 32px; 
+      font-weight: bold;
+    }
+  }
+    
+  /*KM = Pantallas escritorio tamaño mediano */
+  @media screen and (min-width: 820px) {  
+    .texto-superpuesto-pc {
+      top: 12%; 
+    }
+    
+    .contenedor-banner-pc{
+      height: 450px;
+    }
+      
+    .texto-superpuesto-pc h4 {
+      font-size: 30px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 45px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 14px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 14px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      background-color: var(--blanco);
+      padding: 0 1rem;
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 4px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 32px; 
+      font-weight: bold;
+    }
+  }
+    
+  /*KM = Escritorio */
+  @media screen and (min-width: 929px) {
+    .gif-senal {
+      width: 600px;
+    }
+
+    .signal-help-section {
+      padding: 2rem 3rem;
+      background-color: var(--blanco);
+      text-align: center;
+    }
+
+    .scroll-termo {
+      width: 120px;
+    }
+    
+    .scroll-señal {
+      width: 120px;
+    }
+
+    .scroll-guia {
+      width: 120px;
+    }
+
+    .titulo-seccion-se{
+      font-size: 24px;
+    }
+    
+    .texto-seccion-se{
+      font-size: 16px;
+    }
+    
+    .violentometro-titulo {
+      font-size: 24px;
+    }
+    
+    .nivel h3 {
+      font-size: 18px;
+    }
+      
+    .nivela h3 {
+      font-size: 18px;
+    }
+    
+    .nivele h3 {
+      font-size: 18px;
+    }
+    
+    .nivel ul li {
+      font-size: 16px;
+    }
+      
+    .nivela ul li {
+      font-size: 16px;
+    }
+    
+    .nivele ul li {
+      font-size: 16px;
+    }
+    
+    .titulo-seccion-guia{
+      font-size: 24px;
+    }
+    
+    .violento-cierre {
+      font-size: 16px;
+    } 
+    
+    .tabla-mini-guia th, 
+    .tabla-mini-guia td {
+      font-size: 16px;
+      }
+      
+    .tabla-mini-guia th {
+      font-size: 18px;
+    }    
+
+    .texto-superpuesto-pc {
+        top: 20%; 
+    }
+
+    .btn-toggle{
+      font-size: 16px;
+    }
+  
+    .btn-read{
+      font-size: 16px;
+      margin-top: 30px;
+    }
+  
+    .intro-seccion {
+      text-align: left;
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+  
+    .scroll-evento{
+      width: 200px;
+    }
+  
+    .parrafo {
+      font-size: 16px;
+    }
+  
+    .contenedor-respirando {
+      max-width: 600px;
+    }
+  
+    .titulo-seccion {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+  
+    .titulo {
+      font-size: 24px;
+    }
+  
+    .titulo-recurso{
+      font-size: 16px;
+    }
+  
+    .contenedor-banner-pc{
+      height: 600px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 50px;
+    }
+  
+    .texto-superpuesto-pc .btn-primary {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+  
+    .footer-contact h5,
+    .footer-hours h5 {
+      font-size: 18px;
+    }
+  
+    .footer-contact p,
+    .footer-hours p {
+      font-size: 16px;
+    }
+  
+    .footer-copy {
+      font-size: 14px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 2rem;
+    }
+    
+    .enlaces-top, 
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 38px;
+      height: 38px;
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+    
+  /*KM = Escritorio */
+  @media screen and (min-width: 1100px) {
+    .gif-senal {
+      width: 700px;
+    }
+
+    .tabla-mini-guia table {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: var(--blanco);
+      box-shadow: 0 4px 10px var(--sombra);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .violentometro-titulo {
+      font-size: 24px;
+    }
+
+    .scroll-termo {
+      width: 150px;
+    }
+    
+    .scroll-señal {
+      width: 150px;
+    }
+
+    .scroll-guia {
+      width: 150px;
+    }
+
+    .titulo-seccion-se{
+      font-size: 32px;
+    }
+
+   .titulo-seccion-guia{
+      font-size: 32px;
+    } 
+
+    .texto-superpuesto-pc {
+      top: 8%; 
+    }
+    
+    .contenedor-banner-pc{
+      height: 750px;
+    }
+      
+    .texto-superpuesto-pc{
+      margin-top: 60px;
+    }
+    
+    .texto-superpuesto-pc h4 {
+      font-size: 40px;
+    }
+    
+    .texto-superpuesto-pc h1 {
+     font-size: 70px;
+    }
+
+    .contenedor-respirando {
+      max-width: 700px;
+    }
+  
+    .titulo-seccion {
+      font-size: 32px;
+    }
+  
+    .titulo {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+  
+    .preguntas-fre{
+      display: none;
+    }
+    
+    .preguntas_pc{
+      display: block;
+      font-size: 16px;
+    }
+    
+    .btn-inicio-registro{
+      font-size: 16px;
+      text-align: center;
+    }
+    
+    .enlaces_y_sociales {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      padding: 0.5rem 8rem;
+    }
+    
+    .enlaces-top,
+    .redes-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .container {
+      padding: 0 1.5rem; 
+    }
+      
+    .secondary-menu {
+      display: none;
+    }
+    
+    .boton-menu,
+    .menu.colapsable {
+      display: none;
+    }
+      
+    .menu-escritorio {
+      display: flex;
+      align-items: center;
+      max-width: 1200px;  
+      margin: 0 auto;
+      padding: 0.5rem 3rem;
+      background-color: var(--blanco);
+      border-top: 1px solid var(--gris_oscuro);
+      border-bottom: 1px solid var(--gris_oscuro);
+    }
+    
+    .menu-escritorio .menu-izquierda,
+    .menu-escritorio .menu-derecha {
+      display: flex;
+      gap: 20px;
+      text-align: center;
+    }
+      
+    .menu-escritorio .enlace-nav {
+      text-decoration: none;
+      color: var(--negro);
+      font-family: "Comic_Neue", sans-serif;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    .menu-escritorio .enlace-nav:hover {
+      color: var(--dorado);
+    }
+      
+    .logo-escritorio {
+      text-decoration: none;
+      font-family: "Comic_Neue", sans-serif;
+      margin: 0 1rem;
+    }
+      
+    .logo-escritorio .logo-texto {
+      color: var(--morado_oscuro);
+      font-size: 36px; 
+      font-weight: bold;
+    }
+  }
+    
+    
+    

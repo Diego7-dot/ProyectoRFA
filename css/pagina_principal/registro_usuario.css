@@ -1,28 +1,68 @@
-/* CSS del registro (Solo para usuarios normales, no empleados) */
+/* CSS del registro (Solo para usuarios normales, no personas de apoyo) */
 
-/*KM = Paleta de colores */
+/* Nota: Este archivo está organizado por:
+   - Paleta de colores
+   - Tipografía
+   - Estructura general
+   - Inputs y formularios
+   - Botones e íconos
+   - Modo oscuro
+   - Responsividad
+*/
+
+/* KM = Principal paleta de colores */
 :root {
-  --rosa_claro: #F1C6D6;
-  --rosa_viejo: #D88C9B;
-  --lavanda_claro: #B4A7D6;
-  --purpura_oscuro: #6A3D7B;
-  --morado_oscuro: #2A0A42;
-  --rosa_oscuro: #9B4D5D;
-  --dorado: #CFAF70;
-  --gris_claro: #D1D1D1;
-  --gris_oscuro: #8b8787;
-  --rosa_polvito: #D8A7B1;
-  --verde: #A8B9A3;
-  --azul: #3E4A6D;
-  --crema: #F0E2C6;
-  --blanco: #fff;
-  --negro: #000;
-  --rojo_claro: #b03a2e;
+  --rosa_claro: #f7acc6;
+  --rosa_oscuro: #f26a9a;
+  --morado_claro: #b592bd;
+  --morado_oscuro: #70338a;
+  --morado_oscuro-dos: #70338a;
+  --naranja_claro: #f4a261;
+  --naranja_oscuro: #e76f51;
+  --crema_claro: #fff9e6;
+  --crema_oscuro: #f2e4c3;
+  --durazno: #ffd6c1;
+  --lavanda: #e6d6f3;
+  --mantequilla: #fff4b8;
+  --negro: #151414;
+  --negro_cálido: #2d2a2a;
+  --gris: #868686;
+  --gris_oscuro: #3c3c3c;
+  --blanco: #ffffff;
+  --segundo-blanco: #fff;
+  --sombra: rgba(0, 0, 0, 0.381);
+  --sombrita: rgba(255, 255, 255, 0.773);
+  --sombre: rgba(62, 0, 55, 0.6);
+}
+
+/* KM = Colores para modo oscuro de la pagina*/
+.dark-mode {
+  --rosa_claro: #b45f7d;
+  --rosa_oscuro: #944062;
+  --morado_claro: #4a1467;
+  --morado_oscuro: #210c2b;
+  --morado_oscuro-dos: #c1a7e4;
+  --naranja_claro: #bf5c3a;
+  --naranja_oscuro: #9a3f2c;
+  --crema_claro: #3b2f2f;
+  --crema_oscuro: #2e2323;
+  --durazno: #a84f3a;
+  --lavanda: #9270c2;
+  --mantequilla: #bfa565;
+  --negro: #ffffff;
+  --negro_cálido: #ffffff;
+  --gris: #b9b6b6;
+  --gris_oscuro: #ffffff;
+  --blanco: #000;
+  --segundo-blanco: #fff;
+  --sombrita: rgba(0, 0, 0, 0.074);
+  --sombra: rgba(255, 255, 255, 0.53);
+  --sombre: rgba(36, 2, 34, 0.688);
 }
 
 /*KM = Carga de tipografías */
 @font-face {
-  font-family: 'Chewy'; 
+  font-family: 'Chewy';
   src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
 }
 
@@ -32,7 +72,7 @@
 }
 
 @font-face {
-  font-family: 'Shadows_Into_Light'; 
+  font-family: 'Shadows_Into_Light';
   src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
 }
 
@@ -41,22 +81,110 @@ body {
   font-family: "Comic_Neue", sans-serif;
   background-color: var(--morado_oscuro);
   margin: 0;
-  padding: 18px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 0;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/*KM = Mensaje de registro */
+.mensaje-flotante {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  max-width: 300px;
+  z-index: 1000;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px var(--sombra);
+  opacity: 0.95;
+  animation: fadeInSlide 0.5s ease-out;
+  font-family: "Comic_Neue", sans-serif;
+}
+
+.mensaje-flotante.exito {
+  background-color: var(--blanco);
+  color: var(--morado_claro);
+  border-left: 5px solid var(--morado_oscuro);
+}
+
+.mensaje-flotante.error {
+  background-color: var(--segundo-blanco);
+  color: var(--rosa_claro);
+  border-left: 5px solid var(--rosa_oscuro);
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 0.95;
+    transform: translateY(0);
+  }
+}
+
+.mensaje-centro {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-width: 90%;
+  width: fit-content;
+  padding: 24px 20px 16px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Comic_Neue", sans-serif;
+  box-shadow: 0 0 10px var(--sombra);
+  text-align: center;
+  animation: fadeInSlide 0.4s ease-out;
+}
+
+.mensaje-centro.exito {
+  background-color: var(--blanco);
+  color: var(--morado_claro);
+  border-left: 6px solid var(--morado_oscuro);
+}
+
+.mensaje-centro.error {
+  background-color: var(--segundo-blanco);
+  color: var(--rosa_claro);
+  border-left: 6px solid var(--rosa_oscuro);
+}
+
+.cerrar-mensaje {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: inherit;
 }
 
 /*KM = Contenedor principal del formulario */
+.contenido-principal {
+  position: relative;
+  z-index: 1;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90%;
-  max-width: 340px;
+  max-width: 300px;
   background-color: var(--blanco);
   padding: 15px;
-  margin: auto;
+  margin: 50px auto;
   border-radius: 8px;
-  box-shadow: 7px 13px 37px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 12px var(--sombra);
   text-align: center;
   transition: width 0.3s ease-in-out;
 }
@@ -65,10 +193,11 @@ body {
 .form-register .titulo {
   font-size: 26px;
   font-weight: bold;
-  color: var(--purpura_oscuro);
+  color: var(--morado_oscuro-dos);
   text-align: center;
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 8px;
+  margin-top: 18px;
 }
 
 .label-bold {
@@ -79,7 +208,7 @@ body {
 /*KM = La caja de fiel, que deje espacio para lo demas */
 fieldset {
   margin-top: 30px;
-  margin-bottom: 25px; 
+  margin-bottom: 25px;
 }
 
 /*KM = Estilos para etiquetas */
@@ -91,19 +220,22 @@ fieldset {
   margin-bottom: 8px;
 }
 
+
 fieldset legend {
-  font-size: 14px; 
-  font-weight: bold; 
-  text-align: left; 
-  margin-bottom: 4px; 
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 4px;
+  color: var(--negro);
 }
 
 /*KM = Estilo de los inputs */
-.controls, 
+.controls,
 .input-icon input {
   width: 100%;
   font-family: "Comic_Neue", sans-serif;
   background: var(--blanco);
+  color: var(--negro_cálido);
   padding: 9px;
   border-radius: 4px;
   margin-bottom: 18px;
@@ -116,14 +248,14 @@ fieldset legend {
 .input-icon {
   position: relative;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: flex-start;
 }
 
 .input-icon .icon {
   position: absolute;
   right: 12px;
-  top: 35%; 
+  top: 35%;
   transform: translateY(-50%);
   cursor: pointer;
   width: 20px;
@@ -135,7 +267,7 @@ fieldset legend {
 
 /*KM = Links */
 .form-register a {
-  color: var(--purpura_oscuro);
+  color: var(--morado_oscuro-dos);
   text-decoration: underline;
 }
 
@@ -144,18 +276,19 @@ fieldset legend {
 }
 
 .form-register p {
-  margin-bottom: 15px; 
+  margin-bottom: 15px;
+  color: var(--negro);
 }
 
-/*KM = Botón principal */
+/*KM = Boton principal */
 .form-register .botons {
   width: 100%;
-  background: var(--purpura_oscuro);
+  background: var(--morado_oscuro-dos);
   font-family: "Comic_Neue", sans-serif;
   border-radius: 4px;
   border: none;
   padding: 12px;
-  color: var(--blanco);
+  color: var(--segundo-blanco);
   font-size: 18px;
   cursor: pointer;
   margin-bottom: 20px;
@@ -168,14 +301,14 @@ fieldset legend {
 
 .btn-glow {
   display: block;
-  margin-top: 20px; 
-  margin-bottom: 20px; 
+  margin-top: 20px;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 /*KM = Mensaje de error */
 .error-message {
-  color: var(--rojo_claro);
+  color: var(--rosa_claro);
   font-size: 12px;
   position: relative;
   display: block;
@@ -185,29 +318,29 @@ fieldset legend {
 }
 
 #fecNacUsu-error {
-  max-width: 90%; 
-  word-wrap: break-word; 
+  max-width: 90%;
+  word-wrap: break-word;
   white-space: normal;
 }
 
 .input-icon .error-message {
   position: relative;
   top: -8px;
-  left: 6px; 
+  left: 6px;
 }
 
 /*KM = Radio buttons */
 .radio-group {
   display: flex;
-  flex-direction: column; 
-  gap: 10px; 
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 16px;
 }
 
 .radio-option {
   display: flex;
-  align-items: center; 
-  gap: 8px; 
+  align-items: center;
+  gap: 8px;
 }
 
 .radio-option input[type="radio"] {
@@ -234,7 +367,68 @@ fieldset legend {
   background-color: var(--morado_oscuro);
 }
 
-/*KM = Móviles más grandes */
+/* KM = Botones de modo oscuro y subidon de ...*/
+.modo-flotante {
+  position: fixed;
+  top: 8px;
+  right: 1.5rem;
+  background: var(--rosa_oscuro);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-modo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  top: 80px;
+  right: 1.5rem;
+  background: var(--morado_claro);
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.05);
+}
+
+.icono-flota {
+  width: 28px;
+  height: 28px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/*KM = Moviles más grandes */
 @media screen and (min-width: 480px) {
   .form-register {
     width: 400px;
@@ -242,65 +436,141 @@ fieldset legend {
     margin-top: 30px;
     margin-bottom: 30px;
   }
-  
+
   .form-register .titulo {
-    font-size: 28px; 
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  /* KM = No lo entenderias*/
+
+  /* KM = Icono de modo oscuro */
+  .modo-flotante {
+    top: auto;
+    position: fixed;
+    bottom: 120px;
+    right: 1.5rem;
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icono-modo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .dark-mode .modo-flotante {
+    background: var(--negro);
+    border: 1px solid var(--lavanda_claro);
+  }
+
+  /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+  .scroll-top-btn {
+    top: auto;
+    position: fixed;
+    bottom: 210px;
+    right: 1.5rem;
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .scroll-top-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .icono-flota {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    animation: floatUpDown 4s ease-in-out infinite;
   }
 }
 
 /*KM = Tablets */
 @media screen and (min-width: 768px) {
   .form-register {
-    width: 700px;
+    max-width: 500px;
     padding: 40px;
     margin-top: 40px;
     margin-bottom: 40px;
   }
 
+  fieldset {
+    width: 400px;
+  }
+
   .form-register .titulo {
-    font-size: 30px; 
+    font-size: 30px;
   }
 
-  fieldset legend, 
+  fieldset legend,
   .form-register label {
-    font-size: 16px; 
+    font-size: 16px;
   }
 
-  .form-register a, 
-  .form-register p{
-   font-size: 16px;
+  .form-register a,
+  .form-register p {
+    font-size: 16px;
   }
 
   .form-register .botons {
-    font-size: 20px; 
+    font-size: 20px;
+  }
+
+  .modo-flotante {
+    bottom: 130px;
+  }
+
+  .scroll-top-btn {
+    bottom: 230px;
   }
 }
 
 /*KM = Escritorio */
 @media screen and (min-width: 950px) {
   .form-register {
-    width: 900px;
-
+    max-width: 600px;
     padding: 40px;
     margin-top: 60px;
     margin-bottom: 60px;
   }
 
   .form-register .titulo {
-    font-size: 32px; 
+    font-size: 32px;
   }
 
-  fieldset legend, 
-  .form-register label {
-    font-size: 16px; 
-  }
-
-  .form-register a, 
-  .form-register p{
-   font-size: 16px;
-  }
-
-  .form-register .botons{
-    font-size: 20px; 
+  .form-register .botons {
+    font-size: 20px;
   }
 }

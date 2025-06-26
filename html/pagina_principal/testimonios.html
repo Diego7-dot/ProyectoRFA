@@ -1,250 +1,311 @@
-<!--Testimonios: Red femenina de apoyo-->
+<!--***********************************************************************-->
+<!-- Testimonios: Red femenina de apoyo -->
+<!--
+  La siguiente plantilla fue modificada y adaptada por Keren Daniela Morgado
+  Todos los derechos reservados a HTML Codex (https://htmlcodex.com)
+  Plantilla original: Ice Cream Shop Website Template
+  Enlace a la plantilla: https://htmlcodex.com/ice-cream-shop-website-template
+-->
+<!--***********************************************************************-->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>RFA-Testimonios</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!--KM = Permitir caracteres especiales :)-->
+  <meta charset="utf-8">
+  <!--KM = Referente del buscador-->
+  <title>Red Feminina de Apoyo</title>
+  <!--KM = Diseño responsivo-->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--KM = Icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!--KM = CSS principal y una libreria-->
+  <link href="../../css/pagina_principal/estilo_testimonio.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-primary py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-light text-primary mx-2" href="login.html">Inicio sesion</a>
-                        <span class="text-white">|</span>
-                        <a class="btn btn-light text-primary mx-2" href="register.html">Registro</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="faQ.html">Preguntas frecuentes</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://x.com/mujeryfuturo1?lang=es" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                            <i class="fas fa-balance-scale"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-white pl-3" href="https://www.youtube.com/watch?v=OGpWtBKtY2E" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!--KM = Mensaje de procesos, la pagina sigue en actualizaciones -->
+  <div id="mensaje-proceso" class="mensaje-proceso"></div>
+
+  <!--KM = Modo oscuro-->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro"/>
+  </button>
+
+  <!--KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir"/>
+  </button>
+
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+
+  <!-- KM = Barra superior (Contiene inicio de sesion, registro, preguntas frecuntes y redes sociales)-->
+  <header class="contenedor_barra">
+    <div class="container">
+      <div class="acomodar_barra">
+
+        <!-- KM = Adaptabilidad para dispositivos moviles -->
+        <div class="enlaces_y_sociales">
+          
+          <!--  KM = Muestra de los botones -->
+          <div class="enlaces-top">
+            <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
+            <span class="separador">|</span>
+            <a class="btn-inicio-registro" href="registro_usuario.html">Registro</a>
+            <span class="separador">|</span>
+            <a class="preguntas-fre" href="preguntas.html">Preguntas</a>
+            <a class="preguntas_pc" href="preguntas.html">Preguntas frecuentes</a>
+          </div>
+          <!-- Fila inferior: redes sociales -->
+          <div class="redes-container">
+            <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+              <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+              <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+            </a>
+
+            <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+              <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+              <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+              <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+            </a>
+
+            <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+              <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Topbar End -->
+  </header>
 
+  <!--KM = Barra de navegacion, para el mobil-->
+  <nav class="secondary-menu">
+    <a href="index.html" class="logo-movil">
+      <h1 class="logo-texto_mobi">RFA</h1>
+    </a>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
-                <a href="index.html" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>RFA</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="recursos.html" class="nav-item nav-link">Recursos de apoyo</a>
-                        <a href="consultar.html" class="nav-item nav-link">Información legal</a>
-                        <a href="product.html" class="nav-item nav-link">Eventos</a>
-                    </div>
-                    <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">RFA</span></h1>
-                    </a>
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="service.html" class="nav-item nav-link">Prevención</a>
-                        <a href="gallery.html" class="nav-item nav-link">Testimonios</a>
-                        <a href="contact.html" class="nav-item nav-link">Espacio joven</a>
-                    </div>
-                </div>
-            </nav>
+    <!-- KM = hamburguesa personalizado -->
+    <button type="button" class="boton-menu hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- KM = Contenido del menu desplegable en mobil -->
+    <div class="menu colapsable" id="menu-navegacion">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </nav>
+  
+  <!--KM = Barra de navegacion para escritorio-->
+  <div class="menu-escritorio">
+    <div class="menu-izquierda">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+    </div>
+    <a href="index.html" class="logo-escritorio">
+      <h1 class="logo-texto">RFA</h1>
+    </a>
+    <div class="menu-derecha">
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </div>
+  <!--KM =  Fin de la segunda barra de navegacion -->
+
+  <!-- KM = Imagenes de presentacion, version mobil-->
+  <section class="imagen-estatica imagen-movil">
+    <div class="contenedor-banner">
+        <img src="../../imagenes/testimosnios.png" alt="Descripción de la imagen" class="imagen-banner">
+        <div class="texto-superpuesto">
+          <h4>Testimonios</h4>
+          <h1>Tu historia importa, tu voz inspira</h1>
+          <a href="#testi" class="btn-primary">Leer más</a>
         </div>
+      </div>
+    <!-- KM = Invitacion para el chatbot y registrarse-->
+    <div class="chatbot-invitation_mobi">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
     </div>
-    <!-- Navbar End -->
+  </section>
+  
+  <!-- KM = Imagen presentacion version escritorio -->
+  <section class="imagen-estatica-pc imagen-escritorio">
+    <div class="contenedor-banner-pc">
+    <img src="../../imagenes/testimonio_pc.png" alt="Imagen de mujer alentada por otras" class="imagen-banner-pc">
+    <div class="texto-superpuesto-pc">
+      <h4>Testimonios</h4>
+      <h1>Tu historia importa, tu voz inspira</h1>
+      <a href="#testi" class="btn-primary">Leer más</a>
+    </div>
+    <div class="chatbot-invitation">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
+    </div>
+   </div>
+  </section>
+  <!-- KM = Fin de las imagenes -->
 
-
-     <!-- Header Start -->
-     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px; background-image: url('img/testimo_index.jpg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; height: 800px;">
-        <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Testimonios</h1>
+  <!-- KM = Este mensaje ahora hace la funcion de espera -->
+  <div class="secciones-principales">
+  <section id="limon" class="contenedor-padre">
+    <div class="contenedor-respirando">
+      <h2 class="titulo">Tu voz da fuerza a otras historias</h2>
+      <div class="fila-texto-imagen">
+        
+        <!-- KM = Introduccion, sujera a cambios -->
+        <div class="contenedor-texto">
+          <p class="parrafo">
+            En <strong>Red Femenina de Apoyo</strong> creemos en el poder de compartir vivencias, en sanar contando nuestras historias y en la fuerza de cada voz.
+          </p>
+          <p class="parrafo">
+            Cada testimonio es un acto de valentía que inspira, acompaña y transforma. Aquí encontrarás relatos de mujeres que, como tú, han enfrentado desafíos y siguen luchando. No estás sola: tu historia también puede iluminar el camino de alguien más.
+           </p>
         </div>
+        <img src="../../imagenes/icono_testimonio.png" alt="Imagen dandose apoyo" class="imagen-en-linea" />   
+      </div>
     </div>
-    <!-- Header End -->
-
-
-    <!-- Portfolio Start -->
-    <div class="container-fluid py-5 px-0">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-5">
-                    <h1 class="section-title position-relative text-center mb-5">Delicious Ice Cream Made From Our Very Own Organic Milk</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 text-center">
-                    <ul class="list-inline mb-4 pb-2" id="portfolio-flters">
-                        <li class="btn btn-sm btn-outline-primary m-1 active"  data-filter="*">All</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".first">Cone</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".second">Vanilla</li>
-                        <li class="btn btn-sm btn-outline-primary m-1" data-filter=".third">Chocolate</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row m-0 portfolio-container">
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-1.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-1.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item second">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-2.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-2.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item third">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-3.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-3.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item first">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-4.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-4.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item second">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-5.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-5.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 p-0 portfolio-item third">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="img/portfolio-6.jpg" alt="">
-                        <a class="portfolio-btn" href="img/portfolio-6.jpg" data-lightbox="portfolio">
-                            <i class="fa fa-plus text-primary" style="font-size: 60px;"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </section>
+  <!-- KM = Fin del mensaje -->
+  
+  <!-- KM = Testimonios --> 
+  <section id="testi" class="testimonials-section">
+   <div class="scroll-testi"></div>
+    <h2 class="testimonios-titulo">Testimonios de vida</h2>
+    <div class="testimonios-carousel-container">
+      <div class="page" id="page-content-1"></div>
+      <div class="controls-tes">
+        <button id="prev-tes-1">Anterior</button>
+        <button id="next-tes-1">Siguiente</button>
+      </div>
     </div>
-    <!-- Portfolio End -->
-
-
-
-    <!--Contactos-->
-    <div id="cont" class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary">RFA</h1>
-                    </a>
-                </div>
-                <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://x.com/mujeryfuturo1?lang=es" target="_blank"><i class="fa fa-times"></i></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                                <i class="fas fa-balance-scale"></i>
-                            </a></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <div class="col-md-6 text-center text-lg-right">
-                        <div class="d-inline-flex align-items-center">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-2 mb-4">
-                    <div class="row">
-                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Contactanos</h5>
-                            <p class="mb-2">Carrera 27, Sena CSET</p>
-                            <p class="mb-0">+57 3213211436</p>
-                        </div>
-                        <div class="col-sm-6 text-center text-sm-left">
-                            <h5 class="font-weight-bold mb-2">Horarios de atención</h5>
-                            <p class="mb-2">Lunes – Domingo, 24 horas</p>
-                            <p class="mb-0">Soporte: +57 3003110085</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+  </section>
+  
+  <section class="pepe-testi-section">
+    <div class="scroll-totto"></div>
+    <h2 class="testimonios-dos-titulo">Historias de superación</h2>
+    <div class="testimonios-carousel-container">
+      <div class="page" id="page-content-2"></div>
+      <div class="controls-totto">
+        <button id="prev-tes-2">Anterior</button>
+        <button id="next-tes-2">Siguiente</button>
+      </div>
     </div>
-    <!--Contactos terminados :(-->
-    <!-- Footer End -->
+  </section>
+  
+  <section class="testimonials-section">
+    <div class="scroll-testi"></div>
+    <h2 class="testimonios-titulo">Experiencias en red de apoyo</h2>
+    <div class="testimonios-carousel-container">
+      <div class="page" id="page-content-3"></div>
+      <div class="controls-tes">
+        <button id="prev-tes-3">Anterior</button>
+        <button id="next-tes-3">Siguiente</button>
+      </div>
+    </div>
+  </section>  
 
+ <!-- KM = Invitacion a compartir -->
+  <section class="pepe-testi-section">
+   <div id="scroll-invitacion" class="scroll-totto"></div>
+   <h2 class="testimonios-dos-titulo">¿Te gustaría compartir tu experiencia?</h2>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+  <div class="testimonial-invite">
+    <p>
+      Nos encantaría conocer tu historia 💬. Ya sea una vivencia personal, un momento de superación o cómo la red te ha acompañado.  
+      Puedes escribirnos a  
+      <a href="mailto:redapoyofemenino@gmail.com?subject=Quiero%20compartir%20mi%20experiencia&body=Hola%2C%20quiero%20compartir%20mi%20historia%20o%20mi%20experiencia%20con%20ustedes.%20Puede%20ser%20an%C3%B3nima%20si%20lo%20prefiero.%0A%0AAqu%C3%AD%20escribo%20mi%20mensaje...">
+        redapoyofemenino@gmail.com
+      </a>.  
+      ¡Juntas construimos un espacio más fuerte y solidario! 🤍
+     </p>
+    </div>
+  </section>
+   <!-- KM = Fin de testimonios -->
+  
+  <!-- KM = Pie de pagina y contactos-->
+  <footer id="cont" class="footer-section">
+    <div class="footer-container">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="logo-footer">RFA</h1>
+      </a>
 
+      <!-- KM = Redes sociales de nuevo jeje -->
+      <div class="redes-container">
+        <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+          <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+        </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+          <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+        </a>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+        <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+          <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+        </a>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+          <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+        </a>
+
+        <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+          <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+        </a>
+
+        <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+          <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+        </a>
+      </div>
+        
+       <!-- KM = Información de contacto y horarios -->
+       <div class="footer-info">
+
+        <!-- KM = Contactos -->
+        <section class="footer-contact">
+          <h5>Contáctanos</h5>
+          <p>Carrera 27, Sena CSET</p>
+          <p>+57 3213211436</p>
+        </section>
+
+        <div class="separator"></div>
+  
+        <!-- KM =  Horarios de atención -->
+        <section class="footer-hours">
+          <h5>Horarios de atención</h5>
+          <p>Lunes – Domingo, 24 horas</p>
+          <p>Soporte: +57 3003110085</p>
+        </section>
+      </div>
+  
+      <!-- KM = Información de derechos de autor-->
+      <p class="footer-copy">
+        &copy; <a href="#">Keren Daniela Morgado</a>. Todos los derechos reservados. Diseño adaptado y modificado a partir de una plantilla original. <br>
+        &copy; <a href="#">© Domain</a>. . All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>.
+      </p>
+    </div>
+  </footer>
+  <!-- KM = Se termino, por ahora! Puedes revisar las otras secciones :)-->
+
+  <!-- KM = Librerias y js de la pagina recursos de apoyo -->
+  <script src="../../java_script/pagina_principal/testimonios.js"></script>
 </body>
-
 </html>

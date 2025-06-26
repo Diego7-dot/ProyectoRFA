@@ -8,7 +8,7 @@
   <!-- KM = Optimizador para los dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- KM = Referente de icono -->
-  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon"> 
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
   <!-- KM = Título -->
   <title>Inicio de sesión</title>
   <!-- KM = Referencia a el CSS -->
@@ -19,27 +19,42 @@
   <!-- KM = Llamado de las partículas -->
   <div id="particles-js"></div>
 
+  <!-- KM = Modo oscuro -->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro" />
+  </button>
+
+  <!-- KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir" />
+  </button>
+
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+
   <!-- KM = Creación del formulario -->
   <section class="form-sesion">
     <h1 class="titulo">¡Bienvenid@!</h1>
     <p class="intro">
-      Por favor, selecciona tu perfil para acceder al espacio adecuado para ti. 
+      Por favor, selecciona tu perfil para acceder al espacio adecuado para ti.
       Estamos aquí para apoyarte y brindarte las herramientas que necesitas.
     </p>
 
     <!-- KM = Selección de rol -->
     <div class="seleccion-rol">
-      
-      <!-- Opción Usuario -->
+
+      <!-- KM = Opcion de elegir el tipo de usuario -->
       <div class="opcion usuario">
         <img src="../../iconos/pagina_principal/user_mujer.png" alt="Usuario" class="icono-rol">
-        <a href="inicio_sesion_usuario.html" class="btn-rol usuario">Ingresar como usuari@</a>
+        <a href="/Proyecto_real_v1/Proyecto_real/html/pagina_principal/inicio_sesion_usuario.php"
+          class="btn-rol usuario">Ingresar como usuari@</a>
       </div>
 
       <!-- Opción Persona de Apoyo -->
       <div class="opcion apoyo">
         <img src="../../iconos/pagina_principal/user_apoyo.png" alt="Persona de Apoyo" class="icono-rol">
-        <a href="inicio_sesion_empleado.html" class="btn-rol ">Ingresar como persona de apoyo</a>
+        <a href="inicio_sesion_empleado.php" class="btn-rol ">Ingresar como persona de apoyo</a>
       </div>
     </div>
 
@@ -53,5 +68,6 @@
   <script src="../../java_script/pagina_principal/aplicacion_particula.js"></script>
 
 </body>
+
 </html>
-<!-- Plantilla tomada de: Andev.web -->
+<!-- Plantilla tomada de: Andev.web y modificada por Keren Morgado-->

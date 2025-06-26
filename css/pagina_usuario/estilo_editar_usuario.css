@@ -1,0 +1,662 @@
+/*KM = Css de editar usuario*/
+
+/* KM = Principal paleta de colores */
+:root {
+    --rosa_claro: #f7acc6;
+    --rosa_oscuro: #f26a9a;
+    --morado_claro: #b592bd;
+    --morado_oscuro: #70338a;
+    --morado_oscuro-dos: #70338a;
+    --naranja_claro: #f6cdab;
+    --naranja_oscuro: #ef775a;
+    --amarillo_claro: #fff4b8;
+    --amarillo_oscuro: #f4a300;
+    --rojo_claro: #fdb7b7;
+    --rojo_oscuro: #8b0000;
+    --crema_claro: #fff9e6;
+    --crema_oscuro: #f2e4c3;
+    --durazno: #ffd6c1;
+    --lavanda: #e6d6f3;
+    --mantequilla: #fff4b8;
+    --negro: #151414;
+    --negro-dos: #151414;
+    --negro_cálido: #2d2a2a;
+    --gris: #868686;
+    --gris_oscuro: #3c3c3c;
+    --blanco: #ffffff;
+    --segundo-blanco: #fff;
+    --sombra: rgba(0, 0, 0, 0.381);
+    --sombrita: rgba(255, 255, 255, 0.773);
+    --sombre: rgba(62, 0, 55, 0.6);
+}
+
+/* KM = Colores para modo oscuro de la pagina*/
+.dark-mode {
+    --negro-dos: #151414;
+    --rosa_claro: #b45f7d;
+    --rosa_oscuro: #944062;
+    --morado_claro: #4a1467;
+    --morado_oscuro: #210c2b;
+    --morado_oscuro: #210c2b;
+    --morado_oscuro-dos: #c1a7e4;
+    --naranja_claro: #f6cdab;
+    --naranja_oscuro: #9a3f2c;
+    --amarillo_claro: #f4a300;
+    --amarillo_oscuro: #fff4b8;
+    --rojo_claro: #8b0000;
+    --rojo_oscuro: #fdb7b7;
+    --crema_claro: #3b2f2f;
+    --crema_oscuro: #2e2323;
+    --durazno: #a84f3a;
+    --lavanda: #9270c2;
+    --mantequilla: #bfa565;
+    --negro: #ffffff;
+    --negro_cálido: #f7f7f7;
+    --gris: #d6d6d6;
+    --gris_oscuro: #aaaaaa;
+    --blanco: #000;
+    --segundo-blanco: #fff;
+    --sombrita: rgba(0, 0, 0, 0.074)15;
+    --sombra: rgba(255, 255, 255, 0.53);
+    --sombre: rgba(36, 2, 34, 0.688);
+}
+
+/*KM = Carga de tipografías */
+@font-face {
+    font-family: 'Chewy';
+    src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Comic_Neue';
+    src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Shadows_Into_Light';
+    src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
+}
+
+/* KM =  Momento de los top globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* KM =  Estilo principal de la pagina */
+body {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--blanco);
+    font-size: 14px;
+}
+
+/* KM = Contenedor general */
+.contenedor-editar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 30px;
+    background-color: var(--morado_oscuro);
+}
+
+/* KM = Panel de edición */
+.panel-editar {
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 24px var(--sombra);
+}
+
+/* KM = Titulo */
+.titulo-editar {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--morado_oscuro-dos);
+    margin-bottom: 20px;
+}
+
+/* KM = Campos del formulario */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: var(--negro);
+}
+
+.campo input,
+.campo select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--gris);
+    border-radius: 4px;
+    font-family: 'Comic_Neue', sans-serif;
+}
+
+.fotito {
+    margin-top: 15px;
+}
+
+/* KM = Mensajes de error al actualizar */
+.mensaje-error {
+    background-color: var(--rosa_oscuro);
+    color: var(--segundo-blanco);
+    border: 1px var(--morado_claro);
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* KM = Visualizacion de imagenes*/
+.modal {
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--negro);
+}
+
+.modal-contenido {
+    background-color: var(--blanco);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal-contenido img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: border 0.2s ease;
+}
+
+.modal-contenido img.seleccionada {
+    border-color: var(--morado_claro);
+}
+
+/* KM = Encabezado donde va el cerrar*/
+.encabezado-modal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border-bottom: 1px solid var(--rosa_claro);
+    margin-bottom: 20px;
+}
+
+.cerrar {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--rosa_claro);
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.cerrar:hover {
+    color: var(--rosa_oscuro);
+}
+
+/*  KM = Contenedor principal del formulario */
+.form-editar {
+    width: 90%;
+    max-width: 600px;
+    background-color: var(--blanco);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 6px 10px 40px var(--sombra);
+    margin: auto;
+    margin-top: 50px;
+    font-family: "Comic_Neue", sans-serif;
+}
+
+.label-bold {
+    font-weight: bold;
+    color: var(--negro);
+    margin-bottom: 6px;
+    display: block;
+    font-size: 14px;
+}
+
+.controls {
+    font-family: "Comic_Neue", sans-serif;
+    width: 100%;
+    background: var(--blanco);
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid var(--gris_oscuro);
+    margin-bottom: 16px;
+    font-size: 15px;
+}
+
+/* KM = Boton de guardar */
+.boton-ma {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--morado_oscuro-dos);
+    color: var(--segundo-blanco);
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.boton-ma:hover {
+    background-color: var(--morado_oscuro);
+}
+
+/* KM = Boton de cambiar contraseña */
+.boton-mac {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--morado_oscuro-dos);
+    color: var(--segundo-blanco);
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-mac:hover {
+    background-color: var(--morado_oscuro);
+}
+
+/* KM = Boton de seleccionar imagen */
+.boton-mai {
+    font-family: "Comic_Neue", sans-serif;
+    background-color: var(--rosa_claro);
+    color: var(--segundo-blanco);
+    border: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.boton-mai:hover {
+    background-color: var(--rosa_oscuro);
+}
+
+/* KM = Boton de volver */
+.btn-glow {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* KM = Imagen actual de perfil */
+.preview-foto {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--morado_claro);
+    margin-top: 10px;
+    background-color: var(--segundo-blanco);
+}
+
+.preview-container {
+    text-align: center;
+}
+
+.imagenes-opciones img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.imagenes-opciones img:hover {
+    transform: scale(1.05);
+}
+
+.imagen-seleccionada {
+    border: 3px solid var(--morado_oscuro);
+    box-shadow: 0 0 10px var(--morado_claro);
+}
+
+.ylacosasunea {
+    font-size: 20px;
+    color: var(--morado_oscuro-dos);
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 4px;
+}
+
+/* KM = Botones de modo oscuro y subidon de ...*/
+.modo-flotante {
+    position: fixed;
+    top: 8px;
+    right: 1.5rem;
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icono-modo {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.scroll-top-btn {
+    position: fixed;
+    top: 80px;
+    right: 1.5rem;
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    font-size: 1.6rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+    transform: scale(1.05);
+}
+
+.icono-flota {
+    width: 28px;
+    height: 28px;
+    animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.error-message {
+    color: var(--rosa_claro);
+    font-size: 13px;
+    margin-bottom: 6px;
+    display: block;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+/* KM = Nombre de usuario */
+.nombre_user {
+  display: inline-block;
+  max-width: 60px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.nombre-usuario {
+  max-width: 65%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+}
+
+/* KM = Bienvenida limitada*/
+.bienvenida_user_limitada {
+  display: inline-block;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+}
+
+.nombre-usuario-bi {
+  text-align: center;
+}
+
+/*KM = No permitir la edicion del correo */
+.input-bloqueado {
+    background-color: var(--gris);
+    opacity: 0.6;
+    color: var(--negro);
+    cursor: not-allowed;
+}
+
+/*KM = Campo de contraseña con icono */
+.input-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon .icon {
+    position: absolute;
+    right: 12px;
+    top: 35%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+}
+
+/* KM = Moviles mas grandes */
+@media screen and (min-width: 480px) {
+    .panel-editar {
+        border-radius: 12px;
+        width: 85%;
+        margin-top: 20px;
+        margin-bottom: 20x;
+    }
+
+    .preview-foto {
+        width: 90px;
+        height: 90px;
+    }
+
+    /* KM = Icono de modo oscuro */
+    .modo-flotante {
+        top: auto;
+        position: fixed;
+        bottom: 120px;
+        right: 1.5rem;
+        background: var(--rosa_oscuro);
+        border: none;
+        border-radius: 50%;
+        width: 65px;
+        height: 65px;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 6px 16px var(--sombra);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icono-modo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        pointer-events: none;
+    }
+
+    .dark-mode .modo-flotante {
+        background: var(--negro);
+        border: 1px solid var(--lavanda_claro);
+    }
+
+    /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+    .scroll-top-btn {
+        top: auto;
+        position: fixed;
+        bottom: 210px;
+        right: 1.5rem;
+        background: var(--morado_claro);
+        border: none;
+        border-radius: 50%;
+        width: 72px;
+        height: 72px;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 6px 16px var(--sombra);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    .scroll-top-btn:hover {
+        transform: scale(1.1);
+    }
+
+    .scroll-top-btn.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .icono-flota {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        pointer-events: none;
+        animation: floatUpDown 4s ease-in-out infinite;
+    }
+}
+
+/* KM = Tablet */
+@media screen and (min-width: 768px) {
+    .preview-foto {
+        width: 100px;
+        height: 100px;
+    }
+
+    .preview-container {
+        text-align: center;
+    }
+
+    .imagenes-opciones img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 8px;
+        transition: transform 0.2s ease;
+    }
+
+    .imagenes-opciones img:hover {
+        transform: scale(1.05);
+    }
+
+    .imagen-seleccionada {
+        border: 3px solid var(--morado_oscuro);
+        box-shadow: 0 0 10px var(--morado_claro);
+    }
+
+    .ylacosasunea {
+        font-size: 20px;
+        color: var(--morado_oscuro-dos);
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .panel-editar {
+        border-radius: 12px;
+        width: 85%;
+        margin-top: 20px;
+        margin-bottom: 20x;
+    }
+
+    .form-editar {
+        max-width: 800px;
+        padding: 40px;
+    }
+
+    .titulo-editar {
+        font-size: 32px;
+    }
+
+    .controls,
+    .label-bold {
+        font-size: 16px;
+    }
+
+    .boton-guardar {
+        font-size: 18px;
+    }
+
+    .boton-ma {
+        font-size: 16px;
+    }
+
+    .boton-mac {
+        font-size: 16px;
+    }
+
+    .boton-mai {
+        font-size: 16px;
+    }
+
+    .btn-glow {
+        font-size: 16px;
+    }
+}
+
+/* KM = Escritorio */
+@media screen and (min-width: 950px) {
+     /*KM = Curioso los pocos cambios que realize?*/
+    .preview-foto {
+        width: 100px;
+        height: 100px;
+    }
+}

@@ -1,285 +1,441 @@
-<!--Informacion legal: Red femenina de apoyo-->
+<!--***********************************************************************-->
+<!-- Informacion legal: Red femenina de apoyo -->
+<!--
+  La siguiente plantilla fue modificada y adaptada por Keren Daniela Morgado
+  Todos los derechos reservados a HTML Codex (https://htmlcodex.com)
+  Plantilla original: Ice Cream Shop Website Template
+  Enlace a la plantilla: https://htmlcodex.com/ice-cream-shop-website-template
+-->
+<!--***********************************************************************-->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>RFA-Información legal</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="icon/logo_fem_icon.png" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!--KM = Permitir caracteres especiales :)-->
+  <meta charset="utf-8">
+  <!--KM = Referente del buscador-->
+  <title>Red Feminina de Apoyo</title>
+  <!--KM = Diseño responsivo-->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--KM = Icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!--KM = CSS principal y una libreria-->
+  <link href="../../css/pagina_principal/estilo_legal.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--Recursos de apoyo-->
-    <div class="container-fluid bg-primary py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-light text-primary mx-2" href="login.html">Inicio sesion</a>
-                        <span class="text-white">|</span>
-                        <a class="btn btn-light text-primary mx-2" href="register.html">Registro</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="faQ.html">Preguntas frecuentes</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://x.com/mujeryfuturo1?lang=es" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                            <i class="fas fa-balance-scale"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-white pl-3" href="https://www.youtube.com/watch?v=OGpWtBKtY2E" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!--KM = Mensaje de procesos, la pagina sigue en actualizaciones -->
+  <div id="mensaje-proceso" class="mensaje-proceso"></div>
+
+  <!--KM = Modo oscuro-->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro"/>
+  </button>
+
+  <!--KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir"/>
+  </button>
+
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+
+  <!-- KM = Barra superior (Contiene inicio de sesion, registro, preguntas frecuntes y redes sociales)-->
+  <header class="contenedor_barra">
+    <div class="container">
+      <div class="acomodar_barra">
+
+        <!-- KM = Adaptabilidad para dispositivos moviles -->
+        <div class="enlaces_y_sociales">
+          
+          <!--  KM = Muestra de los botones -->
+          <div class="enlaces-top">
+            <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
+            <span class="separador">|</span>
+            <a class="btn-inicio-registro" href="registro_usuario.html">Registro</a>
+            <span class="separador">|</span>
+            <a class="preguntas-fre" href="preguntas.html">Preguntas</a>
+            <a class="preguntas_pc" href="preguntas.html">Preguntas frecuentes</a>
+          </div>
+          <!-- Fila inferior: redes sociales -->
+          <div class="redes-container">
+            <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+              <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+              <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+            </a>
+
+            <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+              <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+              <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+              <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+            </a>
+
+            <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+              <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- opbar End -->
+  </header>
 
+  <!--KM = Barra de navegacion, para el mobil-->
+  <nav class="secondary-menu">
+    <a href="index.html" class="logo-movil">
+      <h1 class="logo-texto_mobi">RFA</h1>
+    </a>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
-                <a href="index.html" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>RFA</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="recursos.html" class="nav-item nav-link">Recursos de apoyo</a>
-                        <a href="consultar.html" class="nav-item nav-link">Información legal</a>
-                        <a href="product.html" class="nav-item nav-link">Eventos</a>
-                    </div>
-                    <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">RFA</span></h1>
-                    </a>
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="service.html" class="nav-item nav-link">Prevención</a>
-                        <a href="gallery.html" class="nav-item nav-link">Testimonios</a>
-                        <a href="contact.html" class="nav-item nav-link">Espacio joven</a>
-                    </div>
-                </div>
-            </nav>
+    <!-- KM = hamburguesa personalizado -->
+    <button type="button" class="boton-menu hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- KM = Contenido del menu desplegable en mobil -->
+    <div class="menu colapsable" id="menu-navegacion">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </nav>
+  
+  <!--KM = Barra de navegacion para escritorio-->
+  <div class="menu-escritorio">
+    <div class="menu-izquierda">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+    </div>
+    <a href="index.html" class="logo-escritorio">
+      <h1 class="logo-texto">RFA</h1>
+    </a>
+    <div class="menu-derecha">
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </div>
+  <!--KM =  Fin de la segunda barra de navegacion -->
+
+  <!-- KM = Imagenes de presentacion, version mobil-->
+  <section class="imagen-estatica imagen-movil">
+    <div class="contenedor-banner">
+        <img src="../../imagenes/legal.png" alt="Descripción de la imagen" class="imagen-banner">
+        <div class="texto-superpuesto">
+          <h4>Información legal</h4>
+          <h1>Defendiendo tus derechos, protegiendo tu voz</h1>
+          <a href="#informacion-legal" class="btn-primary">Leer más</a>
         </div>
+      </div>
+    <!-- KM = Invitacion para el chatbot y registrarse-->
+    <div class="chatbot-invitation_mobi">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
     </div>
-    <!-- Navbar End -->
+  </section>
+  
+  <!-- KM = Imagen presentacion version escritorio -->
+  <section class="imagen-estatica-pc imagen-escritorio">
+    <div class="contenedor-banner-pc">
+    <img src="../../imagenes/legal_pc.png" alt="Imagen de mujer alentada por otras" class="imagen-banner-pc">
+    <div class="texto-superpuesto-pc">
+      <h4>Información legal</h4>
+      <h1>Defendiendo tus derechos, protegiendo tu voz</h1>
+      <a href="#informacion-legal" class="btn-primary">Leer más</a>
+    </div>
+    <div class="chatbot-invitation">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
+    </div>
+   </div>
+  </section>
+  <!-- KM = Fin de las imagenes -->
 
-    <!-- Header Start -->
-    <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px; background-image: url('img/legal_index.jpg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; height: 600px;">
-        <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Información legal</h1>
+  <!-- KM = Este mensaje ahora hace la funcion de espera -->
+  <div class="secciones-principales">
+  <section id="limon" class="contenedor-padre">
+    <div class="contenedor-respirando">
+      <h2 class="titulo">Tu voz tiene respaldo legal</h2>
+      <div class="fila-texto-imagen">
+        
+        <!-- KM = Introduccion, sujera a cambios -->
+        <div class="contenedor-texto">
+          <p class="parrafo">
+            En <strong>Red Femenina de Apoyo</strong> creemos en tu derecho a vivir libre de violencia y en el acceso a la justicia.
+          </p>
+          <p class="parrafo">
+            Esta sección fue creada para brindarte información legal clara, confiable y actualizada. Aquí encontrarás tus derechos, las leyes que te protegen, y las rutas de ayuda disponibles para ti. No estás sola: tu voz tiene fuerza, respaldo y protección.
+           </p>
         </div>
+        <img src="../../imagenes/iocno_legal.png" alt="Imagen dandose apoyo" class="imagen-en-linea" />   
+      </div>
     </div>
-    <!-- Header End -->
-
-
-    <!-- About Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-7">
-                    <h1 class="section-title position-relative text-center mb-5">Traditional & Delicious Ice Cream Since 1950</h1>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 py-5">
-                    <h4 class="font-weight-bold mb-3">About Us</h4>
-                    <h5 class="text-muted mb-3">Eos kasd eos dolor vero vero, lorem stet diam rebum. Ipsum amet sed vero dolor sea</h5>
-                    <p>Takimata sed vero vero no sit sed, justo clita duo no duo amet et, nonumy kasd sed dolor eos diam lorem eirmod. Amet sit amet amet no. Est nonumy sed labore eirmod sit magna. Erat at est justo sit ut. Labor diam sed ipsum et eirmod</p>
-                    <a href="" class="btn btn-secondary mt-2">Learn More</a>
-                </div>
-                <div class="col-lg-4" style="min-height: 400px;">
-                    <div class="position-relative h-100 rounded overflow-hidden">
-                        <img class="position-absolute w-100 h-100" src="img/about.jpg" style="object-fit: cover;">
-                    </div>
-                </div>
-                <div class="col-lg-4 py-5">
-                    <h4 class="font-weight-bold mb-3">Our Features</h4>
-                    <p>Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos, ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est dolor</p>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Eos kasd eos dolor</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Eos kasd eos dolor</h5>
-                    <h5 class="text-muted mb-3"><i class="fa fa-check text-secondary mr-3"></i>Eos kasd eos dolor</h5>
-                    <a href="" class="btn btn-primary mt-2">Learn More</a>
-                </div>
-            </div>
+  </section>
+  <!-- KM = Fin del mensaje -->
+  
+  <!-- KM = Sección de información legal y derechos en Colombia --> 
+  <div class="secciones-principales">
+    <section id="informacion-legal" class="seccion-legal">
+      
+      <div id="recurs" class="scroll-resursos"></div>
+      
+      <h2 class="titulo-seccion">Información legal para mujeres en Bucaramanga (Colombia)</h2>
+      
+      <p class="intro-seccion">
+        Aquí encontrarás tus derechos, las leyes que te protegen y las rutas de ayuda disponibles en Colombia si has vivido o estás viviendo situaciones de violencia. Haz clic en cada tema para ver más información.
+      </p>
+  
+      <!-- KM = Derechos de las mujeres en Colombia -->
+      <div class="bloque-legal">
+        <div class="margen-izquierdo"></div>
+        <div class="contenido-legal">
+          <h2 class="titulo-legal">Derechos fundamentales de las mujeres</h2>
+          <ul class="lista-legal">
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Vivir libre de violencia y discriminación
+              <div class="definicion-legal">
+                Derecho a vivir sin sufrir maltrato físico, sexual, emocional o económico en cualquier ámbito de la vida.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Igualdad real y efectiva
+              <div class="definicion-legal">
+                Garantía de oportunidades y trato justo en la vida social, económica y política.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Respeto a la dignidad humana
+              <div class="definicion-legal">
+                Derecho a ser valorada, respetada y protegida en tu integridad como ser humano.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Acceso a servicios de calidad
+              <div class="definicion-legal">
+                Derecho a recibir atención médica, educativa y laboral en condiciones de equidad.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Participación activa en la sociedad
+              <div class="definicion-legal">
+                Derecho a votar, ser elegida y formar parte en decisiones políticas, económicas y sociales.
+              </div>
+            </li>
+          </ul>
+          <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
         </div>
-    </div>
-    <!-- About End -->
-
-
-    <!-- Team Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative mb-5">Experienced & Most Famous Ice Cream Chefs</h1>
-                </div>
-                <div class="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0"></div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel team-carousel">
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-1.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-2.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-3.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="team-item">
-                            <div class="team-img mx-auto">
-                                <img class="rounded-circle w-100 h-100" src="img/team-4.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded px-4 py-5" style="margin-top: -100px;">
-                                <h3 class="font-weight-bold mt-5 mb-3 pt-5">Full Name</h3>
-                                <h6 class="text-uppercase text-muted mb-4">Designation</h6>
-                                <div class="d-flex justify-content-center pt-1">
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-outline-secondary btn-social mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      </div>
+  
+      <!-- KM = Leyes que protegen contra la violencia -->
+      <div class="bloque-legal">
+        <div class="margen-izquierdo"></div>
+        <div class="contenido-legal">
+          <h2 class="titulo-legal">Principales leyes que te protegen</h2>
+          <ul class="lista-legal">
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Ley 1257 de 2008
+              <div class="definicion-legal">
+                Prevención, protección y atención a mujeres víctimas de violencia.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Ley 1761 de 2015
+              <div class="definicion-legal">
+                Tipifica el feminicidio como un delito autónomo y sanciona con severidad.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Ley 294 de 1996
+              <div class="definicion-legal">
+                Medidas de protección frente a violencia intrafamiliar.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Convención de Belém do Pará
+              <div class="definicion-legal">
+                Compromiso internacional de Colombia para erradicar la violencia contra las mujeres.
+              </div>
+            </li>
+          </ul>
+          <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
         </div>
-    </div>
-    <!-- Team End -->
-
-
-
-    <!--Contactos-->
-    <div id="cont" class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary">RFA</h1>
-                    </a>
-                </div>
-                <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://x.com/mujeryfuturo1?lang=es" target="_blank"><i class="fa fa-times"></i></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                                <i class="fas fa-balance-scale"></i>
-                            </a></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <div class="col-md-6 text-center text-lg-right">
-                        <div class="d-inline-flex align-items-center">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-2 mb-4">
-                    <div class="row">
-                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Contactanos</h5>
-                            <p class="mb-2">Carrera 27, Sena CSET</p>
-                            <p class="mb-0">+57 3213211436</p>
-                        </div>
-                        <div class="col-sm-6 text-center text-sm-left">
-                            <h5 class="font-weight-bold mb-2">Horarios de atención</h5>
-                            <p class="mb-2">Lunes – Domingo, 24 horas</p>
-                            <p class="mb-0">Soporte: +57 3003110085</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                    </p>
-                </div>
-            </div>
+      </div>
+  
+      <!-- KM = Cómo pedir ayuda legal -->
+      <div class="bloque-legal">
+        <div class="margen-izquierdo"></div>
+        <div class="contenido-legal">
+          <h2 class="titulo-legal">¿Cómo solicitar ayuda legal?</h2>
+          <ul class="lista-legal">
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Acude a una Comisaría de Familia
+              <div class="definicion-legal">
+                Allí puedes pedir medidas de protección inmediatas como alejamiento del agresor.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Denuncia en la Fiscalía General
+              <div class="definicion-legal">
+                Puedes denunciar cualquier acto de violencia sin necesidad de pruebas físicas.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Busca asesoría gratuita
+              <div class="definicion-legal">
+                La Defensoría del Pueblo y consultorios jurídicos te orientan y acompañan sin costo.
+              </div>
+            </li>
+          </ul>
+          <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
         </div>
+      </div>
+  
+      <!-- KM = Rutas de atención -->
+      <div class="bloque-legal">
+        <div class="margen-izquierdo"></div>
+        <div class="contenido-legal">
+          <h2 class="titulo-legal">Rutas de atención disponibles</h2>
+          <ul class="lista-legal">
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Línea 123 o Línea 155
+              <div class="definicion-legal">
+                Atención inmediata 24/7 para mujeres en riesgo de violencia.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Centros de atención y Casas de Justicia
+              <div class="definicion-legal">
+                Espacios seguros para recibir ayuda jurídica, emocional y psicológica.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Refugios temporales
+              <div class="definicion-legal">
+                Lugares seguros para protección de mujeres víctimas de alto riesgo.
+              </div>
+            </li>
+          </ul>
+          <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+        </div>
+      </div>
+  
+      <!-- KM = Derechos en casos de violencia intrafamiliar -->
+      <div class="bloque-legal">
+        <div class="margen-izquierdo"></div>
+        <div class="contenido-legal">
+          <h2 class="titulo-legal">Tus derechos si vives violencia intrafamiliar</h2>
+          <ul class="lista-legal">
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Medidas de protección inmediata
+              <div class="definicion-legal">
+                Orden de alejamiento, reubicación o protección policial.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Atención médica y psicológica gratuita
+              <div class="definicion-legal">
+                Servicios de salud disponibles sin costo para víctimas.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Apoyo económico
+              <div class="definicion-legal">
+                En casos de afectación económica por la violencia.
+              </div>
+            </li>
+            <li class="item-legal" onclick="toggleDefinicion(this)">
+              Protección integral para tus hijos
+              <div class="definicion-legal">
+                Seguridad emocional, protección física y acceso educativo garantizados.
+              </div>
+            </li>
+          </ul>
+          <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+        </div>
+      </div>
+      <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+    </section>
+  </div>
+   <!-- KM = FIn de informacion legal -->
+  
+  <!-- KM = Pie de pagina y contactos-->
+  <footer id="cont" class="footer-section">
+    <div class="footer-container">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="logo-footer">RFA</h1>
+      </a>
+
+      <!-- KM = Redes sociales de nuevo jeje -->
+      <div class="redes-container">
+        <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+          <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+        </a>
+
+        <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+          <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+        </a>
+
+        <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+          <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+        </a>
+
+        <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+          <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+        </a>
+
+        <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+          <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+        </a>
+
+        <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+          <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+        </a>
+      </div>
+        
+       <!-- KM = Información de contacto y horarios -->
+       <div class="footer-info">
+
+        <!-- KM = Contactos -->
+        <section class="footer-contact">
+          <h5>Contáctanos</h5>
+          <p>Carrera 27, Sena CSET</p>
+          <p>+57 3213211436</p>
+        </section>
+
+        <div class="separator"></div>
+  
+        <!-- KM =  Horarios de atención -->
+        <section class="footer-hours">
+          <h5>Horarios de atención</h5>
+          <p>Lunes – Domingo, 24 horas</p>
+          <p>Soporte: +57 3003110085</p>
+        </section>
+      </div>
+  
+      <!-- KM = Información de derechos de autor-->
+      <p class="footer-copy">
+        &copy; <a href="#">Keren Daniela Morgado</a>. Todos los derechos reservados. Diseño adaptado y modificado a partir de una plantilla original. <br>
+        &copy; <a href="#">© Domain</a>. . All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>.
+      </p>
     </div>
-    <!--Contactos terminados :(-->
+  </footer>
+  <!-- KM = Se termino, por ahora! Puedes revisar las otras secciones :)-->
 
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+  <!-- KM = Librerias y js de la pagina recursos de apoyo -->
+  <script src="../../java_script/pagina_principal/infromacion_legal.js"></script>
 </body>
-
 </html>

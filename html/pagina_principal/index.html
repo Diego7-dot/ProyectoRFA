@@ -1,118 +1,760 @@
 <!--***********************************************************************-->
-<!--Pagina principal: Red femenina de apoyo-->
-<!--
-  Derechos reservados a HTMLCodex (https://htmlcodex.com)
-  Plantilla original: Ice Cream Shop Website Template
-  Enlace a la plantilla: https://htmlcodex.com/ice-cream-shop-website-template
--->
+<!-- Página principal: Red femenina de apoyo -->
 <!--***********************************************************************-->
 
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-    <!--KM = Permitir caracteres especiales :)-->
-    <meta charset="utf-8">
-    <!--KM = Referente del buscador-->
-    <title>Red Feminina de Apoyo</title>
-    <!--KM = Diseño responsivo-->
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <!--KM = Palabras claves al momento de busqueda-->
-    <meta content="Apoyo a mujeres, violencia de género, recursos para víctimas, Bucaramanga" name="keywords">
-    <!--KM = Descripcion de la pagina en el navegador-->
-    <meta content="Buscamos brindar recursos y apoyo a mujeres víctimas de violencia en Bucaramanga, no estas sola." name="description">
-
-    <!--KM = Referente de icono-->
-    <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">    
-
-    <!--KM = Referencia a el CSS-->
-    <link href="../../css/pagina_principal/estilo_inicio.css" rel="stylesheet">
+  <!--KM = Permitir caracteres especiales :)-->
+  <meta charset="utf-8">
+  <!--KM = Referente del buscador-->
+  <title>Red Feminina de Apoyo</title>
+  <!--KM = Diseño responsivo-->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--KM = Palabras claves-->
+  <meta content="Apoyo a mujeres, violencia de género, recursos para víctimas, Bucaramanga" name="keywords">
+  <!--KM = Descripción-->
+  <meta content="Buscamos brindar recursos y apoyo a mujeres víctimas de violencia en Bucaramanga, no estás sola."
+    name="description">
+  <!--KM = Icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!--KM = CSS principal y una libreria-->
+  <link href="../../css/pagina_principal/estilo_inicio.css" rel="stylesheet">
+  <link href="../../libreria/pagina_principal/estilo_carrucel.css" rel="stylesheet">
 </head>
 
 <body>
-    <!--KM = ChatBot (Su nombre es Alma, Almita para los amigos :)-->
-    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
-    <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+  <!--KM = Mensaje de procesos, la pagina sigue en actualizaciones -->
+  <div id="mensaje-proceso" class="mensaje-proceso"></div>
 
-    <!-- Barra superior (Inicio sesion, registro, preguntas frecuentes y redes sociales) -->
-    <div class="container-barra">
-        <div class="container">
-            <div class="flexibilidad-barra">
+  <!--KM = Modo oscuro-->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro" />
+  </button>
 
-                <!-- Sección de botones (Inicio sesión, Registro, Preguntas frecuentes) -->
-                <div class="enlaces-container">
-                    <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
-                    <span class="separador">|</span>
-                    <a class="btn-inicio-registro" href="registro_usuario.html">Registro</a>
-                    <span class="separador">|</span>
-                    <a class="preguntas-frecuentes" href="preguntas.html">Preguntas frecuentes</a>
-                </div>
+  <!--KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir" />
+  </button>
 
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
 
-                <!--Los siguientes logos fueron descargados desde: https://iconos8.es -->
-                <div class="redes-container">
-                    <a href="https://www.facebook.com/" target="_blank">
-                        <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
-                    </a>
-                    <a href="https://x.com/" target="_blank">
-                        <img src="../../iconos/pagina_principal/twitterx.png" alt="TwitterX" class="social-icon">
-                    </a>
-                    <a href="https://discord.gg/" target="_blank">
-                        <img src="../../iconos/pagina_principal/discordia.png" alt="Discord" class="social-icon">
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <img src="../../iconos/pagina_principal/instagram.png" alt="Instagram" class="social-icon">
-                    </a>
-                    <a href="https://www.youtube.com/" target="_blank">
-                        <img src="../../iconos/pagina_principal/youtube.png" alt="YouTube" class="social-icon">
-                    </a>
-                    <a href="https://t.me/" target="_blank">
-                        <img src="../../iconos/pagina_principal/telegram.png" alt="Telegram" class="social-icon">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- KM = Barra superior (Contiene inicio de sesion, registro, preguntas frecuntes y redes sociales)-->
+  <header class="contenedor_barra">
+    <div class="container">
+      <div class="acomodar_barra">
 
-    <!-- Barra de Navegación -->
-<div class="barra-navegacion">
-    <div class="contenedor-nav">
-        <nav class="navegacion">
-            <!-- Logo visible solo en dispositivos móviles -->
-            <a href="index.html" class="logo-movil">
-                <h1 class="logo-texto">RFA</h1>
+        <!-- KM = Adaptabilidad para dispositivos moviles -->
+        <div class="enlaces_y_sociales">
+
+          <!--  KM = Muestra de los botones -->
+          <div class="enlaces-top">
+            <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
+            <span class="separador">|</span>
+            <a class="btn-inicio-registro" href="registro_usuario.php">Registro</a>
+            <span class="separador">|</span>
+            <a class="preguntas-fre" href="preguntas.html">Preguntas</a>
+            <a class="preguntas_pc" href="preguntas.html">Preguntas frecuentes</a>
+          </div>
+          <!-- Fila inferior: redes sociales -->
+          <div class="redes-container">
+            <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+              <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
             </a>
-            
-            <!-- Botón de menú para dispositivos móviles -->
-            <button type="button" class="boton-menu" data-toggle="collapse" data-target="#menu-navegacion">
-                <span class="icono-menu"></span>
-            </button>
-            
-            <!-- Menú de navegación -->
-            <div class="menu colapsable" id="menu-navegacion">
-                <div class="menu-izquierda">
-                    <a href="recursos.html" class="enlace-nav">Recursos de apoyo</a>
-                    <a href="consultar.html" class="enlace-nav">Información legal</a>
-                    <a href="product.html" class="enlace-nav">Eventos</a>
-                </div>
 
-                <!-- Logo visible solo en escritorio -->
-                <a href="index.html" class="logo-escritorio">
-                    <h1 class="logo-texto">RFA</h1>
-                </a>
+            <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+              <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+            </a>
 
-                <div class="menu-derecha">
-                    <a href="service.html" class="enlace-nav">Prevención</a>
-                    <a href="gallery.html" class="enlace-nav">Testimonios</a>
-                    <a href="contact.html" class="enlace-nav">Espacio joven</a>
-                </div>
-            </div>
-        </nav>
+            <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+              <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+              <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+              <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+            </a>
+
+            <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+              <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-    <!--Barra de navegacion terminada-->
+  </header>
 
-    <!-- Template Javascript -->
-    <script src="../../java_script/pagina_principal/inicio.js"></script>
+  <!--KM = Barra de navegacion, para el mobil-->
+  <nav class="secondary-menu">
+    <a href="index.html" class="logo-movil">
+      <h1 class="logo-texto_mobi">RFA</h1>
+    </a>
+
+    <!-- KM = hamburguesa personalizado -->
+    <button type="button" class="boton-menu hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- KM = Contenido del menu desplegable en mobil -->
+    <div class="menu colapsable" id="menu-navegacion">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </nav>
+
+  <!--KM = Barra de navegacion para escritorio-->
+  <div class="menu-escritorio">
+    <div class="menu-izquierda">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+    </div>
+    <a href="index.html" class="logo-escritorio">
+      <h1 class="logo-texto">RFA</h1>
+    </a>
+    <div class="menu-derecha">
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </div>
+  <!--KM =  Fin de la segunda barra de navegacion -->
+
+  <!-- KM = Tuve que dividir los carruceles por el tamaño de imagen jaja (Version movil) -->
+  <div class="carousel-container carousel-mobile">
+    <div class="carousel-track-container">
+      <ul class="carousel-track">
+
+        <!--KM = Primera caja de texto que se muestra en el carrucel-->
+        <li class="carousel-item active">
+          <img src="../../imagenes/fondo_inicio.png" alt="Imagen de mujeres de perfil, unidas">
+          <div class="carousel-caption">
+            <h4>Nuestro compromiso</h4>
+            <h1>Creando espacios seguros para cada mujer</h1>
+            <a href="#limon" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+
+        <!--KM = Segunda caja de texto que se muestra en el carrucel-->
+        <li class="carousel-item">
+          <img src="../../imagenes/fondo_inicio_2.png" alt="Imagen de manos estrechadas">
+          <div class="carousel-caption">
+            <h4>Impulsando el cambio</h4>
+            <h1>Fortaleciendo el poder femenino en Bucaramanga</h1>
+            <a href="#about" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+
+        <!--KM = Tercera caja de texto que se muestra en el carrucel-->
+        <li class="carousel-item">
+          <img src="../../imagenes/fondo_inicio_3.png" alt="Imagen de varias mujeres abranzandose">
+          <div class="carousel-caption">
+            <h4>Juntas por el futuro</h4>
+            <h1>Unidas en protección, apoyo y solidaridad</h1>
+            <a href="#valo" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- KM = Botones e indicadores para móvil -->
+    <button class="carousel-button carousel-button--left">&#10094;</button>
+    <button class="carousel-button carousel-button--right">&#10095;</button>
+    <div class="carousel-nav">
+      <button class="carousel-indicator current"></button>
+      <button class="carousel-indicator"></button>
+      <button class="carousel-indicator"></button>
+    </div>
+  </div>
+
+  <!-- KM = Invitacion para registrase y usar el chatbot-->
+  <div class="chatbot-invitation_mobi">
+    <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que
+      necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+    <p>Además, <a href="registro_usuario.php" class="btn-secondary">regístrate</a> para recibir un asesoramiento más
+      personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que
+      necesites.</p>
+  </div>
+
+  <!-- KM = Carrusel para escritorio -->
+  <div class="carousel-container_pc carousel-desktop">
+    <div class="carousel-track-container">
+      <ul class="carousel-track">
+
+        <!--KM = Primera caja de texto que se muestra en el carrucel pc-->
+        <li class="carousel-item active">
+          <img src="../../imagenes/imagen_fondo_3.png" alt="Imagen de mujeres de perfil">
+          <div class="carousel-caption_pc">
+            <h4>Nuestro compromiso</h4>
+            <h1>Creando espacios seguros para cada mujer</h1>
+            <a href="#limon" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+
+        <!--KM = Segunda caja de texto que se muestra en el carrucel pc-->
+        <li class="carousel-item">
+          <img src="../../imagenes/imagen_fondo_2.png" alt="Imagen de mujeres pidiendo sus derechos">
+          <div class="carousel-caption_pc">
+            <h4>Impulsando el cambio</h4>
+            <h1>Fortaleciendo el poder femenino en Bucaramanga</h1>
+            <a href="#about" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+
+        <!--KM = Tercera caja de texto que se muestra en el carrucel pc-->
+        <li class="carousel-item">
+          <img src="../../imagenes/imagen_fondo_1.png" alt="Imagen de mujeres abrazandose">
+          <div class="carousel-caption_pc">
+            <h4>Juntas por el futuro</h4>
+            <h1>Unidas en protección, apoyo y solidaridad</h1>
+            <a href="#valo" class="btn-primary">Leer más</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- KM = Botones de navegacion -->
+    <button class="carousel-button carousel-button--left">&#10094;</button>
+    <button class="carousel-button carousel-button--right">&#10095;</button>
+
+    <!-- KM =Contenedor para indicadores e invitacion-->
+    <div class="carousel-overlay_pc">
+      <div class="carousel-navita">
+        <button class="carousel-indicator current"></button>
+        <button class="carousel-indicator"></button>
+        <button class="carousel-indicator"></button>
+      </div>
+      <div class="chatbot-invitation">
+        <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que
+          necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+        <p>Además, <a href="registro_usuario.php" class="btn-secondary">regístrate</a> para recibir un asesoramiento más
+          personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que
+          necesites.</p>
+      </div>
+    </div>
+  </div>
+  <!-- KM = Fin de los carruseles -->
+
+  <!-- KM = Mensaje de explicacion! Quiero decir es que pense seria buena una idea tener una introduccion!-->
+  <section id="limon" class="contenedor-padre">
+    <div class="contenedor-respirando">
+      <h2 class="titulo">Nunca estás sola</h2>
+      <div class="fila-texto-imagen">
+
+        <!-- KM = Introduccion, sujera a cambios -->
+        <div class="contenedor-texto">
+          <p class="parrafo">
+            En <strong>Red Femenina de Apoyo</strong> queremos poder acompañarte en los momentos más difíciles.
+          </p>
+          <p class="parrafo">
+            Por eso creamos un espacio donde puedas recibir orientación y recursos adaptados a tu situación. Un lugar
+            seguro, pensado para ti, donde cada palabra, cada historia y cada paso hacia tu bienestar cuenta.
+          </p>
+        </div>
+        <img src="../../imagenes/abrazo.png" alt="Imagen dandose apoyo" class="imagen-en-linea" />
+      </div>
+    </div>
+  </section>
+  <!-- KM = Fin del mensaje -->
+
+  <!-- KM = Vision y mision -->
+  <section class="about-section">
+    <div class="about-container">
+      <div id="about" class="scroll-normal"></div>
+      <header class="about-header">
+        <h1 class="section-title_misi">Compromiso con nuestra comunidad</h1>
+      </header>
+
+      <!-- KM = Vision -->
+      <div class="about-content">
+        <article class="about-vision">
+          <h4 class="sub-title">Visión</h4>
+          <h5 class="subtitle">Para el año 2027, nos visualizamos como un faro de esperanza para todas las mujeres.</h5>
+          <p>Soñamos con un entorno donde cada una pueda encontrar un refugio seguro y acceder a recursos que
+            transformen su vida.</p>
+          <p>Aspiramos a un futuro libre de violencia, justo e igualitario, donde podamos ser arquitectas del cambio.
+          </p>
+          <a href="#valo" class="btn-secundary">Leer más</a>
+        </article>
+
+        <!--KM = Imagen de vision y mision-->
+        <figure class="about-image">
+          <img src="../../imagenes/mision_vision.png" alt="Imagen de misión y visión" class="responsive-image">
+        </figure>
+
+        <!-- KM = Mision -->
+        <article id="biti" class="about-mission">
+          <h4 class="sub-title">Misión</h4>
+          <p> Nuestro compromiso en los próximos tres años es brindar refugio, recursos y apoyo a las mujeres de
+            Bucaramanga que enfrentan violencia y acoso.</p>
+          <p> Queremos empoderarlas, acompañarlas en su proceso de sanación y asegurar que ninguna se sienta sola.</p>
+          <p>Nos proponemos:</p>
+          <ul class="mission-list">
+            <li>Brindar recursos</li>
+            <li>Fomentar la comunicación</li>
+            <li>Apoyo integral</li>
+          </ul>
+          <a href="recursos_apoyo.html" class="btn-secundary">Leer más</a>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- KM = Fin de mision y vision -->
+
+  <!-- KM = Video con informacion sobre los tipos de abuso -->
+  <section id="pepe" class="video-section">
+    <div class="video-row">
+      <div class="video-column video-image">
+        <img src="../../imagenes/mano_index.png" alt="Imagen del video, diferentes tipos de violencia contra la mujer"
+          class="responsive-image" id="videoThumbnail">
+        <button type="button" class="btn-play" onclick="playVideo()">
+          <span></span>
+        </button>
+        <!-- KM = Contenedor para el video pipi es normal que se agrande, pero me asegure que no es lo suficiente para salirse! -->
+        <div id="videoContainer">
+          <iframe src="" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen onload="videoLoaded()"></iframe>
+        </div>
+        <!-- KM = Derechos de autor al creador del video -->
+        <p class="derechos-autor-video">
+          <em>Este video es propiedad de <strong>DW Español</strong> en YouTube. Todos los derechos pertenecen a su
+            autor original.</em><br>
+          Fuente oficial:
+          <a href="https://www.youtube.com/watch?v=f35vVsvNS2I" target="_blank" rel="noopener noreferrer">
+            https://www.youtube.com/watch?v=f35vVsvNS2I
+          </a>
+        </p>
+      </div>
+
+      <!--KM = Informacion de los diferentes tipos de violencia-->
+      <div class="video-column video-info">
+        <div class="video-info-content">
+
+          <h3 class="video-title">¡NO a la violencia de género!</h3>
+          <h4 class="video-subtitle">Reconociendo los tipos de violencia más comunes:</h4>
+          <ul class="video-list">
+            <li>Violencia física</li>
+            <li>Violencia sexual</li>
+            <li>Violencia psicológica</li>
+            <li>Violencia económica</li>
+          </ul>
+
+          <h4 class="video-subtitle">Otros tipos de violencia:</h4>
+          <ul class="video-list">
+            <li>Violencia intrafamiliar</li>
+            <li>Violencia digital</li>
+            <li>Violencia simbólica</li>
+            <li>Violencia institucional</li>
+          </ul>
+
+          <div class="video-btn-container">
+            <a href="prevencion.html" class="btn-secundary_lepe">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KM = Modal para video -->
+  <div class="modal fade oculto" id="videoModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="" id="video" allow="autoplay"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- KM = Fin de la sección de video -->
+
+  <!-- KM : Valores que defendemos! No estas sola :( -->
+  <section class="values-section">
+    <div class="values-container">
+      <div id="valo" class="scroll-descansando"></div>
+      <header class="section-header">
+        <h1 class="section-title">Valores que defendemos</h1>
+      </header>
+
+      <!-- KM = Botones de navegabilidad -->
+      <div class="values-controls">
+        <button class="nav-btn values-prev"><span class="arrow">
+            << /span></button>
+        <button class="nav-btn values-next"><span class="arrowed">></span></button>
+      </div>
+
+      <div class="values-wrapper">
+        <div class="values-track">
+
+          <!-- KM = Primer valor -->
+          <div class="section-item">
+            <div class="service-item active">
+              <img src="../../imagenes/solidaridad.png" class="circle" />
+              <h4>Solidaridad</h4>
+              <p>Creemos en la importancia de apoyarnos mutuamente y contruir una red de apoyo entre mujeres.</p>
+            </div>
+          </div>
+
+          <!-- KM = Segundo valor -->
+          <div class="section-item">
+            <div class="service-item">
+              <img src="../../imagenes/respeto.png" class="circle_2" />
+              <h5>Respeto</h5>
+              <p>Formentamos un ambiente de respeto y dignidad, donde cada mujer es calorado y escuchada.</p>
+            </div>
+          </div>
+
+          <!-- KM = Tercer valor -->
+          <div class="section-item">
+            <div class="service-item">
+              <img src="../../imagenes/integridad.png" class="circle" />
+              <h4>Integridad</h4>
+              <p>Actuamos con honestidad y ética en todas nuestras interacciones y decisiones.</p>
+            </div>
+          </div>
+
+          <!-- KM = Cuarto valor -->
+          <div class="section-item">
+            <div class="service-item">
+              <img src="../../imagenes/inclusividad.png" class="circle_2" />
+              <h5>Inclusividad</h5>
+              <p>Celebramos la diversidad asegurando que todas las muejeres se sientan bienvenidas.</p>
+            </div>
+          </div>
+
+          <!-- KM = Quinto valor -->
+          <div class="section-item">
+            <div class="service-item">
+              <img src="../../imagenes/empoderamiento.png" class="circle" />
+              <h4>Empoderamiento</h4>
+              <p>Promovemos la confianza, autonomía y fortaleza de cada mujer para que tome el control de su vida y
+                decisiones.</p>
+            </div>
+          </div>
+
+          <!-- KM = Sexto valor -->
+          <div class="section-item">
+            <div class="service-item">
+              <img src="../../imagenes/escucha.png" class="circle_2" />
+              <h5>Escucha activa</h5>
+              <p>Creemos en la importancia de escuchar con empatía, sin juzgar, validando las experiencias de cada
+                mujer.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- KM :  Fin de los valores que defendemos-->
+
+  <!-- KM :  Mesajes de apoyo -->
+  <section class="apoyo-section">
+    <div class="section-header_apoyo">
+      <div id="scroll-apoyo" class="scroll-anchor"></div>
+      <h2 class="section-title_apoyo">Mensajes de apoyo</h2>
+    </div>
+
+    <!-- KM = Primer mensaje de apoyo -->
+    <div class="apoyo-container">
+      <div class="apoyo-card" style="background-image: url('../../imagenes/juntas_podemos.png');">
+        <div class="inner-frame">
+          <div class="text-box">
+            <p>Recuerda que no estás sola. Eres valiente, poderosa y mereces una vida libre de miedo. Estamos contigo,
+              ahora y siempre.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KM = Segundo mensaje de apoyo -->
+      <div class="apoyo-card" style="background-image: url('../../imagenes/por_todas.png');">
+        <div class="inner-frame">
+          <div class="text-box">
+            <p>Cada paso hacia tu bienestar es una victoria. Aquí estamos para apoyarte.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- KM = Tercer mensaje de apoyo -->
+      <div class="apoyo-card" style="background-image: url('../../imagenes/siempre_juntas.png');">
+        <div class="inner-frame">
+          <div class="text-box">
+            <p>Tus experiencias no definen quién eres. Eres dueña de tu destino.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- KM : Terminacion de mensajes de apoyo! -->
+
+  <!-- KM = Politicas de la pagina, proximamente agregamos más -->
+  <section class="glide">
+    <div class="poli-container">
+      <div id="poli" class="scroll-policia"></div>
+      <header>
+        <div class="titulo-poli">Políticas de la página</div>
+      </header>
+
+      <!-- KM = Botones para navegar -->
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <span class="arrow_poli">&lt;</span>
+        </button>
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          <span class="arrowed_poli">&gt;</span>
+        </button>
+      </div>
+
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+
+          <!-- KM = Primera politica -->
+          <li class="glide__slide">
+            <div class="slide-content">
+              <img src="../../imagenes/conficialidad.png" alt="Imagen de confidencialidad">
+              <h3>Confidencialidad y privacidad</h3>
+              <p>Cuidamos tu información con respeto. Cada historia será tratada con privacidad y responsabilidad.</p>
+              <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+            </div>
+          </li>
+
+          <!-- KM = Segunda politica -->
+          <li class="glide__slide">
+            <div class="slide-content">
+              <img src="../../imagenes/tranparente.png" alt="Imagen de rendicion de cuentas">
+              <h3>Transparencia y rendición de cuentas</h3>
+              <p>Actuamos con claridad y honestidad. Informamos con responsabilidad sobre nuestros servicios y
+                decisiones.</p>
+              <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+            </div>
+          </li>
+
+          <!-- KM = Tercera politica -->
+          <li class="glide__slide">
+            <div class="slide-content">
+              <img src="../../imagenes/inclusidad.png" alt="Imagen de tolerancia">
+              <h3>Cero tolerancia a la discriminación</h3>
+              <p>Aquí todas son bienvenidas. No se permite discriminación por género, edad u origen.</p>
+              <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+            </div>
+          </li>
+
+          <!-- KM = Cuarta politica -->
+          <li class="glide__slide">
+            <div class="slide-content">
+              <img src="../../imagenes/mejora.png" alt="Imagen de mejoras (Siempre mejoraremos la pagina)">
+              <h3>Mejora y adaptación constante</h3>
+              <p>Escuchamos a la comunidad y adaptamos nuestros recursos para crecer junto a sus necesidades.</p>
+              <a href="#" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+            </div>
+          </li>
+
+          <!-- KM = Quinta politica -->
+          <li class="glide__slide">
+            <div class="slide-content">
+              <img src="../../imagenes/compromiso.png" alt="Imagen de responsabilidad social">
+              <h3>Ética y responsabilidad social</h3>
+              <p>Nos guiamos por la ética. Nuestro compromiso es construir una sociedad justa y segura.</p>
+              <a href="#limon" onclick="mostrarMensajeProceso(event)" class="btn-read">Leer más</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- KM = Políticas de la empresa, terminado a la espera de añadir más -->
+
+  <!-- KM = Equipo de trabajo -->
+  <section class="team-section">
+    <div class="team-container">
+      <div id="arequipe" class="scroll-equipozzzz"></div>
+      <header class="section-header_equipe">
+        <h1 class="section-title_equipe">¡Conoce a nuestro equipo!</h1>
+      </header>
+      <div class="team-row">
+
+        <!-- KM = La bonita de yo! -->
+        <article class="team-item flip-card slide-content test-card">
+          <div class="card-front">
+            <figure class="team-img">
+              <img src="../../iconos/pagina_principal/logo_keren.png" alt="Keren Morgado Sierra"
+                class="rounded-circle responsive-image">
+            </figure>
+
+            <!-- KM = Informacion, nombre, rol, y redes sociales-->
+            <div class="team-info">
+              <h3>Keren Morgado Sierra</h3>
+              <h6>Encargada del frontend, backend y líder de proyecto</h6>
+              <div class="redes-container">
+                <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+                  <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+                  <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+                </a>
+                <a href="https://wa.me/qr/R3QIATUKXTMNN1" target="_blank">
+                  <img src="../../iconos/pagina_principal/wasaaaa.png" alt="Logo whassap" class="social-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- KM = Gif al seleccionar -->
+          <div class="card-back">
+            <img src="../../iconos/pagina_principal/gif_Keren.gif" alt="Animación del equipo" class="team-gif">
+          </div>
+        </article>
+
+        <!-- KM = Mi compañero Dieguito-->
+        <article class="team-item flip-card slide-content test-card">
+          <div class="card-front">
+            <figure class="team-img">
+              <img src="../../iconos/pagina_principal/logo_diego.png" alt="Diego Yovany Infante"
+                class="rounded-circle responsive-image">
+            </figure>
+
+            <!-- KM = Informacion, nombre, rol, y redes sociales-->
+            <div class="team-info">
+              <h3>Diego Yovany Infante</h3>
+              <h6>Encargado del frontend, backend y tester</h6>
+              <div class="redes-container">
+                <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+                  <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+                </a>
+                <a href="https://www.whatsapp.com/?lang=es_LA" target="_blank">
+                  <img src="../../iconos/pagina_principal/wasaaaa.png" alt="Logo whass" class="social-icon">
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- KM = Gif al darle click -->
+          <div class="card-back">
+            <img src="../../iconos/pagina_principal/gif_Diego.gif" alt="Animación del equipo" class="team-gif">
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- KM = Equipo de tranbajo finalidy -->
+
+  <!-- KM = Apartado de textimonio-->
+  <section class="testimonials-section">
+    <div id="testi" class="scroll-testi"></div>
+    <h2 class="testimonios-titulo">Testimonios</h2>
+
+    <div class="testimonios-carousel-container">
+      <div class="page" id="page-content"> </div>
+
+      <div class="controls-tes">
+        <button id="prev-tes">Anterior</button>
+        <button id="next-tes">Siguiente</button>
+      </div>
+
+      <!-- KM = Invitacion s que nos envien sus hisrtorias!!-->
+      <div class="testimonial-invite">
+        <p>
+          ¿Quieres compartir tu historia con nosotros? 💌 Tu testimonio es muy valioso y puede ayudar a muchas personas.
+          Escríbenos a
+          <a
+            href="mailto:redapoyofemenino@gmail.com?subject=Quiero%20compartir%20mi%20testimonio&body=Hola%2C%20quiero%20compartir%20mi%20historia.%0A%0APuedes%20publicarla%20como%20an%C3%B3nima%20si%20lo%20deseas.%0AEscribe%20aqui%20lo%20que%20quieras%20contar...">
+            redapoyofemenino@gmail.com
+          </a>.
+          Es completamente voluntario y, si lo deseas, puede ser anónimo 🤍.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- KM = Terminacion de testimonios-->
+
+  <!-- KM = Pie de pagina y contactos-->
+  <footer id="cont" class="footer-section">
+    <div class="footer-container">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="logo-footer">RFA</h1>
+      </a>
+
+      <!-- KM = Redes sociales de nuevo jeje -->
+      <div class="redes-container">
+        <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+          <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+        </a>
+
+        <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+          <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+        </a>
+
+        <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+          <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+        </a>
+
+        <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+          <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+        </a>
+
+        <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+          <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+        </a>
+
+        <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+          <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+        </a>
+      </div>
+
+      <!-- KM = Información de contacto y horarios -->
+      <div class="footer-info">
+
+        <!-- KM = Contactos -->
+        <section class="footer-contact">
+          <h5>Contáctanos</h5>
+          <p>Carrera 27, Sena CSET</p>
+          <p>+57 3213211436</p>
+        </section>
+
+        <div class="separator"></div>
+
+        <!-- KM =  Horarios de atención -->
+        <section class="footer-hours">
+          <h5>Horarios de atención</h5>
+          <p>Lunes – Domingo, 24 horas</p>
+          <p>Soporte: +57 3003110085</p>
+        </section>
+      </div>
+
+      <!-- KM = Información de derechos de autor-->
+      <p class="footer-copy">
+        &copy; <a href="#">Keren Daniela Morgado</a>. Todos los derechos reservados. Diseño adaptado y modificado a
+        partir de una plantilla original. <br>
+        &copy; <a href="#">© Domain</a>. . All Rights Reserved. Designed by <a href="https://htmlcodex.com"
+          target="_blank" rel="noopener noreferrer">HTML Codex</a>.
+      </p>
+    </div>
+  </footer>
+  <!-- KM = Se termino, por ahora! Puedes revisar las otras secciones :)-->
+
+  <!-- KM = Librerias y js de la pagina principal -->
+  <script src="../../libreria/pagina_principal/carrucel_2.js"></script>
+  <script src="../../libreria/pagina_principal/play.js"></script>
+  <script src="../../libreria/pagina_principal/play_2.js"></script>
+  <script src="../../libreria/pagina_principal/play_3.js"></script>
+  <script src="../../java_script/pagina_principal/inicio.js"></script>
 </body>
+
 </html>

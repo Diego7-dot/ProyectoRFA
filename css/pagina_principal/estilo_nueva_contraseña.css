@@ -1,0 +1,385 @@
+/* KM = Css de nueva contraseña (Recuperar contraseña) */
+
+/* KM = Principal paleta de colores */
+:root {
+  --rosa_claro: #f7acc6;
+  --rosa_oscuro: #f26a9a;
+  --morado_claro: #b592bd;
+  --morado_oscuro: #70338a;
+  --morado_oscuro-dos: #70338a;
+  --naranja_claro: #f4a261;
+  --naranja_oscuro: #e76f51;
+  --crema_claro: #fff9e6;
+  --crema_oscuro: #f2e4c3;
+  --durazno: #ffd6c1;
+  --lavanda: #e6d6f3;
+  --mantequilla: #fff4b8;
+  --negro: #151414;
+  --negro_cálido: #2d2a2a;
+  --gris: #868686;
+  --gris_oscuro: #3c3c3c;
+  --blanco: #ffffff;
+  --segundo-blanco: #fff;
+  --azul_claro: #a8d0e6;
+  --azul_medio: #5ea3c4;
+  --azul_oscuro: #3d5a80;
+  --azul_vibrante: #6db3f2;
+  --sombra: rgba(0, 0, 0, 0.381);
+  --sombrita: rgba(255, 255, 255, 0.773);
+  --sombre: rgba(62, 0, 55, 0.6);
+}
+
+/* KM = Colores para modo oscuro de la pagina*/
+.dark-mode {
+  --rosa_claro: #b45f7d;
+  --rosa_oscuro: #944062;
+  --morado_claro: #4a1467;
+  --morado_oscuro: #210c2b;
+  --morado_oscuro-dos: #c1a7e4;
+  --naranja_claro: #bf5c3a;
+  --naranja_oscuro: #9a3f2c;
+  --crema_claro: #3b2f2f;
+  --crema_oscuro: #2e2323;
+  --durazno: #a84f3a;
+  --lavanda: #9270c2;
+  --mantequilla: #bfa565;
+  --negro: #ffffff;
+  --negro_cálido: #ffffff;
+  --gris: #b9b6b6;
+  --gris_oscuro: #ffffff;
+  --blanco: #000;
+  --segundo-blanco: #fff;
+  --azul_claro: #3d5a80;
+  --azul_medio: #2c4462;
+  --azul_oscuro: #1a2c3d;
+  --azul_vibrante: #547bbd;
+  --sombrita: rgba(0, 0, 0, 0.074);
+  --sombra: rgba(255, 255, 255, 0.53);
+  --sombre: rgba(36, 2, 34, 0.688);
+}
+
+
+/* Carga de tipografías */
+@font-face {
+  font-family: 'Comic_Neue';
+  src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
+}
+
+/* Fondo general */
+body {
+  font-family: 'Comic_Neue', sans-serif;
+  background: var(--azul_oscuro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0 16px;
+}
+
+/* Formulario */
+form {
+  background-color: var(--blanco);
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px var(--sombre);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+/* Título */
+.titulo {
+  color: var(--azul_medio);
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+
+/* Etiquetas */
+label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  color: var(--negro);
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+h2 {
+  font-size: 20px;
+  color: var(--azul_vibrante);
+  margin-bottom: 20px;
+}
+
+/* Inputs */
+.campo {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 2px solid var(--sombre);
+  border-radius: 8px;
+  background-color: var(--segundo-blanco);
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.campo:focus {
+  outline: none;
+  border-color: var(--azul_medio);
+  box-shadow: 0 0 6px var(--sombre);
+}
+
+/* Botón */
+.botons {
+  font-family: 'Comic_Neue', sans-serif;
+  width: 100%;
+  background-color: var(--azul_oscuro);
+  color: var(--segundo-blanco);
+  border: none;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.botons:hover {
+  background-color: var(--azul_vibrante);
+}
+
+/* Mensajes */
+.mensaje-error {
+  font-size: 14px;
+  color: var(--rosa_claro);
+  margin-top: 10px;
+}
+
+.mensaje-exito {
+  font-size: 14px;
+  color: var(--naranja_claro);
+  margin-top: 10px;
+}
+
+/*KM = Campo de contraseña con icono */
+.input-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon .icon {
+  position: absolute;
+  right: 12px;
+  top: 48%;
+  /*KM = Se deja de 48 para que no quede por fuera del input */
+  transform: translateY(-50%);
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.input-icon .controls {
+  width: 100%;
+  padding: 10px 40px 10px 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid var(--gris);
+  box-sizing: border-box;
+  font-family: 'Comic_Neue', sans-serif;
+}
+
+.input-icon .controls:focus {
+  outline: none;
+  border-color: var(--morado_oscuro);
+  box-shadow: 0 0 6px var(--sombre);
+}
+
+.input-icon .icon:hover {
+  opacity: 1;
+}
+
+/* Fondo de partículas */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--azul_oscuro);
+}
+
+/* KM = Botones de modo oscuro y subidon de ...*/
+.modo-flotante {
+  position: fixed;
+  top: 8px;
+  right: 1.5rem;
+  background: var(--rosa_oscuro);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-modo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  top: 80px;
+  right: 1.5rem;
+  background: var(--morado_claro);
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.05);
+}
+
+.icono-flota {
+  width: 28px;
+  height: 28px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.error-message {
+  color: var(--rosa_claro);
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+/* Tamaño de fuente más grande para pantallas grandes */
+@media screen and (min-width: 480px) {
+
+  /* KM = Icono de modo oscuro */
+  .modo-flotante {
+    top: auto;
+    position: fixed;
+    bottom: 120px;
+    right: 1.5rem;
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icono-modo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .dark-mode .modo-flotante {
+    background: var(--negro);
+    border: 1px solid var(--lavanda_claro);
+  }
+
+  /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+  .scroll-top-btn {
+    top: auto;
+    position: fixed;
+    bottom: 210px;
+    right: 1.5rem;
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .scroll-top-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .icono-flota {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    animation: floatUpDown 4s ease-in-out infinite;
+  }
+
+  .form-recuperar {
+    width: 400px;
+    padding: 40px;
+  }
+
+  .form-recuperar .titulo {
+    font-size: 28px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 768px) {
+  h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .botons {
+    font-size: 16px;
+  }
+
+  label {
+    font-size: 16px;
+  }
+}

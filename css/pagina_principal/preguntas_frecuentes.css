@@ -1,192 +1,456 @@
- /*KM = Css de preguntas frecuentes */
+/* Css de preguntas grecuentes */
 
-/*KM = Paleta de colores */
+/* KM = Principal paleta de colores */
 :root {
-    --rosa_claro: #F1C6D6;
-    --rosa_viejo: #D88C9B;
-    --lavanda_claro: #B4A7D6;
-    --purpura_oscuro: #6A3D7B;
-    --morado_oscuro: #2A0A42;
-    --rosa_oscuro: #9B4D5D;
-    --dorado: #CFAF70;
-    --gris_claro: #D1D1D1;
-    --gris_oscuro: #8b8787;
-    --rosa_polvito: #D8A7B1;
-    --verde: #A8B9A3;
-    --azul: #3E4A6D;
-    --crema: #F0E2C6;
-    --blanco: #fff;
-    --negro: #000;
-    --rojo_claro: #b03a2e;
+    --rosa_claro: #f7acc6;
+    --rosa_oscuro: #f26a9a;
+    --morado_claro: #b592bd;
+    --morado_oscuro: #70338a;
+    --morado_oscuro-dos: #70338a;
+    --naranja_claro: #f4a261;
+    --naranja_oscuro: #e76f51; 
+    --crema_claro: #fff9e6;
+    --crema_oscuro: #f2e4c3;
+    --durazno: #ffd6c1;
+    --lavanda: #e6d6f3;
+    --mantequilla: #fff4b8;
+    --negro: #151414;
+    --negro_cálido: #2d2a2a;
+    --gris: #868686;
+    --gris_oscuro: #3c3c3c;
+    --blanco: #ffffff;
+    --segundo-blanco: #fff;
+    --sombra: rgba(0, 0, 0, 0.381);   
+    --sombrita: rgba(255, 255, 255, 0.773);  
+    --sombre: rgba(62, 0, 55, 0.6);
   }
-  
-  /*KM = Carga de tipografías */
-  @font-face {
-    font-family: 'Chewy'; 
+    
+  /* KM = Colores para modo oscuro de la pagina*/
+  .dark-mode {
+    --rosa_claro: #b45f7d;     
+    --rosa_oscuro: #944062;    
+    --morado_claro: #4a1467;
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro: #210c2b; 
+    --morado_oscuro-dos: #c1a7e4; 
+    --naranja_claro: #bf5c3a;  
+    --naranja_oscuro: #9a3f2c; 
+    --crema_claro: #3b2f2f;    
+    --crema_oscuro: #2e2323;    
+    --durazno: #a84f3a;        
+    --lavanda: #9270c2;       
+    --mantequilla: #bfa565;   
+    --negro: #ffffff;            
+    --negro_cálido: #f7f7f7;    
+    --gris: #d6d6d6;           
+    --gris_oscuro: #aaaaaa;
+    --blanco: #000;
+    --segundo-blanco: #fff;  
+    --sombrita: rgba(0, 0, 0, 0.074)15;   
+    --sombra: rgba(255, 255, 255, 0.53); 
+    --sombre: rgba(36, 2, 34, 0.688);   
+  }
+
+/* KM = Cargue de tipografia */
+@font-face {
+    font-family: 'Chewy';
     src: url('../../libreria/tipografia/Chewy/Chewy-Regular.ttf') format('truetype');
-  }
-  
-  @font-face {
+}
+@font-face {
     font-family: 'Comic_Neue';
     src: url('../../libreria/tipografia/Comic_Neue/ComicNeue-Regular.ttf') format('truetype');
-  }
-  
-  @font-face {
-    font-family: 'Shadows_Into_Light'; 
+}
+@font-face {
+    font-family: 'Shadows_Into_Light';
     src: url('../../libreria/tipografia/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf') format('truetype');
-  }
+}
 
-/* KM =  Estilo general de la pagina*/
+/* KM = General */
 body {
-    font-family: "Comic_Neue", sans-serif;
-    background-color: var(--color-fondo);
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: 'Comic_Neue', sans-serif;
+  background-color: var(--blanco);
+  margin: 1rem;
+  padding: 20px;
+  font-size: 14;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: flex-start;
 }
 
-/* KM = Titulo principal */
+/* KM = Titulo */
 .titulo {
-    font-size: 28px;
-    color: var(--morado_oscuro);
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--morado_oscuro-dos);
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
-/* KM = Texto de como usar los botones o finalidad del modulo */
+/* KM = Introduccion */
 .texto-intro {
-    font-size: 16px;
-    color: var(--negro);
-    text-align: left;
-    max-width: 600px;
-    margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--negro);
+  text-align: left;
+  margin-bottom: 20px;
 }
-/* 📌 Contenedor de Categorías */
+
+.texto-intro a {
+  color: var(--morado_oscuro-dos);
+}
+
+/* KM = Categorías */
 .categorias {
-    display: flex;
-    flex-direction: column; /* Asegura que los botones queden uno debajo del otro */
-    align-items: flex-start; /* Alinea los botones a la izquierda */
-    gap: 10px; /* Espaciado entre botones */
-    margin-bottom: 20px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
 }
 
-/* 📌 Estilo de cada categoría (botón tipo radio) */
 .categoria {
-    background-color: var(--blanco);
-    color: var(--morado_oscuro);
-    padding: 12px 15px;
-    border-radius: 20px; /* Hace los bordes más redondeados */
-    cursor: pointer;
-    font-size: 16px;
-    border: 2px solid transparent; /* Borde invisible para evitar cambios de tamaño */
-    text-align: left; /* Asegura que el texto quede alineado */
-    width: 100%; /* Ocupará todo el ancho disponible */
-    transition: background 0.3s, border 0.3s, transform 0.2s ease-in-out;
+  font-family: 'Comic_Neue', sans-serif;
+  background-color: var(--blanco);
+  color: var(--morado_oscuro-dos);
+  font-weight: bold;
+  border: 2px solid var(--morado_oscuro);
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left; 
+  width: 100%;
 }
 
-/* 📌 Efecto al pasar el mouse */
-.categoria:hover {
-    background-color: var(--color-hover);
-    transform: scale(1.03);
-}
-
-/* 📌 Estilo para la categoría activa (cuando se selecciona) */
+.categoria:hover,
 .categoria.activa {
-    background-color: var(--color-primario);
-    border: 2px solid var(--color-hover); /* Hace que resalte */
-    font-weight: bold;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
+  background-color: var(--lavanda);
+  color: var(--negro);
 }
 
-
-/* 📌 Contenedor de Preguntas */
+/* KM = Preguntas */
 .preguntas {
-    width: 100%;
-    max-width: 700px;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 .contenedor-preguntas {
-    display: none;
-    margin-top: 10px;
-    background: var(--color-blanco);
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Comic_Neue', sans-serif;
+  display: none;
+  background: var(--blanco);
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px var(--sombra);
+  padding: 20px;
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
 .contenedor-preguntas.activo {
-    display: block;
-    animation: fadeIn 0.3s ease-in-out;
+  display: block;
+  animation: fadeIn 0.5s ease;
 }
 
-/* 📌 Preguntas */
 .contenedor-pregunta {
-    border-bottom: 1px solid var(--color-borde);
-    padding: 10px 0;
+  border-bottom: 1px solid var(--gris_oscuro);
+  padding: 12px 0;
 }
 
 .pregunta {
-    font-size: 16px;
-    font-weight: bold;
-    color: var(--color-texto);
-    background: none;
-    border: none;
-    width: 100%;
-    text-align: left;
-    cursor: pointer;
-    padding: 10px;
-    transition: color 0.3s;
+  font-family: 'Comic_Neue', sans-serif;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  color: var(--morado_oscuro-dos);
+  cursor: pointer;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  transition: color 0.3s;
+}
+
+.pregunta {
+  color: var(--rosa_oscuro);
 }
 
 .pregunta:hover {
-    color: var(--color-hover);
+  color: var(--rosa_oscuro);
 }
 
-/* 📌 Respuestas (Ocultas por defecto) */
+.redes-sociales a {
+  color: var(--morado_oscuro-dos); 
+  text-decoration: none;
+  font-weight: bold;
+}
+  
+.redes-sociales a:hover {
+  color: var(--rosa_oscuro); 
+  text-decoration: underline; 
+}
+
+/* KM = Respuesta */
 .respuesta {
-    font-size: 14px;
-    color: var(--color-texto);
-    padding: 5px 10px;
-    display: none;
+  display: none;
+  padding: 10px 0 10px 20px;
+  font-size: 14px;
+  color: var(--gris_oscuro);
+  text-align: left;
 }
 
-/* 📌 Animación al abrir respuestas */
 .pregunta[aria-expanded="true"] + .respuesta {
-    display: block;
-    animation: fadeIn 0.3s ease-in-out;
+  display: block;
+  animation: fadeIn 0.5s ease;
 }
 
-/* 📌 Animación de aparición */
+/* KM = Animación */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-5px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* 📌 Responsive - Mobile First */
-@media screen and (min-width: 768px) {
-    .preguntas {
-        max-width: 700px;
-    }
-    .titulo {
-        font-size: 32px;
-    }
+/* KM = Botón de volver */
+.btn-glow {
+  display: inline-block;
+  margin-top: 0.5rem; 
+  font-size: 14px;
+  color: var(--morado_oscuro-dos);
+  text-decoration: underline;
+  font-weight: bold;
+  text-align: left;
+  transition: background-color 0.3s;
 }
 
-@media screen and (min-width: 950px) {
-    .preguntas {
-        max-width: 900px;
-    }
-    .titulo {
-        font-size: 36px;
-    }
+.btn-glow:hover {
+  background-color: var(--lavanda);
+  color: var(--negro);
 }
+
+/* KM = Mensaje de modos en proceso! */
+.mensaje-proceso {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 9999;
+}
+  
+.mensaje-proceso.show::after {
+  content: '¡En proceso de elaboración!'; 
+  background-color: var(--naranja_claro);
+  color: var(--blanco);
+  padding: 1.2rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px var(--sombra);
+  opacity: 1;
+  animation: fadeInOut 3s ease;
+}
+  
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  10% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+  
+/* KM = Icono de modo oscuro */
+.modo-flotante {
+  position: fixed;
+  bottom: 130px;
+  right: 1.5rem; 
+  background: var(--rosa_oscuro);
+  border: none;
+  border-radius: 50%;
+  width: 65px;
+  height: 65px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 6px 16px var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  
+.icono-modo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none;
+}
+  
+.dark-mode .modo-flotante {
+  background: var(--negro);
+  border: 1px solid var(--lavanda_claro);
+}
+
+/* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 240px;
+  right: 1.5rem; 
+  background: var(--morado_claro);
+  border: none;
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 6px 16px var(--sombra);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+  
+.scroll-top-btn:hover {
+  transform: scale(1.1);
+}
+  
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+  
+.icono-flota {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  pointer-events: none;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+/*KM = Móviles más grandes */
+@media screen and (min-width: 480px) {
+    .titulo {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+      
+      .texto-intro {
+        font-size: 14px;
+      }
+      
+      .categoria {
+        font-size: 14px;
+      }
+      
+      .pregunta {
+        font-size: 14px;
+      }
+      
+      .respuesta {
+        font-size: 14px;
+      }
+      
+      .btn-glow {
+        font-size: 16px;
+      }
+      
+      .modo-flotante {
+        font-size: 2rem;
+      }
+      
+      .scroll-top-btn {
+        font-size: 2rem;
+      }      
+  }
+  
+  /*KM = Tablets */
+  @media screen and (min-width: 768px) {
+    .titulo {
+        font-size: 24px;
+      }
+      
+      .texto-intro {
+        font-size: 14px;
+      }
+      
+      .categoria {
+        font-size: 14px;
+      }
+      
+      .pregunta {
+        font-size: 14px;
+      }
+      
+      .respuesta {
+        font-size: 14px;
+      }
+      
+      .btn-glow {
+        font-size: 16px;
+      }
+      
+      .modo-flotante {
+        font-size: 2rem;
+      }
+      
+      .scroll-top-btn {
+        font-size: 2rem;
+      }      
+  }
+  
+  /*KM = Escritorio */
+  @media screen and (min-width: 950px) {
+    .titulo {
+        font-size: 28px;
+      }
+      
+      .texto-intro {
+        font-size: 16px;
+      }
+      
+      .categoria {
+        font-size: 16px;
+      }
+      
+      .pregunta {
+        font-size: 16px;
+      }
+      
+      .respuesta {
+        font-size: 16px;
+      }
+      
+      .btn-glow {
+        font-size: 20px;
+      }
+      
+      .modo-flotante {
+        font-size: 2rem;
+      }
+      
+      .scroll-top-btn {
+        font-size: 2rem;
+      }      
+  }

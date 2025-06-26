@@ -1,50 +1,46 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const categorias = document.querySelectorAll('.categoria');
-    const contenedoresPreguntas = document.querySelectorAll('.contenedor-preguntas');
+  // Js de preguntas frecuentes
+
+  document.addEventListener('DOMContentLoaded', function () {
+  const categorias = document.querySelectorAll('.categoria');
+  const contenedoresPreguntas = document.querySelectorAll('.contenedor-preguntas');
     
-    let categoriaActiva = null;
+  let categoriaActiva = null;
 
-    // Ocultar todas las preguntas al inicio
-    contenedoresPreguntas.forEach(contenedor => {
-        contenedor.style.display = 'none';
-    });
+  contenedoresPreguntas.forEach(contenedor => {
+    contenedor.style.display = 'none';
+  });
 
-    categorias.forEach(categoria => {
-        categoria.addEventListener('click', function () {
-            const categoriaSeleccionada = this.getAttribute('data-categoria');
-            const preguntasAsociadas = document.querySelector(`.contenedor-preguntas[data-categoria="${categoriaSeleccionada}"]`);
+  categorias.forEach(categoria => {
+    categoria.addEventListener('click', function () {
+        const categoriaSeleccionada = this.getAttribute('data-categoria');
+        const preguntasAsociadas = document.querySelector(`.contenedor-preguntas[data-categoria="${categoriaSeleccionada}"]`);
 
-            // Si la categoría seleccionada ya está activa, la ocultamos
-            if (categoriaActiva === categoriaSeleccionada) {
-                preguntasAsociadas.style.display = 'none';
-                categoriaActiva = null;
-                return;
-            }
+        
+        if (categoriaActiva === categoriaSeleccionada) {
+            preguntasAsociadas.style.display = 'none';
+            categoriaActiva = null;
+            return;
+        }
 
-            // Ocultar todas las preguntas antes de mostrar la seleccionada
-            contenedoresPreguntas.forEach(contenedor => {
-                contenedor.style.display = 'none';
-            });
+        contenedoresPreguntas.forEach(contenedor => {
+            contenedor.style.display = 'none';
+        });
 
-            // Mostrar preguntas debajo del botón de la categoría seleccionada
-            preguntasAsociadas.style.display = 'block';
-            preguntasAsociadas.classList.add('expandido');
+        preguntasAsociadas.style.display = 'block';
+        preguntasAsociadas.classList.add('expandido');
 
-            // Mover dinámicamente la sección de preguntas debajo de la categoría
-            categoria.insertAdjacentElement('afterend', preguntasAsociadas);
+        categoria.insertAdjacentElement('afterend', preguntasAsociadas);
 
-            // Actualizar la categoría activa
-            categoriaActiva = categoriaSeleccionada;
+        categoriaActiva = categoriaSeleccionada;
         });
     });
 
-    // Evento para mostrar/ocultar respuestas dentro de cada categoría
+    // KM = Mostrar cada categoria o ocultarla
     document.addEventListener('click', function (event) {
         if (event.target.classList.contains('pregunta')) {
             const respuesta = event.target.nextElementSibling;
             const estaAbierta = event.target.getAttribute('aria-expanded') === 'true';
 
-            // Cerrar todas las respuestas antes de abrir la nueva
             document.querySelectorAll('.respuesta').forEach(resp => {
                 resp.style.maxHeight = null;
             });
@@ -53,11 +49,49 @@ document.addEventListener('DOMContentLoaded', function () {
                 p.setAttribute('aria-expanded', 'false');
             });
 
-            // Si la respuesta no estaba abierta, la abre
             if (!estaAbierta) {
                 event.target.setAttribute('aria-expanded', 'true');
                 respuesta.style.maxHeight = respuesta.scrollHeight + 'px';
             }
         }
     });
+
+  // KM =  Modo oscuro
+  const btnModo = document.getElementById("modo-toggle");
+  const iconoModo = document.getElementById("icono-modo");
+
+  btnModo.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+  // KM = Cambiar ícono según el modo ya sea oscuro a luz y viceversa
+  const modoOscuroActivo = document.body.classList.contains("dark-mode");
+
+  iconoModo.src = modoOscuroActivo
+    ? "../../iconos/pagina_principal/sol.png" 
+    : "../../iconos/pagina_principal/luna.png";
+
+  iconoModo.alt = modoOscuroActivo ? "Modo claro" : "Modo oscuro";
+  });
+
+  // KM = Scroll para subir al incio de la pagina
+  const scrollTopBtn = document.getElementById('btnScrollTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      scrollTopBtn.classList.add('visible');
+    } else {
+      scrollTopBtn.classList.remove('visible');
+    }
+  });
+
+  scrollTopBtn.addEventListener('click', () => {
+    const scrollStep = -window.scrollY / 60; 
+    const scrollInterval = setInterval(() => {
+      if (window.scrollY !== 0) {
+        window.scrollBy(0, scrollStep);
+      } else {
+        clearInterval(scrollInterval);
+      }
+    }, 16);
+  });
 });

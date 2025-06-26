@@ -1,18 +1,63 @@
-/* CSS del recuperar contraseña */
+/* CSS del recuperar contraseña de usuario y persona de apoyo */
 
-/* Paleta de colores */
+/* KM = Principal paleta de colores */
 :root {
-  --rosa_claro: #F1C6D6;
-  --lavanda_claro: #B4A7D6;
-  --purpura_oscuro: #6A3D7B;
-  --morado_oscuro: #2A0A42;
-  --rosa_oscuro: #9B4D5D;
-  --gris_claro: #D1D1D1;
-  --gris_oscuro: #8b8787;
-  --verde: #A8B9A3;
-  --rojo_claro: #b03a2e;
-  --blanco: #fff;
+  --rosa_claro: #f7acc6;
+  --rosa_oscuro: #f26a9a;
+  --morado_claro: #b592bd;
+  --morado_oscuro: #70338a;
+  --morado_oscuro-dos: #70338a;
+  --naranja_claro: #f4a261;
+  --naranja_oscuro: #e76f51;
+  --crema_claro: #fff9e6;
+  --crema_oscuro: #f2e4c3;
+  --durazno: #ffd6c1;
+  --lavanda: #e6d6f3;
+  --mantequilla: #fff4b8;
+  --negro: #151414;
+  --negro_cálido: #2d2a2a;
+  --gris: #868686;
+  --gris_oscuro: #3c3c3c;
+  --blanco: #ffffff;
+  --segundo-blanco: #fff;
+   --azul_claro: #a8d0e6;     
+  --azul_medio: #5ea3c4;     
+  --azul_oscuro: #3d5a80; 
+  --azul_vibrante: #6db3f2; 
+  --sombra: rgba(0, 0, 0, 0.381);
+  --sombrita: rgba(255, 255, 255, 0.773);
+  --sombre: rgba(62, 0, 55, 0.6);
 }
+
+/* KM = Colores para modo oscuro de la pagina*/
+.dark-mode {
+  --rosa_claro: #b45f7d;
+  --rosa_oscuro: #944062;
+  --morado_claro: #4a1467;
+  --morado_oscuro: #210c2b;
+  --morado_oscuro-dos: #c1a7e4;
+  --naranja_claro: #bf5c3a;
+  --naranja_oscuro: #9a3f2c;
+  --crema_claro: #3b2f2f;
+  --crema_oscuro: #2e2323;
+  --durazno: #a84f3a;
+  --lavanda: #9270c2;
+  --mantequilla: #bfa565;
+  --negro: #ffffff;
+  --negro_cálido: #ffffff;
+  --gris: #b9b6b6;
+  --gris_oscuro: #ffffff;
+  --blanco: #000;
+  --segundo-blanco: #fff;
+  --azul_claro: #3d5a80;
+  --azul_medio: #2c4462;
+  --azul_oscuro: #1a2c3d;
+  --azul_vibrante: #547bbd;
+  --sombrita: rgba(0, 0, 0, 0.074);
+  --sombra: rgba(255, 255, 255, 0.53);
+  --sombre: rgba(36, 2, 34, 0.688);
+}
+
 
 /* Carga de tipografías */
 @font-face {
@@ -23,7 +68,7 @@
 /* Estilo general de la página */
 body {
   font-family: "Comic_Neue", sans-serif;
-  background-color: var(--lavanda_claro);
+  background-color: var(--azul_claro);
   margin: 0;
   padding: 18px;
   display: flex;
@@ -48,7 +93,7 @@ body {
 .form-recuperar .titulo {
   font-size: 26px;
   font-weight: bold;
-  color: var(--purpura_oscuro);
+  color: var(--azul_medio);
   text-align: center;
   display: block;
   margin-bottom: 12px;
@@ -59,14 +104,15 @@ body {
   display: block;
   text-align: left;
   font-size: 14px;
-  color: var(--morado_oscuro);
+  color: var(--negro);
   margin-bottom: 6px;
   font-weight: bold; 
 }
 
 fieldset legend {
   font-size: 14px; 
-  font-weight: bold; 
+  font-weight: bold;
+  color: var(--negro); 
   text-align: left; 
   margin-bottom: 4px; 
 }
@@ -81,7 +127,7 @@ fieldset {
 .controls {
   width: 100%;
   font-family: "Comic_Neue", sans-serif;
-  background: var(--blanco);
+  background: var(--segundo-blanco);
   padding: 9px;
   border-radius: 4px;
   margin-bottom: 12px;
@@ -100,12 +146,12 @@ fieldset {
 /* Botón principal */
 .form-recuperar .botons {
   width: 100%;
-  background: var(--purpura_oscuro);
+  background: var(--azul_medio);
   font-family: "Comic_Neue", sans-serif;
   border-radius: 4px;
   border: none;
   padding: 12px;
-  color: var(--blanco);
+  color: var(--segundo-blanco);
   font-size: 16px;
   cursor: pointer;
   margin-top: 10px;
@@ -117,7 +163,7 @@ fieldset {
 
 /* Links */
 .form-recuperar a {
-  color: var(--purpura_oscuro);
+  color: var(--azul_oscuro);
   text-decoration: underline;
   font-size: 14px;
 }
@@ -142,11 +188,11 @@ fieldset {
 }
 
 .mensaje-exito {
-  color: var(--verde);
+  color: var(--rosa_claro);
 }
 
 .mensaje-error {
-  color: var(--rojo_claro);
+  color: var(--rosa_oscuro);
 }
 
 /* Fondo de partículas */
@@ -157,11 +203,153 @@ fieldset {
   top: 0;
   left: 0;
   z-index: -1;
-  background-color: var(--lavanda_claro);
+  background-color: var(--azul_claro);
+}
+
+/* KM = Botones de modo oscuro y subidon de ...*/
+.modo-flotante {
+  position: fixed;
+  top: 8px;
+  right: 1.5rem;
+  background: var(--rosa_oscuro);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icono-modo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.scroll-top-btn {
+  position: fixed;
+  top: 80px;
+  right: 1.5rem;
+  background: var(--morado_claro);
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  transform: scale(1.05);
+}
+
+.icono-flota {
+  width: 28px;
+  height: 28px;
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.error-message {
+  color: var(--rosa_claro);
+  font-size: 13px;
+  margin-bottom: 6px;
+  display: block;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 /* Tamaño de fuente más grande para pantallas grandes */
 @media screen and (min-width: 480px) {
+  /* KM = Icono de modo oscuro */
+  .modo-flotante {
+    top: auto;
+    position: fixed;
+    bottom: 120px;
+    right: 1.5rem;
+    background: var(--rosa_oscuro);
+    border: none;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icono-modo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  .dark-mode .modo-flotante {
+    background: var(--negro);
+    border: 1px solid var(--lavanda_claro);
+  }
+
+  /* KM = Scroll para poder subir al momento de bajar XD (Esa descripcion jajaja pero no se me ocurre nada mas) */
+  .scroll-top-btn {
+    top: auto;
+    position: fixed;
+    bottom: 210px;
+    right: 1.5rem;
+    background: var(--morado_claro);
+    border: none;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 6px 16px var(--sombra);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  .scroll-top-btn:hover {
+    transform: scale(1.1);
+  }
+
+  .scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .icono-flota {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    pointer-events: none;
+    animation: floatUpDown 4s ease-in-out infinite;
+  }
+  
   .form-recuperar {
     width: 400px;
     padding: 40px;

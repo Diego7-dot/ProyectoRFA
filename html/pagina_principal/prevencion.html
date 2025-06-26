@@ -1,274 +1,355 @@
-<!--Prevencion: Red femenina de apoyo-->
+<!--***********************************************************************-->
+<!-- Señales de alerta: Red femenina de apoyo -->
+<!--
+  La siguiente plantilla fue modificada y adaptada por Keren Daniela Morgado
+  Todos los derechos reservados a HTML Codex (https://htmlcodex.com)
+  Plantilla original: Ice Cream Shop Website Template
+  Enlace a la plantilla: https://htmlcodex.com/ice-cream-shop-website-template
+-->
+<!--***********************************************************************-->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <title>RFA-Prevención</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
-
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+  <!--KM = Permitir caracteres especiales :)-->
+  <meta charset="utf-8">
+  <!--KM = Referente del buscador-->
+  <title>Red Feminina de Apoyo</title>
+  <!--KM = Diseño responsivo-->
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!--KM = Icono-->
+  <link href="../../iconos/pagina_principal/logo_fem_icon.png" rel="icon">
+  <!--KM = CSS principal y una libreria-->
+  <link href="../../css/pagina_principal/estilo_prevencion.css" rel="stylesheet">
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-primary py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-lg-left mb-2 mb-lg-0">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="btn btn-light text-primary mx-2" href="login.html">Inicio sesion</a>
-                        <span class="text-white">|</span>
-                        <a class="btn btn-light text-primary mx-2" href="register.html">Registro</a>
-                        <span class="text-white">|</span>
-                        <a class="text-white pl-3" href="faQ.html">Preguntas frecuentes</a>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center text-lg-right">
-                    <div class="d-inline-flex align-items-center">
-                        <a class="text-white px-3" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://x.com/mujeryfuturo1?lang=es" target="_blank">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                            <i class="fas fa-balance-scale"></i>
-                        </a>
-                        <a class="text-white px-3" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="text-white pl-3" href="https://www.youtube.com/watch?v=OGpWtBKtY2E" target="_blank">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
+  <!--KM = Mensaje de procesos, la pagina sigue en actualizaciones -->
+  <div id="mensaje-proceso" class="mensaje-proceso"></div>
+
+  <!--KM = Modo oscuro-->
+  <button id="modo-toggle" class="modo-flotante">
+    <img id="icono-modo" class="icono-modo" src="../../iconos/pagina_principal/luna.png" alt="Modo oscuro"/>
+  </button>
+
+  <!--KM = Subir por scroll -->
+  <button id="btnScrollTop" class="scroll-top-btn" title="Volver arriba">
+    <img id="icono-flota" class="icono-flota" src="../../iconos/pagina_principal/flotando.png" alt="Subir"/>
+  </button>
+
+  <!--KM = ChatBot (Alma)-->
+  <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+  <script src="https://files.bpcontent.cloud/2025/02/20/15/20250220153220-BMQ0282N.js"></script>
+
+  <!-- KM = Barra superior (Contiene inicio de sesion, registro, preguntas frecuntes y redes sociales)-->
+  <header class="contenedor_barra">
+    <div class="container">
+      <div class="acomodar_barra">
+
+        <!-- KM = Adaptabilidad para dispositivos moviles -->
+        <div class="enlaces_y_sociales">
+          
+          <!--  KM = Muestra de los botones -->
+          <div class="enlaces-top">
+            <a class="btn-inicio-registro" href="inicio_sesion.html">Inicio sesión</a>
+            <span class="separador">|</span>
+            <a class="btn-inicio-registro" href="registro_usuario.html">Registro</a>
+            <span class="separador">|</span>
+            <a class="preguntas-fre" href="preguntas.html">Preguntas</a>
+            <a class="preguntas_pc" href="preguntas.html">Preguntas frecuentes</a>
+          </div>
+          <!-- Fila inferior: redes sociales -->
+          <div class="redes-container">
+            <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+              <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+            </a>
+
+            <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+              <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+            </a>
+
+            <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+              <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+            </a>
+
+            <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+              <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+            </a>
+
+            <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+              <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+            </a>
+
+            <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+              <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+            </a>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Topbar End -->
+  </header>
 
+  <!--KM = Barra de navegacion, para el mobil-->
+  <nav class="secondary-menu">
+    <a href="index.html" class="logo-movil">
+      <h1 class="logo-texto_mobi">RFA</h1>
+    </a>
 
-    <!-- Navbar Start -->
-    <div class="container-fluid position-relative nav-bar p-0">
-        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
-            <nav class="navbar navbar-expand-lg bg-white navbar-light shadow p-lg-0">
-                <a href="index.html" class="navbar-brand d-block d-lg-none">
-                    <h1 class="m-0 display-4 text-primary"><span class="text-secondary"></span>RFA</h1>
-                </a>
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav ml-auto py-0">
-                        <a href="recursos.html" class="nav-item nav-link">Recursos de apoyo</a>
-                        <a href="consultar.html" class="nav-item nav-link">Información legal</a>
-                        <a href="product.html" class="nav-item nav-link">Eventos</a>
-                    </div>
-                    <a href="index.html" class="navbar-brand mx-5 d-none d-lg-block">
-                        <h1 class="m-0 display-4 text-primary"><span class="text-secondary">RFA</span></h1>
-                    </a>
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="service.html" class="nav-item nav-link">Prevención</a>
-                        <a href="gallery.html" class="nav-item nav-link">Testimonios</a>
-                        <a href="contact.html" class="nav-item nav-link">Espacio joven</a>
-                    </div>
-                </div>
-            </nav>
+    <!-- KM = hamburguesa personalizado -->
+    <button type="button" class="boton-menu hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- KM = Contenido del menu desplegable en mobil -->
+    <div class="menu colapsable" id="menu-navegacion">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </nav>
+  
+  <!--KM = Barra de navegacion para escritorio-->
+  <div class="menu-escritorio">
+    <div class="menu-izquierda">
+      <a href="recursos_apoyo.html" class="enlace-nav">Recursos de apoyo</a>
+      <a href="informacion_legal.html" class="enlace-nav">Información legal</a>
+      <a href="eventos.html" class="enlace-nav">Eventos</a>
+    </div>
+    <a href="index.html" class="logo-escritorio">
+      <h1 class="logo-texto">RFA</h1>
+    </a>
+    <div class="menu-derecha">
+      <a href="testimonios.html" class="enlace-nav">Testimonios</a>
+      <a href="prevencion.html" class="enlace-nav">Señales de alerta</a>
+      <a href="espacio_joven.html" class="enlace-nav">Espacio joven</a>
+    </div>
+  </div>
+  <!--KM =  Fin de la segunda barra de navegacion -->
+
+  <!-- KM = Imagenes de presentacion, version mobil-->
+  <section class="imagen-estatica imagen-movil">
+    <div class="contenedor-banner">
+        <img src="../../imagenes/señal_alerta.png" alt="Descripción de la imagen" class="imagen-banner">
+        <div class="texto-superpuesto">
+          <h4>Señales de alerta</h4>
+          <h1>Reconoce los signos, protege tu bienestar</h1>
+          <a href="#señal" class="btn-primary">Leer más</a>
         </div>
+      </div>
+    <!-- KM = Invitacion para el chatbot y registrarse-->
+    <div class="chatbot-invitation_mobi">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
     </div>
-    <!-- Navbar End -->
+  </section>
+  
+  <!-- KM = Imagen presentacion version escritorio -->
+  <section class="imagen-estatica-pc imagen-escritorio">
+    <div class="contenedor-banner-pc">
+    <img src="../../imagenes/alerta_pc.png" alt="Imagen de mujer alentada por otras" class="imagen-banner-pc">
+    <div class="texto-superpuesto-pc">
+      <h4>Señales de alerta</h4>
+      <h1>Reconoce los signos, protege tu bienestar</h1>
+      <a href="#señal" class="btn-primary">Leer más</a>
+    </div>
+    <div class="chatbot-invitation">
+      <p>¿Tienes alguna duda? ¡Habla con <strong>Alma</strong>, nuestro chatbot, y obtén toda la información que necesitas! (La encontrarás en la parte inferior derecha de la página.)</p>
+      <p>Además, <a href="registro_usuario.html" class="btn-secondary">regístrate</a> para recibir un asesoramiento más personalizado de nuestro equipo de apoyo, siempre dispuesto a resolver tus consultas y brindarte el apoyo que necesites.</p>
+    </div>
+   </div>
+  </section>
+  <!-- KM = Fin de las imagenes -->
 
-     <!-- Header Start -->
-     <div class="jumbotron jumbotron-fluid page-header" style="margin-bottom: 90px; background-image: url('img/preve_index.jpg'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; height: 800px;">
-        <div class="container text-center py-5">
-            <h1 class="text-white display-3 mt-lg-5">Prevención</h1>
+  <!-- KM = Este mensaje ahora hace la funcion de espera -->
+  <div class="secciones-principales">
+  <section id="limon" class="contenedor-padre">
+    <div class="contenedor-respirando">
+      <h2 class="titulo">Reconocer es el primer paso</h2>
+      <div class="fila-texto-imagen">
+        
+        <!-- KM = Introduccion, sujera a cambios -->
+        <div class="contenedor-texto">
+          <p class="parrafo">
+            En <strong>Red Femenina de Apoyo</strong> creemos que identificar las señales de alerta puede salvar vidas y abrir caminos hacia la protección y el bienestar.
+          </p>
+          <p class="parrafo">
+            Esta sección te ayudará a conocer comportamientos de riesgo, signos tempranos de violencia y herramientas para actuar a tiempo. Tu seguridad importa, y nunca estás sola: estamos aquí contigo.
+           </p>
         </div>
+        <img src="../../imagenes/icono_señales.png" alt="Imagen dandose apoyo" class="imagen-en-linea" />   
+      </div>
     </div>
-    <!-- Header End -->
-
-    <!-- Services Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative mb-5">Best Services We Provide For Our Clients</h1>
-                </div>
-                <div class="col-lg-6 mb-5 mb-lg-0 pb-5 pb-lg-0"></div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="owl-carousel service-carousel">
-                        <div class="service-item">
-                            <div class="service-img mx-auto">
-                                <img class="rounded-circle w-100 h-100 bg-light p-3" src="img/service-1.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 class="font-weight-semi-bold mt-5 mb-3 pt-5">Quality Maintain</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" class="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-img mx-auto">
-                                <img class="rounded-circle w-100 h-100 bg-light p-3" src="img/service-2.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 class="font-weight-semi-bold mt-5 mb-3 pt-5">Individual Approach</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" class="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-img mx-auto">
-                                <img class="rounded-circle w-100 h-100 bg-light p-3" src="img/service-3.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 class="font-weight-semi-bold mt-5 mb-3 pt-5">Celebration Ice Cream</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" class="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="service-item">
-                            <div class="service-img mx-auto">
-                                <img class="rounded-circle w-100 h-100 bg-light p-3" src="img/service-4.jpg" style="object-fit: cover;">
-                            </div>
-                            <div class="position-relative text-center bg-light rounded p-4 pb-5" style="margin-top: -75px;">
-                                <h5 class="font-weight-semi-bold mt-5 mb-3 pt-5">Delivery To Any Point</h5>
-                                <p>Dolor nonumy sed eos sed lorem diam amet eos magna. Dolor kasd lorem duo stet kasd justo</p>
-                                <a href="" class="border-bottom border-secondary text-decoration-none text-secondary">Learn More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  </section>
+  <!-- KM = Fin del mensaje -->
+  
+  <!-- KM = Señal de alerta internacional -->
+  <section id="señal" class="signal-help-section">
+    <div class="scroll-señal"></div>
+    <h2 class="titulo-seccion-se">Señal de ayuda silenciosa</h2>
+    <p class="texto-seccion-se">
+      Si te encuentras en una situación de riesgo y no puedes hablar, puedes usar esta señal de mano reconocida internacionalmente para pedir ayuda de forma discreta. Esta señal es sencilla pero poderosa, y puede alertar a otros de que necesitas ayuda sin decir una palabra.
+    </p>
+    <p class="texto-seccion-se">
+      Es importante que practiques la señal para recordarla y que sepas reconocerla si otra persona la utiliza.</p>
+    <div class="contenedor-senal">
+      <img src="../../imagenes/señal_universal.png" alt="Señal de ayuda" class="gif-senal">
+      <p class="explicacion-senal">
+        1️⃣ Palma abierta.<br>
+        2️⃣ Pulgar doblado hacia la palma.<br>
+        3️⃣ Cierra los dedos sobre el pulgar.<br><br>
+        Si ves a alguien haciendo esta señal, **Llama al 123**.
+      </p>
     </div>
-    <!-- Services End -->
+  </section>
+  <!-- KM = Fin de la seccion de señal -->
 
-
-    <!-- Testimonial Start -->
-    <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <h1 class="section-title position-relative text-center mb-5">Clients Say About Our Famous Ice Cream</h1>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="owl-carousel testimonial-carousel">
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-1.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-2.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                        <div class="text-center">
-                            <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                            <h4 class="font-weight-light mb-4">Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam</h4>
-                            <img class="img-fluid mx-auto mb-3" src="img/testimonial-3.jpg" alt="">
-                            <h5 class="font-weight-bold m-0">Client Name</h5>
-                            <span>Profession</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- KM = Seccion de Señales de Alerta -->
+  <section class="violentometro-section">
+    <div id="termometro" class="scroll-termo"></div>
+    <h2 class="violentometro-titulo">Violentómetro: Reconoce las señales</h2>
+    
+    <div class="nivel nivel-amarillo">
+      <h3>Etapa de alerta</h3>
+      <ul>
+        <li>Bromas hirientes</li>
+        <li>Mentiras y chantajes</li>
+        <li>Celos excesivos</li>
+        <li>Prohibiciones (amigos, ropa, redes sociales)</li>
+      </ul>
     </div>
-    <!-- Testimonial End -->
-
-
-
-    <!--Contactos-->
-    <div id="cont" class="container-fluid footer bg-light py-5" style="margin-top: 90px;">
-        <div class="container text-center py-5">
-            <div class="row">
-                <div class="col-12 mb-4">
-                    <a href="index.html" class="navbar-brand m-0">
-                        <h1 class="m-0 mt-n2 display-4 text-primary">RFA</h1>
-                    </a>
-                </div>
-                <div class="col-12 mb-4">
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://x.com/mujeryfuturo1?lang=es" target="_blank"><i class="fa fa-times"></i></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://web.facebook.com/psicosocial.bucaramanga123/?locale=es_LA&_rdc=1&_rdr" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-secondary btn-social mr-2" href="https://www.bucaramanga.gov.co/noticias/asi-puede-acceder-a-los-servicios-del-centro-integral-de-la-mujer-en-bucaramanga/" target="_blank">
-                                <i class="fas fa-balance-scale"></i>
-                            </a></i></a>
-                    <a class="btn btn-outline-secondary btn-social" href="https://www.instagram.com/fsantandereanadelamujer/?hl=es" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <div class="col-md-6 text-center text-lg-right">
-                        <div class="d-inline-flex align-items-center">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mt-2 mb-4">
-                    <div class="row">
-                        <div class="col-sm-6 text-center text-sm-right border-right mb-3 mb-sm-0">
-                            <h5 class="font-weight-bold mb-2">Contactanos</h5>
-                            <p class="mb-2">Carrera 27, Sena CSET</p>
-                            <p class="mb-0">+57 3213211436</p>
-                        </div>
-                        <div class="col-sm-6 text-center text-sm-left">
-                            <h5 class="font-weight-bold mb-2">Horarios de atención</h5>
-                            <p class="mb-2">Lunes – Domingo, 24 horas</p>
-                            <p class="mb-0">Soporte: +57 3003110085</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <p class="m-0">&copy; <a href="#">Domain</a>. All Rights Reserved. Designed by <a href="https://htmlcodex.com">HTML Codex</a>
-                    </p>
-                </div>
-            </div>
-        </div>
+  
+    <div class="nivela nivel-naranja">
+      <h3>Etapa de riesgo</h3>
+      <ul>
+        <li>Humillaciones públicas o privadas</li>
+        <li>Insultos y amenazas</li>
+        <li>Destrucción de tus pertenencias</li>
+        <li>Empujones o jaloneos</li>
+      </ul>
     </div>
-    <!--Contactos terminados :(-->
+  
+    <div class="nivele nivel-rojo">
+      <h3>Etapa de peligro</h3>
+      <ul>
+        <li>Golpes o agresiones físicas</li>
+        <li>Abuso sexual</li>
+        <li>Amenazas de muerte</li>
+        <li>Intento de homicidio</li>
+      </ul>
+    </div>
+  
+    <p class="violento-cierre">Si te identificas en cualquier nivel, busca ayuda. Tu vida y bienestar son lo más importante. 🤍</p>
+  </section>  
+  <!-- KM = Fin de señales de alarma, proximamente se añadiran mas -->
+  
+  <!-- KM = Mini guia por si se reconce algun tipo de violencia -->
+  <section class="mini-guia-section">
+    <div id="guia" class="scroll-guia"></div>
+    <h2 class="titulo-seccion-guia">Mini guía de protección</h2>
+    <div class="tabla-mini-guia">
+      <table>
+        <thead>
+          <tr>
+            <th>Acción</th>
+            <th>Descripción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>No justifiques la violencia</td>
+            <td>Reconoce que cualquier forma de violencia es inaceptable. No es tu culpa.</td>
+          </tr>
+          <tr>
+            <td>Confía en tus sentimientos</td>
+            <td>Si te sientes insegura o incómoda, tus emociones son válidas. Escúchate.</td>
+          </tr>
+          <tr>
+            <td>Busca ayuda</td>
+            <td>Habla con alguien de confianza o contacta a una línea de ayuda profesional.</td>
+          </tr>
+          <tr>
+            <td>Documenta situaciones</td>
+            <td>Guarda mensajes, fotos, notas o cualquier prueba que pueda servirte después.</td>
+          </tr>
+          <tr>
+            <td>Plan de seguridad</td>
+            <td>Prepara una estrategia para salir de una situación de riesgo si es necesario.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>  
+  <!-- KM = Mini guia por si se reconce algun tipo de violencia -->
 
+  <!-- KM = Pie de pagina y contactos-->
+  <footer id="cont" class="footer-section">
+    <div class="footer-container">
+      <a href="index.html" class="navbar-brand">
+        <h1 class="logo-footer">RFA</h1>
+      </a>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-secondary px-2 back-to-top"><i class="fa fa-angle-double-up"></i></a>
+      <!-- KM = Redes sociales de nuevo jeje -->
+      <div class="redes-container">
+        <a href="https://www.facebook.com/keren.morgado.9/?locale=es_LA" target="_blank">
+          <img src="../../iconos/pagina_principal/facebook.png" alt="Facebook" class="social-icon">
+        </a>
 
+        <a href="https://x.com/KerenMorga43873?t=0nC6K6p4_toQmKW8RIPkaQ&s=08" target="_blank">
+          <img src="../../iconos/pagina_principal/twitterx.png" alt="Logo twitterX" class="social-icon">
+        </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <a href="https://discord.gg/qpRyw9Yw" target="_blank">
+          <img src="../../iconos/pagina_principal/discordia.png" alt="Logo discord" class="social-icon">
+        </a>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
+        <a href="https://www.instagram.com/infan_te95?igsh=MXZqZGVyNzN1NWF0aA==" target="_blank">
+          <img src="../../iconos/pagina_principal/instagram.png" alt="Logo instagram" class="social-icon">
+        </a>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+        <a href="https://www.youtube.com/@kerenmorgado1497" target="_blank">
+          <img src="../../iconos/pagina_principal/youtube.png" alt="Logo youTube" class="social-icon">
+        </a>
+
+        <a href="https://t.me/+qc0Dj0rcWPBkNmFh" target="_blank">
+          <img src="../../iconos/pagina_principal/telegram.png" alt="Logo telegram" class="social-icon">
+        </a>
+      </div>
+        
+       <!-- KM = Información de contacto y horarios -->
+       <div class="footer-info">
+
+        <!-- KM = Contactos -->
+        <section class="footer-contact">
+          <h5>Contáctanos</h5>
+          <p>Carrera 27, Sena CSET</p>
+          <p>+57 3213211436</p>
+        </section>
+
+        <div class="separator"></div>
+  
+        <!-- KM =  Horarios de atención -->
+        <section class="footer-hours">
+          <h5>Horarios de atención</h5>
+          <p>Lunes – Domingo, 24 horas</p>
+          <p>Soporte: +57 3003110085</p>
+        </section>
+      </div>
+  
+      <!-- KM = Información de derechos de autor-->
+      <p class="footer-copy">
+        &copy; <a href="#">Keren Daniela Morgado</a>. Todos los derechos reservados. Diseño adaptado y modificado a partir de una plantilla original. <br>
+        &copy; <a href="#">© Domain</a>. . All Rights Reserved. Designed by <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a>.
+      </p>
+    </div>
+  </footer>
+  <!-- KM = Se termino, por ahora! Puedes revisar las otras secciones :)-->
+
+  <!-- KM = Librerias y js de la pagina recursos de apoyo -->
+  <script src="../../java_script/pagina_principal/prevencion.js"></script>
 </body>
-
 </html>
